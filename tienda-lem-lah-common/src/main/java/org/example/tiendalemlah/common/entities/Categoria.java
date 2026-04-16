@@ -3,7 +3,7 @@ package org.example.tiendalemlah.common.entities;
 import lombok.Data;
 
 @Data
-public class Category {
+public class Categoria {
 
     private Long id;
     private String nombre;
