@@ -24,13 +24,14 @@
             <div>
                 <img th:if="${categoria.imagen != null}"
                      th:src="@{/imagenes/categorias/{img}(img=${categoria.imagen})}"
-                     th:alt="${categoria.nombre}" width="200">
+                     th:alt="${categoria.nombre}"
+                     width="200">
 
-                <img th:unless="${categoria.imagen != null}"
+                <img th:if="${categoria.imagen == null}"
                      th:src="@{/imagenes/categorias/no-disponible.png}"
-                     th:alt="${categoria.nombre}" width="200">
+                     th:alt="${categoria.nombre}"
+                     width="200">
             </div>
-
             <h3 th:text="${categoria.nombre}">Nombre</h3>
             <p th:text="${categoria.descripcion}">Descripción</p>
             <a th:href="@{/categorias/{id}(id=${categoria.id})}">Ver detalle</a>
