@@ -2,37 +2,89 @@
 <html lang="es" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Condiciones de uso · Crown & Collar</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Condiciones de uso · Crown &amp; Collar</title>
     <link rel="stylesheet" th:href="@{/css/style.css}">
 </head>
 <body>
 
-<header>
-    <div>ENVÍO EXPRESS DE CORTESÍA EN PEDIDOS SUPERIORES A 120€</div>
-    <nav>
-        <a th:href="@{/}">Inicio</a>
-        <a th:href="@{/categorias}">Colecciones</a>
-        <a href="/sobre-nosotros.html">Sobre nosotros</a>
-        <a th:href="@{/condiciones}">Condiciones de uso</a>
-    </nav>
-    <h1>Crown & Collar</h1>
-</header>
+<!-- ── CABECERA ────────────────────────────────────────────── -->
+<div class="banner">🚚 ENVÍO EXPRESS DE CORTESÍA EN PEDIDOS SUPERIORES A 120€</div>
 
-<main class="container">
-    <h2 style="font-family:'Playfair Display',serif; font-size:2.2rem; margin-bottom:1rem;">
-        Condiciones de uso
-    </h2>
-    <p style="max-width:800px;">
-        Aquí se explican las condiciones de compra y uso de la tienda Crown & Collar.
-        El uso de este sitio implica la aceptación de las presentes condiciones, así como
-        de nuestra política de privacidad y de cookies.
+<nav class="nav-main">
+    <div class="nav-left">
+        <a th:href="@{/categorias/perros}">PERROS</a>
+        <a th:href="@{/categorias/gatos}">GATOS</a>
+    </div>
+    <div class="nav-center">
+        <a th:href="@{/}" class="logo">Crown <span class="amp">&amp;</span> Collar</a>
+    </div>
+    <div class="nav-right">
+        <a th:href="@{/sobre-nosotros.html}">NOSOTROS</a>
+        <a th:href="@{/condiciones}">LEGAL</a>
+        <a th:href="@{/categorias}">COLECCIONES</a>
+    </div>
+</nav>
+
+<!-- ── HERO ────────────────────────────────────────────────── -->
+<section class="condiciones-hero">
+    <p class="section-label">MARCO LEGAL</p>
+    <h2>Condiciones de Uso</h2>
+</section>
+
+<!-- ── CONTENIDO ───────────────────────────────────────────── -->
+<main class="condiciones-body">
+    <p>
+        Bienvenido a Crown &amp; Collar. El uso de este sitio web implica la aceptación
+        plena de las presentes condiciones de uso, así como de nuestra política de
+        privacidad y de cookies.
+    </p>
+
+    <h3>1. Objeto y ámbito de aplicación</h3>
+    <p>
+        Las presentes condiciones regulan el acceso y utilización del sitio web de
+        Crown &amp; Collar, así como la adquisición de productos ofertados a través
+        del mismo. Quedará excluida cualquier otra condición, salvo acuerdo expreso
+        previo y por escrito.
+    </p>
+
+    <h3>2. Proceso de compra</h3>
+    <p>
+        Para realizar un pedido, el usuario deberá seleccionar los productos de
+        su preferencia, añadirlos al carrito y completar el proceso de pago.
+        Una vez confirmado el pedido, el usuario recibirá un correo electrónico
+        de confirmación en la dirección facilitada.
+    </p>
+
+    <h3>3. Envíos y devoluciones</h3>
+    <p>
+        Los pedidos superiores a 120 € recibirán envío express de cortesía.
+        En el caso de que el compañero no apruebe el producto, Crown &amp; Collar
+        garantiza la devolución íntegra del importe abonado en un plazo de 14 días
+        naturales desde la recepción del pedido.
+    </p>
+
+    <h3>4. Protección de datos</h3>
+    <p>
+        Crown &amp; Collar trata los datos personales de sus clientes conforme al
+        Reglamento General de Protección de Datos (RGPD) y la legislación española
+        vigente. El usuario puede ejercer sus derechos de acceso, rectificación,
+        supresión y portabilidad dirigiéndose a nuestra dirección de contacto.
+    </p>
+
+    <h3>5. Legislación aplicable</h3>
+    <p>
+        Las presentes condiciones se regirán e interpretarán de conformidad con
+        la legislación española. Para la resolución de cualquier controversia,
+        las partes se someten a los juzgados y tribunales de Madrid.
     </p>
 </main>
 
+<!-- ── FOOTER ──────────────────────────────────────────────── -->
 <footer>
     <div class="footer-grid">
         <div>
-            <h4>Crown & Collar</h4>
+            <h4>Crown &amp; Collar</h4>
             <p>Nutrición artesanal de lujo para los compañeros más distinguidos.</p>
         </div>
         <div>
@@ -55,7 +107,7 @@
             <input type="email" placeholder="su@email.com">
         </div>
     </div>
-    <p style="margin-top:2rem; text-align:center;">© 2026 CROWN & COLLAR. TODOS LOS DERECHOS RESERVADOS.</p>
+    <p class="footer-copy">© 2026 CROWN &amp; COLLAR. TODOS LOS DERECHOS RESERVADOS.</p>
 </footer>
 
 </body>

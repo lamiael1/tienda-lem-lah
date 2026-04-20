@@ -2,55 +2,67 @@
 <html lang="es" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title th:text="${categoria.nombre}">Detalle de categoría</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title th:text="${categoria.nombre} + ' · Crown &amp; Collar'">Detalle · Crown &amp; Collar</title>
     <link rel="stylesheet" th:href="@{/css/style.css}">
 </head>
 <body>
 
-<header>
-    <div>ENVÍO EXPRESS DE CORTESÍA EN PEDIDOS SUPERIORES A 120€</div>
-    <nav>
-        <a th:href="@{/}">Inicio</a>
-        <a th:href="@{/categorias}">Colecciones</a>
-        <a href="/sobre-nosotros.html">Sobre nosotros</a>
-        <a th:href="@{/condiciones}">Condiciones de uso</a>
-    </nav>
-    <h1>Crown & Collar</h1>
-</header>
+<!-- ── CABECERA ────────────────────────────────────────────── -->
+<div class="banner">🚚 ENVÍO EXPRESS DE CORTESÍA EN PEDIDOS SUPERIORES A 120€</div>
 
-<main class="container">
-    <section style="display:flex; gap:3rem; align-items:flex-start;">
+<nav class="nav-main">
+    <div class="nav-left">
+        <a th:href="@{/categorias/perros}">PERROS</a>
+        <a th:href="@{/categorias/gatos}">GATOS</a>
+    </div>
+    <div class="nav-center">
+        <a th:href="@{/}" class="logo">Crown <span class="amp">&amp;</span> Collar</a>
+    </div>
+    <div class="nav-right">
+        <a th:href="@{/sobre-nosotros.html}">NOSOTROS</a>
+        <a th:href="@{/condiciones}">LEGAL</a>
+        <a th:href="@{/categorias}">COLECCIONES</a>
+    </div>
+</nav>
 
-        <div>
+<!-- ── DETALLE DE CATEGORÍA ────────────────────────────────── -->
+<main class="detalle-container">
+    <div class="detalle-grid">
+
+        <!-- IMAGEN -->
+        <div class="detalle-image">
             <img th:if="${categoria.imagen != null}"
                  th:src="@{/imagenes/categorias/{img}(img=${categoria.imagen})}"
-                 th:alt="${categoria.nombre}"
-                 width="260">
+                 th:alt="${categoria.nombre}">
             <img th:if="${categoria.imagen == null}"
                  th:src="@{/imagenes/categorias/no-disponible.png}"
-                 th:alt="${categoria.nombre}"
-                 width="260">
+                 th:alt="${categoria.nombre}">
         </div>
 
-        <div>
-            <h2 th:text="${categoria.nombre}"
-                style="font-family:'Playfair Display',serif; font-size:2.2rem; margin-bottom:1rem;">
-                Nombre categoría
-            </h2>
-            <p th:text="${categoria.descripcion}" style="margin-bottom:1.5rem;">Descripción</p>
-
-            <p style="opacity:0.8;">
+        <!-- INFORMACIÓN -->
+        <div class="detalle-info">
+            <p class="section-label">COLECCIÓN SELECCIONADA</p>
+            <h2 th:text="${categoria.nombre}">Nombre categoría</h2>
+            <div class="detalle-divider"></div>
+            <p th:text="${categoria.descripcion}">Descripción de la categoría.</p>
+            <p style="opacity:0.7; font-size:0.95rem;">
                 Selección curada para los paladares más distinguidos dentro de esta casa.
+                Cada producto ha superado nuestros estrictos criterios de calidad artesanal.
             </p>
+            <div style="margin-top: 2.5rem;">
+                <a th:href="@{/categorias}" class="btn-gold">VER TODAS LAS COLECCIONES</a>
+            </div>
         </div>
 
-    </section>
+    </div>
 </main>
 
+<!-- ── FOOTER ──────────────────────────────────────────────── -->
 <footer>
     <div class="footer-grid">
         <div>
-            <h4>Crown & Collar</h4>
+            <h4>Crown &amp; Collar</h4>
             <p>Nutrición artesanal de lujo para los compañeros más distinguidos.</p>
         </div>
         <div>
@@ -73,7 +85,7 @@
             <input type="email" placeholder="su@email.com">
         </div>
     </div>
-    <p style="margin-top:2rem; text-align:center;">© 2026 CROWN & COLLAR. TODOS LOS DERECHOS RESERVADOS.</p>
+    <p class="footer-copy">© 2026 CROWN &amp; COLLAR. TODOS LOS DERECHOS RESERVADOS.</p>
 </footer>
 
 </body>

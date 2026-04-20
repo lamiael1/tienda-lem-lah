@@ -1,122 +1,197 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Crown & Collar · Nutrición Real</title>
-    <link rel="stylesheet" href="/css/style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crown &amp; Collar · Nutrición Real</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
 </head>
 
 <body>
 
-<header>
-    <div>ENVÍO EXPRESS DE CORTESÍA EN PEDIDOS SUPERIORES A 120€</div>
-    <nav>
-        <a href="/">Inicio</a>
-        <a href="/categorias">Colecciones</a>
-        <a href="/sobre-nosotros.html">Sobre nosotros</a>
-    </nav>
-    <h1>Crown & Collar</h1>
-</header>
+<!-- ── CABECERA ────────────────────────────────────────────── -->
+<div class="banner">🚚 ENVÍO EXPRESS DE CORTESÍA EN PEDIDOS SUPERIORES A 120€</div>
 
-<!-- HERO -->
-<section class="hero" style="background-image: url('/imagenes/categorias/perros-patrimonio.png');">
-    <div class="container">
-        <h2>Nutrición Real para su Compañero Noble</h2>
-        <p>Descubra nuestras selecciones gastronómicas artesanales, elaboradas con ingredientes de grado humano.</p>
-        <a class="btn-gold" href="/categorias">Explorar la colección</a>
+<nav class="nav-main">
+    <div class="nav-left">
+        <a th:href="@{/categorias/perros}">PERROS</a>
+        <a th:href="@{/categorias/gatos}">GATOS</a>
+    </div>
+    <div class="nav-center">
+        <a th:href="@{/}" class="logo">Crown <span class="amp">&amp;</span> Collar</a>
+    </div>
+    <div class="nav-right">
+        <a th:href="@{/sobre-nosotros.html}">NOSOTROS</a>
+        <a th:href="@{/condiciones}">LEGAL</a>
+        <a th:href="@{/categorias}">COLECCIONES</a>
+    </div>
+</nav>
+
+<!-- ── HERO ────────────────────────────────────────────────── -->
+<section class="hero">
+    <div class="hero-image">
+        <img th:src="@{/imagenes/categorias/perros-patrimonio.png}"
+             src="/imagenes/categorias/perros-patrimonio.png"
+             alt="Compañero Noble en sofá">
+    </div>
+    <div class="hero-content">
+        <p class="hero-label">EDICIÓN LIMITADA — PRIMAVERA 2026</p>
+        <h2 class="hero-title">
+            Nutrición Real
+            <em>para su Compañero</em>
+            Noble
+        </h2>
+        <p class="hero-desc">
+            Descubra nuestras selecciones gastronómicas artesanales,
+            elaboradas con ingredientes de grado humano para el paladar
+            más distinguido.
+        </p>
+        <a class="btn-gold" th:href="@{/categorias}">EXPLORAR LA COLECCIÓN</a>
     </div>
 </section>
 
-<!-- PERROS / GATOS -->
+<!-- ── DUAL CARDS ──────────────────────────────────────────── -->
 <section class="dual-section">
-    <div class="dual-card" style="background-image: url('/imagenes/categorias/perros-patrimonio.png');">
-        <h3>El Patrimonio Canino</h3>
-        <a href="/categorias/perros">Ver colección</a>
+    <div class="dual-card">
+        <img th:src="@{/imagenes/categorias/perros-patrimonio.png}"
+             src="/imagenes/categorias/perros-patrimonio.png"
+             alt="El Patrimonio Canino">
+        <div class="dual-card-overlay">
+            <p class="dual-card-label">PERROS</p>
+            <h3>El Patrimonio Canino</h3>
+            <a th:href="@{/categorias/perros}" class="dual-card-link">VER COLECCIÓN</a>
+        </div>
     </div>
-
-    <div class="dual-card" style="background-image: url('/imagenes/categorias/gatos-herencia.png');">
-        <h3>La Herencia Felina</h3>
-        <a href="/categorias/gatos">Ver colección</a>
+    <div class="dual-card">
+        <img th:src="@{/imagenes/categorias/gatos-herencia.png}"
+             src="/imagenes/categorias/gatos-herencia.png"
+             alt="La Herencia Felina">
+        <div class="dual-card-overlay">
+            <p class="dual-card-label">GATOS</p>
+            <h3>La Herencia Felina</h3>
+            <a th:href="@{/categorias/gatos}" class="dual-card-link">VER COLECCIÓN</a>
+        </div>
     </div>
 </section>
 
-<!-- LAS FINCAS -->
-<section class="container">
-    <h2>Las Fincas</h2>
-    <div class="fincas">
-        <img src="/imagenes/finca1.jpg">
-        <img src="/imagenes/finca2.jpg">
+<!-- ── LAS FINCAS ──────────────────────────────────────────── -->
+<section class="fincas-section">
+    <p class="section-label">LAS FINCAS</p>
+    <h2 class="section-title">Nuestros Dominios</h2>
+    <div class="fincas-grid">
+        <img th:src="@{/imagenes/categorias/perros-patrimonio.png}"
+             src="/imagenes/categorias/perros-patrimonio.png"
+             alt="Finca canina">
+        <img th:src="@{/imagenes/categorias/gatos-herencia.png}"
+             src="/imagenes/categorias/gatos-herencia.png"
+             alt="Finca felina">
     </div>
 </section>
 
-<!-- RECOMENDACIONES -->
-<section class="container">
-    <h2>Nuestras Recomendaciones</h2>
-    <p>La selección del mes</p>
+<!-- ── RECOMENDACIONES ─────────────────────────────────────── -->
+<section class="recomendaciones-section">
+    <p class="section-label">LA SELECCIÓN DEL MES</p>
+    <h2 class="section-title">Nuestras Recomendaciones</h2>
 
     <div class="recomendaciones-grid">
 
         <div class="card">
-            <img src="/imagenes/venison.jpg">
-            <h4>Venison & Truffle</h4>
-            <p>Canino · Gourmet</p>
+            <div class="card-image-wrap">
+                <img th:src="@{/imagenes/categorias/recomendaciones-mes.png}"
+                     src="/imagenes/categorias/recomendaciones-mes.png"
+                     alt="Venison &amp; Truffle">
+            </div>
+            <p class="card-label">CANINO · GOURMET</p>
+            <h4>Venison &amp; Truffle</h4>
         </div>
 
         <div class="card">
-            <img src="/imagenes/salmon.jpg">
-            <h4>Salmon & Caviar</h4>
-            <p>Felino · Premium</p>
+            <div class="card-image-wrap">
+                <span class="card-badge">NUEVO</span>
+                <img th:src="@{/imagenes/categorias/gatos-herencia.png}"
+                     src="/imagenes/categorias/gatos-herencia.png"
+                     alt="Salmon &amp; Caviar">
+            </div>
+            <p class="card-label">FELINO · PREMIUM</p>
+            <h4>Salmon &amp; Caviar</h4>
         </div>
 
         <div class="card">
-            <img src="/imagenes/chicken.jpg">
+            <div class="card-image-wrap">
+                <img th:src="@{/imagenes/categorias/perros-patrimonio.png}"
+                     src="/imagenes/categorias/perros-patrimonio.png"
+                     alt="Organic Chicken">
+            </div>
+            <p class="card-label">CANINO · ORGÁNICO</p>
             <h4>Organic Chicken</h4>
-            <p>Canino · Orgánico</p>
         </div>
 
         <div class="card">
-            <img src="/imagenes/feast.jpg">
+            <div class="card-image-wrap">
+                <span class="card-badge">BESTSELLER</span>
+                <img th:src="@{/imagenes/categorias/recomendaciones-mes.png}"
+                     src="/imagenes/categorias/recomendaciones-mes.png"
+                     alt="Gourmet Feast">
+            </div>
+            <p class="card-label">FELINO · GOURMET</p>
             <h4>Gourmet Feast</h4>
-            <p>Felino · Gourmet</p>
         </div>
 
     </div>
 </section>
 
-<!-- LA PROMESA -->
+<!-- ── LA PROMESA ─────────────────────────────────────────── -->
 <section class="promesa">
-    <h2>La Promesa</h2>
-    <p>Nuestro Compromiso Inquebrantable</p>
+    <p class="section-label">LA PROMESA</p>
+    <h2 class="section-title">Nuestro Compromiso Inquebrantable</h2>
+    <div class="promesa-divider"></div>
 
     <div class="promesa-grid">
 
         <div class="promesa-item">
+            <div class="promesa-icon">
+                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M12 2C6.477 2 2 6.477 2 12s4.477 10 10 10 10-4.477 10-10S17.523 2 12 2z"/>
+                    <path d="M8 12l3 3 5-5"/>
+                </svg>
+            </div>
             <h4>Ingredientes de Grado Humano</h4>
-            <p>Cada ingrediente supera los más altos estándares.</p>
+            <p>Cada ingrediente supera los más altos estándares de calidad alimentaria.</p>
         </div>
 
         <div class="promesa-item">
+            <div class="promesa-icon">
+                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <rect x="1" y="3" width="15" height="13" rx="1"/>
+                    <path d="M16 8h4l3 3v5h-7V8z"/>
+                    <circle cx="5.5" cy="18.5" r="2.5"/>
+                    <circle cx="18.5" cy="18.5" r="2.5"/>
+                </svg>
+            </div>
             <h4>Logística Discreta y Gratuita</h4>
-            <p>Envío refrigerado en embalaje premium.</p>
+            <p>Envío refrigerado en embalaje premium, sin coste adicional.</p>
         </div>
 
         <div class="promesa-item">
+            <div class="promesa-icon">
+                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                </svg>
+            </div>
             <h4>Garantía de Satisfacción Real</h4>
-            <p>Si su compañero no lo aprueba, le devolvemos su inversión.</p>
+            <p>Si su compañero no lo aprueba, le devolvemos su inversión íntegra.</p>
         </div>
 
     </div>
 </section>
 
-<!-- FOOTER -->
+<!-- ── FOOTER ──────────────────────────────────────────────── -->
 <footer>
     <div class="footer-grid">
-
         <div>
-            <h4>Crown & Collar</h4>
+            <h4>Crown &amp; Collar</h4>
             <p>Nutrición artesanal de lujo para los compañeros más distinguidos.</p>
         </div>
-
         <div>
             <h4>La Casa</h4>
             <a href="#">Nuestra Historia</a>
@@ -124,7 +199,6 @@
             <a href="#">Prensa</a>
             <a href="#">Carreras</a>
         </div>
-
         <div>
             <h4>Asistencia</h4>
             <a href="#">Contacto</a>
@@ -132,16 +206,13 @@
             <a href="#">Preguntas Frecuentes</a>
             <a href="#">Guía de Tallas</a>
         </div>
-
         <div>
             <h4>La Gaceta Real</h4>
             <p>Subscríbase para recibir novedades exclusivas.</p>
             <input type="email" placeholder="su@email.com">
         </div>
-
     </div>
-
-    <p style="margin-top:2rem; text-align:center;">© 2026 CROWN & COLLAR. TODOS LOS DERECHOS RESERVADOS.</p>
+    <p class="footer-copy">© 2026 CROWN &amp; COLLAR. TODOS LOS DERECHOS RESERVADOS.</p>
 </footer>
 
 </body>

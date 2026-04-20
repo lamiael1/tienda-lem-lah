@@ -2,62 +2,98 @@
 <html lang="es" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Su selección · Crown & Collar</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Su Selección · Crown &amp; Collar</title>
     <link rel="stylesheet" th:href="@{/css/style.css}">
 </head>
 <body>
 
-<header>
-    <div>ENVÍO EXPRESS DE CORTESÍA EN PEDIDOS SUPERIORES A 120€</div>
-    <nav>
-        <a th:href="@{/}">Inicio</a>
-        <a th:href="@{/categorias}">Colecciones</a>
-        <a href="/sobre-nosotros.html">Sobre nosotros</a>
-        <a th:href="@{/condiciones}">Condiciones de uso</a>
-    </nav>
-    <h1>Crown & Collar</h1>
-</header>
+<!-- ── CABECERA ────────────────────────────────────────────── -->
+<div class="banner">🚚 ENVÍO EXPRESS DE CORTESÍA EN PEDIDOS SUPERIORES A 120€</div>
 
-<main class="container" style="display:flex; gap:3rem; align-items:flex-start;">
+<nav class="nav-main">
+    <div class="nav-left">
+        <a th:href="@{/categorias/perros}">PERROS</a>
+        <a th:href="@{/categorias/gatos}">GATOS</a>
+    </div>
+    <div class="nav-center">
+        <a th:href="@{/}" class="logo">Crown <span class="amp">&amp;</span> Collar</a>
+    </div>
+    <div class="nav-right">
+        <a th:href="@{/sobre-nosotros.html}">NOSOTROS</a>
+        <a th:href="@{/condiciones}">LEGAL</a>
+        <a th:href="@{/categorias}">COLECCIONES</a>
+    </div>
+</nav>
 
-    <section style="flex:2;">
-        <h2 style="font-family:'Playfair Display',serif; font-size:2rem; margin-bottom:1rem;">
-            Su Selección
-        </h2>
+<!-- ── HERO CARRITO ────────────────────────────────────────── -->
+<section class="carrito-hero">
+    <p class="section-label">PEDIDO EN CURSO</p>
+    <h2>Su Selección</h2>
+</section>
 
-        <div th:each="item : ${items}" style="margin-bottom:1.5rem; padding-bottom:1rem; border-bottom:1px solid rgba(212,178,106,0.3);">
-            <p style="font-weight:600;" th:text="${item.nombre}">Canino - Gourmet Venison &amp; Truffle</p>
-            <p th:text="${#numbers.formatDecimal(item.precio, 1, 'COMMA', 2, 'POINT')} + ' €'">35,00€</p>
+<!-- ── CONTENIDO CARRITO ───────────────────────────────────── -->
+<main class="carrito-container">
+
+    <!-- ARTÍCULOS -->
+    <section>
+        <div th:each="item : ${items}" class="carrito-item">
+            <div>
+                <p class="carrito-item-cat">COLECCIÓN SELECCIONADA</p>
+                <p class="carrito-item-nombre" th:text="${item.nombre}">
+                    Canino · Gourmet Venison &amp; Truffle
+                </p>
+            </div>
+            <p class="carrito-item-precio"
+               th:text="${#numbers.formatDecimal(item.precio, 1, 'COMMA', 2, 'POINT')} + ' €'">
+                35,00 €
+            </p>
         </div>
 
-        <div style="margin-top:2rem; display:flex; justify-content:space-between; font-weight:600;">
+        <div class="carrito-subtotal">
             <span>Subtotal</span>
-            <span th:text="${#numbers.formatDecimal(subtotal, 1, 'COMMA', 2, 'POINT')} + ' €'">67,00€</span>
+            <span th:text="${#numbers.formatDecimal(subtotal, 1, 'COMMA', 2, 'POINT')} + ' €'">
+                67,00 €
+            </span>
         </div>
+        <p class="carrito-envio">Envío gratuito incluido</p>
 
-        <p style="margin-top:0.5rem; opacity:0.8;">Envío gratuito incluido</p>
-
-        <button class="btn-gold" style="margin-top:1.5rem;">
-            Finalizar Pedido
-        </button>
+        <div style="margin-top: 2.5rem;">
+            <button class="btn-gold" style="width: 100%; padding: 1.2rem 2rem;">
+                FINALIZAR PEDIDO
+            </button>
+        </div>
     </section>
 
-    <aside style="flex:1; opacity:0.9;">
-        <h3 style="font-family:'Playfair Display',serif; margin-bottom:0.5rem;">Crown & Collar</h3>
+    <!-- SIDEBAR -->
+    <aside class="carrito-sidebar">
+        <h3>Crown &amp; Collar</h3>
         <p>Nutrición artesanal de lujo para los compañeros más distinguidos.</p>
 
-        <div style="margin-top:2rem;">
-            <h4 style="color:var(--dorado);">La Casa</h4>
-            <p>Una casa dedicada a la excelencia gastronómica para compañeros nobles.</p>
+        <div class="carrito-sidebar-section">
+            <h4>GARANTÍAS</h4>
+            <p style="font-size:0.9rem; line-height:1.9; color:#6B6456; font-weight:300;">
+                Envío refrigerado en embalaje premium. Si su compañero no lo aprueba,
+                le devolvemos su inversión íntegra.
+            </p>
+        </div>
+
+        <div class="carrito-sidebar-section">
+            <h4>ATENCIÓN AL CLIENTE</h4>
+            <p style="font-size:0.9rem; line-height:1.9; color:#6B6456; font-weight:300;">
+                Disponible de lunes a viernes de 9h a 18h. Escribanos a
+                hola@crowncollar.es
+            </p>
         </div>
     </aside>
 
 </main>
 
+<!-- ── FOOTER ──────────────────────────────────────────────── -->
 <footer>
     <div class="footer-grid">
         <div>
-            <h4>Crown & Collar</h4>
+            <h4>Crown &amp; Collar</h4>
             <p>Nutrición artesanal de lujo para los compañeros más distinguidos.</p>
         </div>
         <div>
@@ -80,7 +116,7 @@
             <input type="email" placeholder="su@email.com">
         </div>
     </div>
-    <p style="margin-top:2rem; text-align:center;">© 2026 CROWN & COLLAR. TODOS LOS DERECHOS RESERVADOS.</p>
+    <p class="footer-copy">© 2026 CROWN &amp; COLLAR. TODOS LOS DERECHOS RESERVADOS.</p>
 </footer>
 
 </body>
