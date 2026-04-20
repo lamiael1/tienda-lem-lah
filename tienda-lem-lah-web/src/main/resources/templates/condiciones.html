@@ -6,23 +6,57 @@
     <link rel="stylesheet" th:href="@{/css/style.css}">
 </head>
 <body>
+
 <header>
-    <h1>Crown & Collar</h1>
+    <div>ENVÍO EXPRESS DE CORTESÍA EN PEDIDOS SUPERIORES A 120€</div>
     <nav>
         <a th:href="@{/}">Inicio</a>
         <a th:href="@{/categorias}">Colecciones</a>
         <a href="/sobre-nosotros.html">Sobre nosotros</a>
         <a th:href="@{/condiciones}">Condiciones de uso</a>
     </nav>
+    <h1>Crown & Collar</h1>
 </header>
 
-<main>
-    <h2>Condiciones de uso</h2>
-    <p>Aquí se explican las condiciones de compra y uso de la tienda Crown & Collar.</p>
+<main class="container">
+    <h2 style="font-family:'Playfair Display',serif; font-size:2.2rem; margin-bottom:1rem;">
+        Condiciones de uso
+    </h2>
+    <p style="max-width:800px;">
+        Aquí se explican las condiciones de compra y uso de la tienda Crown & Collar.
+        El uso de este sitio implica la aceptación de las presentes condiciones, así como
+        de nuestra política de privacidad y de cookies.
+    </p>
 </main>
 
 <footer>
-    <p>&copy; 2023 CROWN & COLLAR. TODOS LOS DERECHOS RESERVADOS.</p>
+    <div class="footer-grid">
+        <div>
+            <h4>Crown & Collar</h4>
+            <p>Nutrición artesanal de lujo para los compañeros más distinguidos.</p>
+        </div>
+        <div>
+            <h4>La Casa</h4>
+            <a href="#">Nuestra Historia</a>
+            <a href="#">Sostenibilidad</a>
+            <a href="#">Prensa</a>
+            <a href="#">Carreras</a>
+        </div>
+        <div>
+            <h4>Asistencia</h4>
+            <a href="#">Contacto</a>
+            <a href="#">Envíos y Devoluciones</a>
+            <a href="#">Preguntas Frecuentes</a>
+            <a href="#">Guía de Tallas</a>
+        </div>
+        <div>
+            <h4>La Gaceta Real</h4>
+            <p>Subscríbase para recibir novedades exclusivas.</p>
+            <input type="email" placeholder="su@email.com">
+        </div>
+    </div>
+    <p style="margin-top:2rem; text-align:center;">© 2026 CROWN & COLLAR. TODOS LOS DERECHOS RESERVADOS.</p>
 </footer>
+
 </body>
 </html>

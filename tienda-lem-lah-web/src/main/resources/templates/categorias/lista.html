@@ -6,41 +6,81 @@
     <link rel="stylesheet" th:href="@{/css/style.css}">
 </head>
 <body>
+
 <header>
-    <h1>Crown & Collar</h1>
+    <div>ENVÍO EXPRESS DE CORTESÍA EN PEDIDOS SUPERIORES A 120€</div>
     <nav>
-        <a th:href="@{/static}">Inicio</a>
-        <a th:href="@{/templates/categorias}">Colecciones</a>
+        <a th:href="@{/}">Inicio</a>
+        <a th:href="@{/categorias}">Colecciones</a>
         <a href="/sobre-nosotros.html">Sobre nosotros</a>
         <a th:href="@{/condiciones}">Condiciones de uso</a>
     </nav>
+    <h1>Crown & Collar</h1>
 </header>
 
-<main>
+<main class="container">
     <h2>Nuestros Dominios</h2>
+    <p>Explore nuestras colecciones seleccionadas para cada linaje.</p>
 
-    <ul>
-        <li th:each="categoria : ${categorias}">
-            <div>
-                <img th:if="${categoria.imagen != null}"
-                     th:src="@{/imagenes/categorias/{img}(img=${categoria.imagen})}"
-                     th:alt="${categoria.nombre}"
-                     width="200">
+    <ul style="list-style:none; padding:0; margin-top:2rem;">
+        <li th:each="categoria : ${categorias}" style="margin-bottom:2.5rem;">
+            <div style="display:flex; gap:2rem; align-items:center;">
 
-                <img th:if="${categoria.imagen == null}"
-                     th:src="@{/imagenes/categorias/no-disponible.png}"
-                     th:alt="${categoria.nombre}"
-                     width="200">
+                <div>
+                    <img th:if="${categoria.imagen != null}"
+                         th:src="@{/imagenes/categorias/{img}(img=${categoria.imagen})}"
+                         th:alt="${categoria.nombre}"
+                         width="220">
+                    <img th:if="${categoria.imagen == null}"
+                         th:src="@{/imagenes/categorias/no-disponible.png}"
+                         th:alt="${categoria.nombre}"
+                         width="220">
+                </div>
+
+                <div>
+                    <h3 th:text="${categoria.nombre}"
+                        style="font-family:'Playfair Display',serif; font-size:1.8rem; margin-bottom:0.5rem;">
+                        Nombre categoría
+                    </h3>
+                    <p th:text="${categoria.descripcion}">Descripción</p>
+                    <a th:href="@{/categorias/{id}(id=${categoria.id})}" class="btn-gold" style="margin-top:1rem; display:inline-block;">
+                        Ver detalle
+                    </a>
+                </div>
+
             </div>
-            <h3 th:text="${categoria.nombre}">Nombre</h3>
-            <p th:text="${categoria.descripcion}">Descripción</p>
-            <a th:href="@{/categorias/{id}(id=${categoria.id})}">Ver detalle</a>
         </li>
     </ul>
 </main>
 
 <footer>
-    <p>&copy; 2026 CROWN & COLLAR. TODOS LOS DERECHOS RESERVADOS LEM LAH.</p>
+    <div class="footer-grid">
+        <div>
+            <h4>Crown & Collar</h4>
+            <p>Nutrición artesanal de lujo para los compañeros más distinguidos.</p>
+        </div>
+        <div>
+            <h4>La Casa</h4>
+            <a href="#">Nuestra Historia</a>
+            <a href="#">Sostenibilidad</a>
+            <a href="#">Prensa</a>
+            <a href="#">Carreras</a>
+        </div>
+        <div>
+            <h4>Asistencia</h4>
+            <a href="#">Contacto</a>
+            <a href="#">Envíos y Devoluciones</a>
+            <a href="#">Preguntas Frecuentes</a>
+            <a href="#">Guía de Tallas</a>
+        </div>
+        <div>
+            <h4>La Gaceta Real</h4>
+            <p>Subscríbase para recibir novedades exclusivas.</p>
+            <input type="email" placeholder="su@email.com">
+        </div>
+    </div>
+    <p style="margin-top:2rem; text-align:center;">© 2026 CROWN & COLLAR. TODOS LOS DERECHOS RESERVADOS.</p>
 </footer>
+
 </body>
 </html>

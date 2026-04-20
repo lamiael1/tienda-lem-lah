@@ -1,35 +1,148 @@
 <!DOCTYPE html>
-<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<html lang="es">
 <head>
-    <link rel="stylesheet" th:href="@{/css/style.css}">
     <meta charset="UTF-8">
-    <title>Crown & Collar · Nutrición Real para su Compañero Noble</title>
+    <title>Crown & Collar · Nutrición Real</title>
+    <link rel="stylesheet" href="/css/style.css">
 </head>
+
 <body>
+
 <header>
-    <div>
-        ENVÍO EXPRESS DE CORTESÍA EN PEDIDOS SUPERIORES A 120€
-    </div>
+    <div>ENVÍO EXPRESS DE CORTESÍA EN PEDIDOS SUPERIORES A 120€</div>
     <nav>
-        <a th:href="@{/}">Inicio</a>
-        <a th:href="@{/categorias}">Colecciones</a>
+        <a href="/">Inicio</a>
+        <a href="/categorias">Colecciones</a>
+        <a href="/sobre-nosotros.html">Sobre nosotros</a>
     </nav>
     <h1>Crown & Collar</h1>
 </header>
 
-<main>
-    <section>
+<!-- HERO -->
+<section class="hero" style="background-image: url('/imagenes/categorias/perros-patrimonio.png');">
+    <div class="container">
         <h2>Nutrición Real para su Compañero Noble</h2>
-        <p>
-            Descubra nuestras selecciones gastronómicas artesanales,
-            elaboradas con ingredientes de grado humano para el paladar más distinguido.
-        </p>
-        <a th:href="@{/categorias}">Explorar la colección</a>
-    </section>
-</main>
+        <p>Descubra nuestras selecciones gastronómicas artesanales, elaboradas con ingredientes de grado humano.</p>
+        <a class="btn-gold" href="/categorias">Explorar la colección</a>
+    </div>
+</section>
 
+<!-- PERROS / GATOS -->
+<section class="dual-section">
+    <div class="dual-card" style="background-image: url('/imagenes/categorias/perros-patrimonio.png');">
+        <h3>El Patrimonio Canino</h3>
+        <a href="/categorias/perros">Ver colección</a>
+    </div>
+
+    <div class="dual-card" style="background-image: url('/imagenes/categorias/gatos-herencia.png');">
+        <h3>La Herencia Felina</h3>
+        <a href="/categorias/gatos">Ver colección</a>
+    </div>
+</section>
+
+<!-- LAS FINCAS -->
+<section class="container">
+    <h2>Las Fincas</h2>
+    <div class="fincas">
+        <img src="/imagenes/finca1.jpg">
+        <img src="/imagenes/finca2.jpg">
+    </div>
+</section>
+
+<!-- RECOMENDACIONES -->
+<section class="container">
+    <h2>Nuestras Recomendaciones</h2>
+    <p>La selección del mes</p>
+
+    <div class="recomendaciones-grid">
+
+        <div class="card">
+            <img src="/imagenes/venison.jpg">
+            <h4>Venison & Truffle</h4>
+            <p>Canino · Gourmet</p>
+        </div>
+
+        <div class="card">
+            <img src="/imagenes/salmon.jpg">
+            <h4>Salmon & Caviar</h4>
+            <p>Felino · Premium</p>
+        </div>
+
+        <div class="card">
+            <img src="/imagenes/chicken.jpg">
+            <h4>Organic Chicken</h4>
+            <p>Canino · Orgánico</p>
+        </div>
+
+        <div class="card">
+            <img src="/imagenes/feast.jpg">
+            <h4>Gourmet Feast</h4>
+            <p>Felino · Gourmet</p>
+        </div>
+
+    </div>
+</section>
+
+<!-- LA PROMESA -->
+<section class="promesa">
+    <h2>La Promesa</h2>
+    <p>Nuestro Compromiso Inquebrantable</p>
+
+    <div class="promesa-grid">
+
+        <div class="promesa-item">
+            <h4>Ingredientes de Grado Humano</h4>
+            <p>Cada ingrediente supera los más altos estándares.</p>
+        </div>
+
+        <div class="promesa-item">
+            <h4>Logística Discreta y Gratuita</h4>
+            <p>Envío refrigerado en embalaje premium.</p>
+        </div>
+
+        <div class="promesa-item">
+            <h4>Garantía de Satisfacción Real</h4>
+            <p>Si su compañero no lo aprueba, le devolvemos su inversión.</p>
+        </div>
+
+    </div>
+</section>
+
+<!-- FOOTER -->
 <footer>
-    <p>&copy; 2026 CROWN & COLLAR. TODOS LOS DERECHOS RESERVADOS LEM LAH.</p>
+    <div class="footer-grid">
+
+        <div>
+            <h4>Crown & Collar</h4>
+            <p>Nutrición artesanal de lujo para los compañeros más distinguidos.</p>
+        </div>
+
+        <div>
+            <h4>La Casa</h4>
+            <a href="#">Nuestra Historia</a>
+            <a href="#">Sostenibilidad</a>
+            <a href="#">Prensa</a>
+            <a href="#">Carreras</a>
+        </div>
+
+        <div>
+            <h4>Asistencia</h4>
+            <a href="#">Contacto</a>
+            <a href="#">Envíos y Devoluciones</a>
+            <a href="#">Preguntas Frecuentes</a>
+            <a href="#">Guía de Tallas</a>
+        </div>
+
+        <div>
+            <h4>La Gaceta Real</h4>
+            <p>Subscríbase para recibir novedades exclusivas.</p>
+            <input type="email" placeholder="su@email.com">
+        </div>
+
+    </div>
+
+    <p style="margin-top:2rem; text-align:center;">© 2026 CROWN & COLLAR. TODOS LOS DERECHOS RESERVADOS.</p>
 </footer>
+
 </body>
 </html>

@@ -1,16 +1,191 @@
+/* Tipografías */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap');
+
+/* Colores base */
+:root {
+    --verde-oscuro: #0f2b24;
+    --verde-profundo: #102f28;
+    --dorado: #d4b26a;
+    --beige: #f5f5f0;
+    --blanco: #ffffff;
+}
+
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 body {
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-    background-color: #0f2b24;
-    color: #f5f5f0;
+    font-family: 'Inter', sans-serif;
+    background-color: var(--verde-oscuro);
+    color: var(--beige);
+    line-height: 1.6;
 }
 
-header, footer {
-    padding: 1rem 2rem;
-    background-color: #102f28;
+/* Contenedor */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
 }
 
-a {
-    color: #d4b26a;
-    text-decoration: none;
-    margin-right: 1rem;
+/* Header */
+header {
+    background-color: var(--verde-profundo);
+    padding: 1.5rem 2rem;
+    text-align: center;
+    border-bottom: 1px solid rgba(212,178,106,0.3);
+}
+
+header h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.8rem;
+    color: var(--dorado);
+    margin-top: 1rem;
+}
+
+nav a {
+    color: var(--dorado);
+    margin: 0 1rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Hero */
+.hero {
+    background-size: cover;
+    background-position: center;
+    padding: 8rem 2rem;
+    text-align: left;
+}
+
+.hero h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 3.2rem;
+    margin-bottom: 1rem;
+}
+
+.hero p {
+    max-width: 500px;
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+}
+
+.btn-gold {
+    background-color: var(--dorado);
+    color: var(--verde-oscuro);
+    padding: 0.9rem 1.8rem;
+    border-radius: 4px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Sección Perros/Gatos */
+.dual-section {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.dual-card {
+    position: relative;
+    background-size: cover;
+    background-position: center;
+    padding: 10rem 2rem;
+}
+
+.dual-card h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.4rem;
+}
+
+.dual-card a {
+    display: inline-block;
+    margin-top: 1rem;
+    color: var(--dorado);
+    font-weight: 600;
+}
+
+/* Las Fincas */
+.fincas {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+}
+
+.fincas img {
+    width: 100%;
+    border-radius: 6px;
+}
+
+/* Recomendaciones */
+.recomendaciones-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+}
+
+.card {
+    background-color: var(--verde-profundo);
+    padding: 1rem;
+    border-radius: 6px;
+    text-align: center;
+}
+
+.card img {
+    width: 100%;
+    border-radius: 6px;
+}
+
+/* La Promesa */
+.promesa {
+    background-color: var(--verde-profundo);
+    padding: 4rem 2rem;
+    text-align: center;
+}
+
+.promesa-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+}
+
+.promesa-item h4 {
+    color: var(--dorado);
+    font-family: 'Playfair Display', serif;
+}
+
+/* Footer */
+footer {
+    background-color: var(--verde-profundo);
+    padding: 3rem 2rem;
+    margin-top: 4rem;
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+}
+
+footer h4 {
+    color: var(--dorado);
+    font-family: 'Playfair Display', serif;
+}
+
+footer a {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: var(--beige);
+}
+
+footer input {
+    width: 100%;
+    padding: 0.6rem;
+    border-radius: 4px;
+    border: none;
+    margin-top: 1rem;
 }

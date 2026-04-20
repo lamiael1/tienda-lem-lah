@@ -2,7 +2,7 @@
 <html lang="es" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title th:text="${categoria.nombre}">Detalle de categoría</title>
+    <title>Su selección · Crown & Collar</title>
     <link rel="stylesheet" th:href="@{/css/style.css}">
 </head>
 <body>
@@ -18,33 +18,40 @@
     <h1>Crown & Collar</h1>
 </header>
 
-<main class="container">
-    <section style="display:flex; gap:3rem; align-items:flex-start;">
+<main class="container" style="display:flex; gap:3rem; align-items:flex-start;">
 
-        <div>
-            <img th:if="${categoria.imagen != null}"
-                 th:src="@{/imagenes/categorias/{img}(img=${categoria.imagen})}"
-                 th:alt="${categoria.nombre}"
-                 width="260">
-            <img th:if="${categoria.imagen == null}"
-                 th:src="@{/imagenes/categorias/no-disponible.png}"
-                 th:alt="${categoria.nombre}"
-                 width="260">
+    <section style="flex:2;">
+        <h2 style="font-family:'Playfair Display',serif; font-size:2rem; margin-bottom:1rem;">
+            Su Selección
+        </h2>
+
+        <div th:each="item : ${items}" style="margin-bottom:1.5rem; padding-bottom:1rem; border-bottom:1px solid rgba(212,178,106,0.3);">
+            <p style="font-weight:600;" th:text="${item.nombre}">Canino - Gourmet Venison &amp; Truffle</p>
+            <p th:text="${#numbers.formatDecimal(item.precio, 1, 'COMMA', 2, 'POINT')} + ' €'">35,00€</p>
         </div>
 
-        <div>
-            <h2 th:text="${categoria.nombre}"
-                style="font-family:'Playfair Display',serif; font-size:2.2rem; margin-bottom:1rem;">
-                Nombre categoría
-            </h2>
-            <p th:text="${categoria.descripcion}" style="margin-bottom:1.5rem;">Descripción</p>
-
-            <p style="opacity:0.8;">
-                Selección curada para los paladares más distinguidos dentro de esta casa.
-            </p>
+        <div style="margin-top:2rem; display:flex; justify-content:space-between; font-weight:600;">
+            <span>Subtotal</span>
+            <span th:text="${#numbers.formatDecimal(subtotal, 1, 'COMMA', 2, 'POINT')} + ' €'">67,00€</span>
         </div>
 
+        <p style="margin-top:0.5rem; opacity:0.8;">Envío gratuito incluido</p>
+
+        <button class="btn-gold" style="margin-top:1.5rem;">
+            Finalizar Pedido
+        </button>
     </section>
+
+    <aside style="flex:1; opacity:0.9;">
+        <h3 style="font-family:'Playfair Display',serif; margin-bottom:0.5rem;">Crown & Collar</h3>
+        <p>Nutrición artesanal de lujo para los compañeros más distinguidos.</p>
+
+        <div style="margin-top:2rem;">
+            <h4 style="color:var(--dorado);">La Casa</h4>
+            <p>Una casa dedicada a la excelencia gastronómica para compañeros nobles.</p>
+        </div>
+    </aside>
+
 </main>
 
 <footer>
