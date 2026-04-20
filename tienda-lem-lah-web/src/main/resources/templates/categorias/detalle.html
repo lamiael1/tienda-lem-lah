@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title th:text="${categoria.nombre}">Detalle de categoría</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+<body>
+<header>
+    <h1>Crown & Collar</h1>
+    <nav>
+        <a th:href="@{/}">Inicio</a>
+        <a th:href="@{/categorias}">Colecciones</a>
+        <a href="/sobre-nosotros.html">Sobre nosotros</a>
+        <a th:href="@{/condiciones}">Condiciones de uso</a>
+    </nav>
+</header>
+
+<main>
+    <h2 th:text="${categoria.nombre}">Nombre categoría</h2>
+
+    <img th:if="${categoria.imagen != null}"
+         th:src="@{/imagenes/categorias/{img}(img=${categoria.imagen})}"
+         th:alt="${categoria.nombre}"
+         width="260">
+
+    <img th:if="${categoria.imagen == null}"
+         th:src="@{/imagenes/categorias/no-disponible.png}"
+         th:alt="${categoria.nombre}"
+         width="260">
+    <p th:text="${categoria.descripcion}">Descripción</p>
+</main>
+
+<footer>
+    <p>&copy; 2026 CROWN & COLLAR. TODOS LOS DERECHOS RESERVADOS. LEM LAH</p>
+</footer>
+</body>
+</html>
