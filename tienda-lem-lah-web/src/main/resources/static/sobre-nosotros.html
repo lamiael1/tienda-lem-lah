@@ -1,54 +1,92 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Sobre nosotros · Crown & Collar</title>
+    <title>Sobre Nosotros · Crown & Collar</title>
     <link rel="stylesheet" href="/css/style.css">
 </head>
+
 <body>
 
-<header>
-    <div>ENVÍO EXPRESS DE CORTESÍA EN PEDIDOS SUPERIORES A 120€</div>
-    <nav>
-        <a href="/static">Inicio</a>
+<header class="header-premium">
+    <div class="banner-envio">ENVÍO EXPRESS DE CORTESÍA EN PEDIDOS SUPERIORES A 120€</div>
+
+    <h1 class="logo-premium">Crown & Collar</h1>
+
+    <nav class="nav-premium">
+        <a href="/">Inicio</a>
         <a href="/categorias">Colecciones</a>
-        <a href="/sobre-nosotros.html">Sobre nosotros</a>
-        <a href="/condiciones">Condiciones de uso</a>
+        <a href="/sobre-nosotros.html" class="active">Sobre Nosotros</a>
+        <a href="/condiciones">Condiciones</a>
     </nav>
-    <h1>Crown & Collar</h1>
 </header>
 
-<main class="container">
-    <h2 style="font-family:'Playfair Display',serif; font-size:2.4rem; margin-bottom:1rem;">
-        La Casa Crown & Collar
-    </h2>
-    <p style="max-width:700px; margin-bottom:2rem;">
-        Nutrición artesanal de lujo para los compañeros más distinguidos.
-    </p>
 
-    <section style="display:flex; gap:3rem; align-items:flex-start; margin-top:2rem;">
-        <div style="flex:2;">
+
+
+<main class="sobre-nosotros-page">
+
+    <!-- ===========================
+         NUESTRA HISTORIA
+    ============================ -->
+    <section class="historia-section">
+        <div class="historia-texto">
+            <h2 class="titulo-editorial">Nuestra Historia</h2>
+            <p class="subtitulo-editorial">Nacidos de la <em>convicción</em> de que merecen más.</p>
+
+            <h3 class="bloque-titulo">La Fundación</h3>
             <p>
-                En Crown & Collar creemos que los compañeros nobles merecen una mesa a la altura de su linaje.
-                Cada receta es elaborada con ingredientes de grado humano, seleccionados con el mismo rigor que
-                se aplicaría a una mesa de alta gastronomía.
+                Crown & Collar nació en 2018 en las Cotswolds inglesas, fruto de la frustración de una veterinaria
+                y un chef ante la incapacidad de encontrar alimento realmente digno para sus propios animales.
             </p>
-            <p style="margin-top:1rem;">
-                Nuestro compromiso es ofrecer una experiencia culinaria que honre la relación entre usted y su
-                compañero, combinando ciencia nutricional con tradición artesanal.
+            <p>
+                Lo que comenzó como una pequeña tienda artesanal en un garaje de piedra se convirtió, con el tiempo,
+                en un referente en alimentación de lujo para mascotas. Nacimos de una idea simple:
+                <strong>si no lo servirías en tu mesa, no debería estar en su cuenco.</strong>
+            </p>
+            <p>
+                Trabajamos con productores locales, agrícolas, ecológicos y artesanales que comparten nuestra pasión
+                por lo puro. Cada receta pasa por más de 60 controles de calidad antes de llegar a su hogar.
             </p>
         </div>
 
-        <div style="flex:1;">
-            <h3 style="font-family:'Playfair Display',serif; margin-bottom:0.5rem;">El Equipo</h3>
-            <ul style="list-style:none; padding:0;">
-                <li>LEM</li>
-                <li>LAH</li>
-            </ul>
+        <div class="historia-imagen">
+            <img src="/imagenes/categorias/gatos-herencia.png" alt="Nuestra historia Crown & Collar">
         </div>
     </section>
-</main>
 
+    <blockquote class="cita-editorial">
+        “La nobleza no es cuestión de raza. Es cuestión de cómo se les cría.”
+        <span>— Eleonora Blackwood</span>
+    </blockquote>
+
+
+    <!-- ===========================
+         PRINCIPIOS
+    ============================ -->
+    <section class="principios-section">
+        <h2 class="titulo-editorial">Nuestros Principios</h2>
+        <p class="principios-sub">Los pilares de la Casa</p>
+
+        <div class="principios-grid">
+            <div class="principio-card">
+                <h3>Pureza de Origen</h3>
+                <p>Cada ingrediente es trazable hasta su fuente. Nada de subproductos, nada artificial.</p>
+            </div>
+
+            <div class="principio-card">
+                <h3>Excelencia Artesanal</h3>
+                <p>Elaboramos en lotes pequeños para garantizar una calidad que la producción masiva no puede igualar.</p>
+            </div>
+
+            <div class="principio-card">
+                <h3>El Bienestar ante Todo</h3>
+                <p>La ciencia nutricional más avanzada al servicio del bienestar real y duradero.</p>
+            </div>
+        </div>
+    </section>
+
+</main>
 <footer>
     <div class="footer-grid">
         <div>

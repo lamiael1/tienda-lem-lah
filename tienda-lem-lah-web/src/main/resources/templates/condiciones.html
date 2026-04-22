@@ -2,31 +2,104 @@
 <html lang="es" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Condiciones de uso · Crown & Collar</title>
+    <title>Condiciones de Uso · Crown & Collar</title>
     <link rel="stylesheet" th:href="@{/css/style.css}">
 </head>
-<body>
 
-<header>
-    <div>ENVÍO EXPRESS DE CORTESÍA EN PEDIDOS SUPERIORES A 120€</div>
-    <nav>
+<body class="fondo-oscuro">
+
+<header class="header-premium">
+    <div class="banner-envio">ENVÍO EXPRESS DE CORTESÍA EN PEDIDOS SUPERIORES A 120€</div>
+
+    <h1 class="logo-premium">Crown & Collar</h1>
+
+    <nav class="nav-premium">
         <a th:href="@{/}">Inicio</a>
         <a th:href="@{/categorias}">Colecciones</a>
-        <a href="/sobre-nosotros.html">Sobre nosotros</a>
-        <a th:href="@{/condiciones}">Condiciones de uso</a>
+        <a href="/sobre-nosotros.html">Sobre Nosotros</a>
+        <a th:href="@{/condiciones}" class="active">Condiciones</a>
     </nav>
-    <h1>Crown & Collar</h1>
 </header>
 
-<main class="container">
-    <h2 style="font-family:'Playfair Display',serif; font-size:2.2rem; margin-bottom:1rem;">
-        Condiciones de uso
-    </h2>
-    <p style="max-width:800px;">
-        Aquí se explican las condiciones de compra y uso de la tienda Crown & Collar.
-        El uso de este sitio implica la aceptación de las presentes condiciones, así como
-        de nuestra política de privacidad y de cookies.
-    </p>
+<!-- HERO EDITORIAL -->
+<section class="hero-condiciones">
+    <div class="hero-condiciones-texto">
+        <h2 class="hero-titulo">Condiciones de Uso y Contratación</h2>
+        <p class="hero-desc">
+            Le rogamos que lea atentamente las presentes condiciones antes de utilizar este sitio web o realizar un pedido.
+        </p>
+    </div>
+</section>
+
+<!-- CONTENIDO PRINCIPAL -->
+<main class="contenedor-condiciones">
+
+    <section class="bloque-condicion">
+        <h3>01 · Identificación del Titular</h3>
+        <p>
+            Crown & Collar S.L., inscrita en el Registro Mercantil de Madrid, CIF B-88543214,
+            con domicilio en Calle Serrano 240, 28016 Madrid, España.
+            Contacto: info@crownandcollar.com · +34 910 123 456
+        </p>
+    </section>
+
+    <section class="bloque-condicion">
+        <h3>02 · Objeto y Ámbito de Aplicación</h3>
+        <p>
+            Las presentes Condiciones regulan el acceso y uso del sitio web, así como la contratación de productos
+            y servicios ofrecidos por Crown & Collar.
+        </p>
+    </section>
+
+    <section class="bloque-condicion">
+        <h3>03 · Proceso de Compra</h3>
+        <p>
+            1. Selección de productos y adición al carrito.<br>
+            2. Confirmación del pedido y formalización del contrato.<br>
+            3. Envío de correo electrónico con los detalles del pedido.
+        </p>
+    </section>
+
+    <section class="bloque-condicion">
+        <h3>04 · Precios, Impuestos y Envíos</h3>
+        <p>
+            Todos los precios incluyen impuestos. Los gastos de envío se calculan según destino y peso.
+            Métodos de pago: tarjeta, PayPal o transferencia bancaria.
+        </p>
+    </section>
+
+    <section class="bloque-condicion">
+        <h3>05 · Derecho de Desistimiento</h3>
+        <p>
+            El cliente dispone de 14 días naturales para desistir de la compra sin necesidad de justificación.
+            Los productos deben devolverse en perfecto estado y en su embalaje original.
+        </p>
+    </section>
+
+    <section class="bloque-condicion">
+        <h3>06 · Garantía de Satisfacción</h3>
+        <p>
+            Crown & Collar garantiza la calidad de todos sus productos. En caso de defecto, el cliente podrá solicitar
+            sustitución o reembolso.
+        </p>
+    </section>
+
+    <section class="bloque-condicion">
+        <h3>07 · Protección de Datos</h3>
+        <p>
+            Cumplimos con el RGPD y la Ley Orgánica 3/2018. Los datos serán tratados con confidencialidad y utilizados
+            únicamente para la gestión de pedidos.
+        </p>
+    </section>
+
+    <section class="bloque-condicion">
+        <h3>08 · Ley Aplicable</h3>
+        <p>
+            Las presentes Condiciones se rigen por la legislación española. Para cualquier conflicto, las partes se
+            someten a los Juzgados y Tribunales de Madrid.
+        </p>
+    </section>
+
 </main>
 
 <footer>

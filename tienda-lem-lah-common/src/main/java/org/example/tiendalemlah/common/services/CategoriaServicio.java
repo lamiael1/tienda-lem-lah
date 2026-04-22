@@ -9,6 +9,7 @@ import java.util.Optional;
 public interface CategoriaServicio {
 
         List<Categoria> findAll();
+        List<Categoria> findByTipo(String tipo);
 
         Optional<Categoria> findById(Long id);
 

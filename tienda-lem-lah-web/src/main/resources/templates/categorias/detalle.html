@@ -2,50 +2,66 @@
 <html lang="es" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title th:text="${categoria.nombre}">Detalle de categoría</title>
+    <title th:text="${categoria.nombre} + ' · Crown & Collar'">Detalle · Crown & Collar</title>
     <link rel="stylesheet" th:href="@{/css/style.css}">
 </head>
-<body>
 
-<header>
-    <div>ENVÍO EXPRESS DE CORTESÍA EN PEDIDOS SUPERIORES A 120€</div>
-    <nav>
+<body class="fondo-oscuro">
+
+<header class="header-premium">
+    <div class="banner-envio">ENVÍO EXPRESS DE CORTESÍA EN PEDIDOS SUPERIORES A 120€</div>
+
+    <h1 class="logo-premium">Crown & Collar</h1>
+
+    <nav class="nav-premium">
         <a th:href="@{/}">Inicio</a>
         <a th:href="@{/categorias}">Colecciones</a>
-        <a href="/sobre-nosotros.html">Sobre nosotros</a>
-        <a th:href="@{/condiciones}">Condiciones de uso</a>
+        <a href="/sobre-nosotros.html">Sobre Nosotros</a>
+        <a th:href="@{/condiciones}">Condiciones</a>
     </nav>
-    <h1>Crown & Collar</h1>
 </header>
 
-<main class="container">
-    <section style="display:flex; gap:3rem; align-items:flex-start;">
+<!-- HERO DETALLE -->
+<section class="hero-detalle">
+    <div class="hero-detalle-imagen">
+        <img th:src="@{'/imagenes/categorias/' + ${categoria.imagen}}"
+             th:alt="${categoria.nombre}">
+    </div>
 
-        <div>
-            <img th:if="${categoria.imagen != null}"
-                 th:src="@{/imagenes/categorias/{img}(img=${categoria.imagen})}"
-                 th:alt="${categoria.nombre}"
-                 width="260">
-            <img th:if="${categoria.imagen == null}"
-                 th:src="@{/imagenes/categorias/no-disponible.png}"
-                 th:alt="${categoria.nombre}"
-                 width="260">
-        </div>
+    <div class="hero-detalle-texto">
+        <p class="hero-edicion" th:text="${categoria.tipo == 'perros'} ? 'COLECCIÓN CANINA' : 'COLECCIÓN FELINA'"></p>
 
-        <div>
-            <h2 th:text="${categoria.nombre}"
-                style="font-family:'Playfair Display',serif; font-size:2.2rem; margin-bottom:1rem;">
-                Nombre categoría
-            </h2>
-            <p th:text="${categoria.descripcion}" style="margin-bottom:1.5rem;">Descripción</p>
+        <h2 class="hero-titulo" th:text="${categoria.nombre}"></h2>
 
-            <p style="opacity:0.8;">
-                Selección curada para los paladares más distinguidos dentro de esta casa.
-            </p>
-        </div>
+        <p class="hero-desc" th:text="${categoria.descripcion}"></p>
 
-    </section>
-</main>
+        <a th:href="@{/categorias(tipo=${categoria.tipo})}" class="btn-volver">
+            ← Volver a Colecciones
+        </a>
+    </div>
+</section>
+
+<!-- BLOQUE PREMIUM DE INFORMACIÓN -->
+<section class="detalle-info">
+    <h3>Sobre esta creación</h3>
+    <p>
+        En Crown & Collar seleccionamos únicamente ingredientes de grado humano, tratados con precisión
+        culinaria y un enfoque aristocrático hacia la nutrición animal.
+        Cada receta es elaborada con respeto por la tradición y un compromiso absoluto con la excelencia.
+    </p>
+
+    <h3>Ingredientes Destacados</h3>
+    <p>
+        Esta colección incluye ingredientes nobles como proteínas magras, caldos reducidos, aceites naturales
+        y extractos gourmet que elevan la experiencia gastronómica de su compañero.
+    </p>
+
+    <h3>Recomendación de la Casa</h3>
+    <p>
+        Ideal para hogares que buscan un equilibrio entre nutrición avanzada y un ritual culinario elegante.
+        Perfecto para animales con paladar exigente y familias que valoran la excelencia.
+    </p>
+</section>
 
 <footer>
     <div class="footer-grid">

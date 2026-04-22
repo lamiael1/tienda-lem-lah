@@ -15,6 +15,15 @@ public class MemoriaCategoriaRepositorio implements CategoriaRepositorio {
 
     private final Map<Long, Categoria> data = new ConcurrentHashMap<>();
     private final AtomicLong sequence = new AtomicLong(0L);
+    public MemoriaCategoriaRepositorio() {
+
+        save(new Categoria(null, "Organic Chicken", "CANINO · ORGÁNICO", "Organic.jpg", "perros"));
+        save(new Categoria(null, "Venison & Truffle", "CANINO · GOURMET", "venisonTruffle.jpg", "perros"));
+
+        save(new Categoria(null, "Gourmet Feast", "FELINO · GOURMET", "GorumetFeast.jpg", "gatos"));
+        save(new Categoria(null, "Salmon & Caviar", "FELINO · PREMIUM", "SalmonCaviar.jpg", "gatos"));
+
+    }
 
     @Override
     public List<Categoria> findAll() {

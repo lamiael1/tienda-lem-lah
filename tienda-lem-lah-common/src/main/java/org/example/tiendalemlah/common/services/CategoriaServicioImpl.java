@@ -35,4 +35,11 @@ public class CategoriaServicioImpl implements CategoriaServicio {
     public void deleteById(Long id) {
         categoriaRepositorio.deleteById(id);
     }
+    @Override
+    public List<Categoria> findByTipo(String tipo) {
+        return categoriaRepositorio.findAll().stream()
+                .filter(c -> c.getTipo().equalsIgnoreCase(tipo))
+                .toList();
+    }
+
 }
