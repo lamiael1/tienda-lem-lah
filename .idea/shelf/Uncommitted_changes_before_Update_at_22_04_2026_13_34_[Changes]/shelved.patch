@@ -1,0 +1,157 @@
+Index: tienda-lem-lah-common/src/main/java/org/example/tiendalemlah/common/entities/Marca.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/tienda-lem-lah-common/src/main/java/org/example/tiendalemlah/common/entities/Marca.java b/tienda-lem-lah-common/src/main/java/org/example/tiendalemlah/common/entities/Marca.java
+new file mode 100644
+--- /dev/null	(date 1776857640897)
++++ b/tienda-lem-lah-common/src/main/java/org/example/tiendalemlah/common/entities/Marca.java	(date 1776857640897)
+@@ -0,0 +1,27 @@
++package org.example.tiendalemlah.common.entities;
++
++import jakarta.persistence.*;
++import lombok.Data;
++import lombok.NoArgsConstructor;
++import lombok.AllArgsConstructor;
++
++@Entity
++@Table(name = "marcas")
++@Data
++@NoArgsConstructor
++@AllArgsConstructor
++public class Marca {
++
++    @Id
++    @GeneratedValue(strategy = GenerationType.IDENTITY)
++    private Long id;
++
++    @Column(nullable = false, length = 100, unique = true)
++    private String nombre;
++
++    @Column(length = 2000)
++    private String descripcion;
++
++    @Column(length = 500)
++    private String imagen;
++}
+Index: tienda-lem-lah-common/src/main/java/org/example/tiendalemlah/common/repositories/MarcaRepositorio.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/tienda-lem-lah-common/src/main/java/org/example/tiendalemlah/common/repositories/MarcaRepositorio.java b/tienda-lem-lah-common/src/main/java/org/example/tiendalemlah/common/repositories/MarcaRepositorio.java
+new file mode 100644
+--- /dev/null	(date 1776857640898)
++++ b/tienda-lem-lah-common/src/main/java/org/example/tiendalemlah/common/repositories/MarcaRepositorio.java	(date 1776857640898)
+@@ -0,0 +1,7 @@
++package org.example.tiendalemlah.common.repositories;
++
++import org.example.tiendalemlah.common.entities.Marca;
++import org.springframework.data.jpa.repository.JpaRepository;
++
++public interface MarcaRepositorio extends JpaRepository<Marca, Long> {
++}
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"AutoImportSettings\">\r\n    <option name=\"autoReloadType\" value=\"SELECTIVE\" />\r\n  </component>\r\n  <component name=\"ChangeListManager\">\r\n    <list default=\"true\" id=\"db32a8df-270e-447d-a191-71dadb85c78a\" name=\"Changes\" comment=\"\">\r\n      <change afterPath=\"$PROJECT_DIR$/tienda-lem-lah-common/src/main/java/org/example/tiendalemlah/common/entities/Producto.java\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/tienda-lem-lah-common/src/main/java/org/example/tiendalemlah/common/repositories/ProductoRepositorio.java\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/tienda-lem-lah-common/src/main/java/org/example/tiendalemlah/common/services/ProductoServicio.java\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/tienda-lem-lah-common/src/main/java/org/example/tiendalemlah/common/services/ProductoServicioImpl.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/.idea/workspace.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/workspace.xml\" afterDir=\"false\" />\r\n    </list>\r\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\r\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\r\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\r\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\r\n  </component>\r\n  <component name=\"FileTemplateManagerImpl\">\r\n    <option name=\"RECENT_TEMPLATES\">\r\n      <list>\r\n        <option value=\"Class\" />\r\n      </list>\r\n    </option>\r\n  </component>\r\n  <component name=\"Git.Settings\">\r\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$\" />\r\n  </component>\r\n  <component name=\"GitHubPullRequestSearchHistory\">{\r\n  &quot;lastFilter&quot;: {\r\n    &quot;state&quot;: &quot;OPEN&quot;,\r\n    &quot;assignee&quot;: &quot;lamiael1&quot;\r\n  }\r\n}</component>\r\n  <component name=\"GithubPullRequestsUISettings\">{\r\n  &quot;selectedUrlAndAccountId&quot;: {\r\n    &quot;url&quot;: &quot;https://github.com/lamiael1/tienda-lem-lah.git&quot;,\r\n    &quot;accountId&quot;: &quot;3312b8e4-f334-42bb-a4ca-176db8ad6609&quot;\r\n  }\r\n}</component>\r\n  <component name=\"McpProjectServerCommands\">\r\n    <commands />\r\n    <urls />\r\n  </component>\r\n  <component name=\"ProjectColorInfo\">{\r\n  &quot;customColor&quot;: &quot;&quot;,\r\n  &quot;associatedIndex&quot;: 7\r\n}</component>\r\n  <component name=\"ProjectId\" id=\"3Chu9ZxjZmt89jwODKl9rQu7MHu\" />\r\n  <component name=\"ProjectViewState\">\r\n    <option name=\"showLibraryContents\" value=\"true\" />\r\n  </component>\r\n  <component name=\"PropertiesComponent\">{\r\n  &quot;keyToString&quot;: {\r\n    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,\r\n    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,\r\n    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,\r\n    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,\r\n    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,\r\n    &quot;RunOnceActivity.MCP Project settings loaded&quot;: &quot;true&quot;,\r\n    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,\r\n    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,\r\n    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,\r\n    &quot;RunOnceActivity.typescript.service.memoryLimit.init&quot;: &quot;true&quot;,\r\n    &quot;Spring Boot.WebApp.executor&quot;: &quot;Run&quot;,\r\n    &quot;git-widget-placeholder&quot;: &quot;main&quot;,\r\n    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,\r\n    &quot;last_opened_file_path&quot;: &quot;C:/Users/Pepe/Desktop/DA2D1A/AD_DW/3/tienda-lem-lah&quot;,\r\n    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,\r\n    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,\r\n    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,\r\n    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,\r\n    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,\r\n    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,\r\n    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;\r\n  }\r\n}</component>\r\n  <component name=\"RunManager\">\r\n    <configuration name=\"WebApp\" type=\"SpringBootApplicationConfigurationType\" factoryName=\"Spring Boot\" nameIsGenerated=\"true\">\r\n      <option name=\"FRAME_DEACTIVATION_UPDATE_POLICY\" value=\"UpdateClassesAndResources\" />\r\n      <module name=\"tienda-lem-lah-web\" />\r\n      <option name=\"SPRING_BOOT_MAIN_CLASS\" value=\"org.example.tiendalemlah.web.WebApp\" />\r\n      <method v=\"2\">\r\n        <option name=\"Make\" enabled=\"true\" />\r\n      </method>\r\n    </configuration>\r\n  </component>\r\n  <component name=\"SharedIndexes\">\r\n    <attachedChunks>\r\n      <set>\r\n        <option value=\"bundled-jdk-30f59d01ecdd-2fc7cc6b9a17-intellij.indexing.shared.core-IU-253.31033.145\" />\r\n        <option value=\"bundled-js-predefined-d6986cc7102b-9b0f141eb926-JavaScript-IU-253.31033.145\" />\r\n      </set>\r\n    </attachedChunks>\r\n  </component>\r\n  <component name=\"TaskManager\">\r\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\r\n      <changelist id=\"db32a8df-270e-447d-a191-71dadb85c78a\" name=\"Changes\" comment=\"\" />\r\n      <created>1776849973527</created>\r\n      <option name=\"number\" value=\"Default\" />\r\n      <option name=\"presentableId\" value=\"Default\" />\r\n      <updated>1776849973527</updated>\r\n      <workItem from=\"1776849976153\" duration=\"114000\" />\r\n      <workItem from=\"1776850349957\" duration=\"340000\" />\r\n      <workItem from=\"1776856284973\" duration=\"1261000\" />\r\n    </task>\r\n    <servers />\r\n  </component>\r\n  <component name=\"TypeScriptGeneratedFilesManager\">\r\n    <option name=\"version\" value=\"3\" />\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+--- a/.idea/workspace.xml	(revision 945f2e90f7a91b5d63c7b030100baf62b812ef13)
++++ b/.idea/workspace.xml	(date 1776857646279)
+@@ -5,10 +5,10 @@
+   </component>
+   <component name="ChangeListManager">
+     <list default="true" id="db32a8df-270e-447d-a191-71dadb85c78a" name="Changes" comment="">
+-      <change afterPath="$PROJECT_DIR$/tienda-lem-lah-common/src/main/java/org/example/tiendalemlah/common/entities/Producto.java" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/tienda-lem-lah-common/src/main/java/org/example/tiendalemlah/common/repositories/ProductoRepositorio.java" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/tienda-lem-lah-common/src/main/java/org/example/tiendalemlah/common/services/ProductoServicio.java" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/tienda-lem-lah-common/src/main/java/org/example/tiendalemlah/common/services/ProductoServicioImpl.java" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/tienda-lem-lah-common/src/main/java/org/example/tiendalemlah/common/entities/Marca.java" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/tienda-lem-lah-common/src/main/java/org/example/tiendalemlah/common/repositories/MarcaRepositorio.java" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/tienda-lem-lah-common/src/main/java/org/example/tiendalemlah/common/services/MarcaServicio.java" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/tienda-lem-lah-common/src/main/java/org/example/tiendalemlah/common/services/MarcaServicioImpl.java" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+     </list>
+     <option name="SHOW_DIALOG" value="false" />
+@@ -102,7 +102,7 @@
+       <updated>1776849973527</updated>
+       <workItem from="1776849976153" duration="114000" />
+       <workItem from="1776850349957" duration="340000" />
+-      <workItem from="1776856284973" duration="1261000" />
++      <workItem from="1776856284973" duration="490000" />
+     </task>
+     <servers />
+   </component>
+Index: tienda-lem-lah-common/src/main/java/org/example/tiendalemlah/common/services/MarcaServicio.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/tienda-lem-lah-common/src/main/java/org/example/tiendalemlah/common/services/MarcaServicio.java b/tienda-lem-lah-common/src/main/java/org/example/tiendalemlah/common/services/MarcaServicio.java
+new file mode 100644
+--- /dev/null	(date 1776857640899)
++++ b/tienda-lem-lah-common/src/main/java/org/example/tiendalemlah/common/services/MarcaServicio.java	(date 1776857640899)
+@@ -0,0 +1,12 @@
++package org.example.tiendalemlah.common.services;
++
++import org.example.tiendalemlah.common.entities.Marca;
++import java.util.List;
++import java.util.Optional;
++
++public interface MarcaServicio {
++    List<Marca> findAll();
++    Optional<Marca> findById(Long id);
++    Marca save(Marca marca);
++    void deleteById(Long id);
++}
+Index: tienda-lem-lah-common/src/main/java/org/example/tiendalemlah/common/services/MarcaServicioImpl.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/tienda-lem-lah-common/src/main/java/org/example/tiendalemlah/common/services/MarcaServicioImpl.java b/tienda-lem-lah-common/src/main/java/org/example/tiendalemlah/common/services/MarcaServicioImpl.java
+new file mode 100644
+--- /dev/null	(date 1776857640900)
++++ b/tienda-lem-lah-common/src/main/java/org/example/tiendalemlah/common/services/MarcaServicioImpl.java	(date 1776857640900)
+@@ -0,0 +1,37 @@
++package org.example.tiendalemlah.common.services;
++
++import org.example.tiendalemlah.common.entities.Marca;
++import org.example.tiendalemlah.common.repositories.MarcaRepositorio;
++import org.springframework.stereotype.Service;
++import java.util.List;
++import java.util.Optional;
++
++@Service
++public class MarcaServicioImpl implements MarcaServicio {
++
++    private final MarcaRepositorio marcaRepositorio;
++
++    public MarcaServicioImpl(MarcaRepositorio marcaRepositorio) {
++        this.marcaRepositorio = marcaRepositorio;
++    }
++
++    @Override
++    public List<Marca> findAll() {
++        return marcaRepositorio.findAll();
++    }
++
++    @Override
++    public Optional<Marca> findById(Long id) {
++        return marcaRepositorio.findById(id);
++    }
++
++    @Override
++    public Marca save(Marca marca) {
++        return marcaRepositorio.save(marca);
++    }
++
++    @Override
++    public void deleteById(Long id) {
++        marcaRepositorio.deleteById(id);
++    }
++}
