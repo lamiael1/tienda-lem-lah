@@ -5,15 +5,20 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="db32a8df-270e-447d-a191-71dadb85c78a" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tienda-lem-lah-common/src/main/java/org/example/tiendalemlah/common/entities/Categoria.java" beforeDir="false" afterPath="$PROJECT_DIR$/tienda-lem-lah-common/src/main/java/org/example/tiendalemlah/common/entities/Categoria.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tienda-lem-lah-common/src/main/java/org/example/tiendalemlah/common/repositories/CategoriaRepositorio.java" beforeDir="false" afterPath="$PROJECT_DIR$/tienda-lem-lah-common/src/main/java/org/example/tiendalemlah/common/repositories/CategoriaRepositorio.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tienda-lem-lah-web/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/tienda-lem-lah-web/src/main/resources/application.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tienda-lem-lah-web/src/main/java/org/example/tiendalemlah/web/resources/data/data.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tienda-lem-lah-common/src/main/java/org/example/tiendalemlah/common/repositories/MemoriaCategoriaRepositorio.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -94,7 +99,7 @@
       <updated>1776849973527</updated>
       <workItem from="1776849976153" duration="114000" />
       <workItem from="1776850349957" duration="340000" />
-      <workItem from="1776856284973" duration="347000" />
+      <workItem from="1776856284973" duration="490000" />
     </task>
     <servers />
   </component>
