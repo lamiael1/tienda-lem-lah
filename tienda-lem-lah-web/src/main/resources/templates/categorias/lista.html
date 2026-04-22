@@ -2,93 +2,111 @@
 <html lang="es" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Colecciones · Crown &amp; Collar</title>
+    <title>Colecciones · Crown & Collar</title>
     <link rel="stylesheet" th:href="@{/css/style.css}">
 </head>
+
 <body>
 
-<!-- ── CABECERA ────────────────────────────────────────────── -->
-<div class="banner">🚚 ENVÍO EXPRESS DE CORTESÍA EN PEDIDOS SUPERIORES A 120€</div>
+<header class="header-premium">
+    <div class="banner-envio">ENVÍO EXPRESS DE CORTESÍA EN PEDIDOS SUPERIORES A 120€</div>
 
-<nav class="nav-main">
-    <div class="nav-left">
-        <a th:href="@{/categorias/perros}">PERROS</a>
-        <a th:href="@{/categorias/gatos}">GATOS</a>
-    </div>
-    <div class="nav-center">
-        <a th:href="@{/}" class="logo">Crown <span class="amp">&amp;</span> Collar</a>
-    </div>
-    <div class="nav-right">
-        <a th:href="@{/sobre-nosotros.html}">NOSOTROS</a>
-        <a th:href="@{/condiciones}">LEGAL</a>
-        <a th:href="@{/categorias}">COLECCIONES</a>
-    </div>
-</nav>
+    <h1 class="logo-premium">Crown & Collar</h1>
+    <nav class="nav-premium">
+        <a th:href="@{/}">Inicio</a>
+        <a th:href="@{/categorias}" class="active">Colecciones</a>
+        <a href="/sobre-nosotros.html">Sobre Nosotros</a>
+        <a th:href="@{/condiciones}">Condiciones</a>
+    </nav>
+</header>
 
-<!-- ── HERO CATEGORÍAS ─────────────────────────────────────── -->
-<section class="categorias-hero">
-    <p class="section-label">LAS FINCAS</p>
-    <h2>Nuestros Dominios</h2>
-    <p>Explore nuestras colecciones seleccionadas para cada linaje noble.</p>
+<!-- SELECTOR -->
+<section class="colecciones-selector">
+    <a th:href="@{/categorias(tipo='perros')}"
+       class="btn-coleccion"
+       th:classappend="${tipo} == 'perros' ? ' active' : ''">
+        Perros
+    </a>
+
+    <a th:href="@{/categorias(tipo='gatos')}"
+       class="btn-coleccion"
+       th:classappend="${tipo} == 'gatos' ? ' active' : ''">
+        Gatos
+    </a>
 </section>
 
-<!-- ── LISTADO ─────────────────────────────────────────────── -->
-<main class="categorias-lista">
-    <ul>
-        <li th:each="categoria : ${categorias}" class="categoria-item">
+<!-- HERO DINÁMICO -->
+<section class="hero-aristocratico" style="padding-top:3rem; padding-bottom:3rem;">
 
-            <div class="categoria-item-image">
-                <img th:if="${categoria.imagen != null}"
-                     th:src="@{/imagenes/categorias/{img}(img=${categoria.imagen})}"
-                     th:alt="${categoria.nombre}">
-                <img th:if="${categoria.imagen == null}"
-                     th:src="@{/imagenes/categorias/no-disponible.png}"
-                     th:alt="${categoria.nombre}">
-            </div>
+    <div class="hero-texto">
+        <p class="hero-edicion"
+           th:text="${tipo == 'perros'} ? 'COLECCIÓN CANINA' : 'COLECCIÓN FELINA'"></p>
 
-            <div class="categoria-info">
-                <p class="section-label" th:text="${categoria.nombre}">LINAJE</p>
-                <h3 th:text="${categoria.nombre}">Nombre categoría</h3>
-                <p th:text="${categoria.descripcion}">Descripción de la colección.</p>
-                <a th:href="@{/categorias/{id}(id=${categoria.id})}" class="btn-gold">
-                    VER DETALLE
-                </a>
-            </div>
+        <h2 class="hero-titulo"
+            th:text="${tipo == 'perros'} ? 'El Patrimonio Canino' : 'La Herencia Felina'"></h2>
 
-        </li>
-    </ul>
-</main>
-
-<!-- ── FOOTER ──────────────────────────────────────────────── -->
-<footer>
-    <div class="footer-grid">
-        <div>
-            <h4>Crown &amp; Collar</h4>
-            <p>Nutrición artesanal de lujo para los compañeros más distinguidos.</p>
-        </div>
-        <div>
-            <h4>La Casa</h4>
-            <a href="#">Nuestra Historia</a>
-            <a href="#">Sostenibilidad</a>
-            <a href="#">Prensa</a>
-            <a href="#">Carreras</a>
-        </div>
-        <div>
-            <h4>Asistencia</h4>
-            <a href="#">Contacto</a>
-            <a href="#">Envíos y Devoluciones</a>
-            <a href="#">Preguntas Frecuentes</a>
-            <a href="#">Guía de Tallas</a>
-        </div>
-        <div>
-            <h4>La Gaceta Real</h4>
-            <p>Subscríbase para recibir novedades exclusivas.</p>
-            <input type="email" placeholder="su@email.com">
-        </div>
+        <p class="hero-desc"
+           th:text="${tipo == 'perros'}
+                ? 'Una curaduría sin compromiso de las mejores recetas para el compañero más leal.'
+                : 'Para el espíritu independiente y el paladar refinado.'">
+        </p>
     </div>
-    <p class="footer-copy">© 2026 CROWN &amp; COLLAR. TODOS LOS DERECHOS RESERVADOS.</p>
-</footer>
+
+    <div class="hero-imagen">
+        <img th:src="${tipo == 'perros'}
+        ? '/imagenes/categorias/perros-patrimonio.png'
+        : '/imagenes/categorias/gatos-herencia.png'">
+
+    </div>
+
+</section>
+
+<!-- PRODUCTOS -->
+<section class="productos-grid">
+
+    <div class="producto-card" th:each="cat : ${categorias}">
+
+        <img th:src="@{'/imagenes/categorias/' + ${cat.imagen}}" th:alt="${cat.nombre}">
+
+        <h4 th:text="${cat.nombre}"></h4>
+        <p class="categoria" th:text="${cat.descripcion}"></p>
+
+        <a class="btn-detalle"
+           th:href="@{/categorias/{id}(id=${cat.id})}">
+            Ver Detalles →
+        </a>
+
+    </div>
+</section>
+
+    <footer>
+        <div class="footer-grid">
+            <div>
+                <h4>Crown & Collar</h4>
+                <p>Nutrición artesanal de lujo para los compañeros más distinguidos.</p>
+            </div>
+            <div>
+                <h4>La Casa</h4>
+                <a href="#">Nuestra Historia</a>
+                <a href="#">Sostenibilidad</a>
+                <a href="#">Prensa</a>
+                <a href="#">Carreras</a>
+            </div>
+            <div>
+                <h4>Asistencia</h4>
+                <a href="#">Contacto</a>
+                <a href="#">Envíos y Devoluciones</a>
+                <a href="#">Preguntas Frecuentes</a>
+                <a href="#">Guía de Tallas</a>
+            </div>
+            <div>
+                <h4>La Gaceta Real</h4>
+                <p>Subscríbase para recibir novedades exclusivas.</p>
+                <input type="email" placeholder="su@email.com">
+            </div>
+        </div>
+        <p style="margin-top:2rem; text-align:center;">© 2026 CROWN & COLLAR. TODOS LOS DERECHOS RESERVADOS.</p>
+    </footer>
 
 </body>
 </html>

@@ -1,474 +1,652 @@
 /* ============================================================
-   CROWN & COLLAR — Hoja de estilos principal
-   Versión 1.0
-   ============================================================ */
+   TIPOGRAFÍA
+============================================================ */
 
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=Montserrat:wght@300;400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Playfair+Display:wght@400;600;700&display=swap');
 
-/* ── VARIABLES ─────────────────────────────────────────────── */
+/* ============================================================
+   VARIABLES
+============================================================ */
+
 :root {
-    --dorado:        #C9A260;
-    --dorado-claro:  #E8D5A3;
-    --crema:         #F2EDE3;
-    --crema-oscura:  #E8E1D3;
-    --oscuro:        #111B0A;
-    --verde-medio:   #1A2612;
-    --texto:         #1C1C1C;
-    --texto-suave:   #6B6456;
-    --blanco:        #FFFFFF;
-    --borde:         rgba(201, 162, 96, 0.25);
-    --sombra:        0 8px 40px rgba(0, 0, 0, 0.12);
+    /* Paleta */
+    --verde-oscuro:     #0f2b24;
+    --verde-medio:      #102f28;
+    --verde-pagina:     #0f1a14;
+    --dorado:           #d4b26a;
+    --dorado-hover:     #c9a55f;
+    --dorado-alt:       #c2a878;
+    --dorado-alt-hover: #d8c29a;
+    --blanco:           #f5f5f0;
+    --blanco-puro:      #ffffff;
+    --beige-premium:    #f0eee8;
+    --negro-suave:      #1a1a1a;
+
+    /* Texto sobre fondos oscuros */
+    --texto-oscuro:     #e8e5d9;
+    --texto-oscuro-sub: #dcd8c8;
+    --texto-oscuro-muted: rgba(255, 255, 255, 0.65);
+
+    /* Tipografía */
+    --font-body:    'Inter', sans-serif;
+    --font-display: 'Playfair Display', serif;
+
+    /* Espaciado de sección */
+    --section-padding: 5rem 8%;
+
+    /* Sombras */
+    --shadow-card:  0 6px 20px rgba(0, 0, 0, 0.15);
+    --shadow-hero:  0 10px 30px rgba(0, 0, 0, 0.25);
+    --shadow-deep:  0 10px 40px rgba(0, 0, 0, 0.4);
+
+
+    /* Transición */
+    --transition:   0.2s ease;
 }
 
-/* ── RESET & BASE ───────────────────────────────────────────── */
-*, *::before, *::after {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-}
-
-html { scroll-behavior: smooth; }
+/* ============================================================
+   RESETEO
+============================================================ */
 
 body {
-    font-family: 'Cormorant Garamond', Georgia, serif;
-    background: var(--crema);
-    color: var(--texto);
-    font-size: 18px;
-    line-height: 1.7;
-    -webkit-font-smoothing: antialiased;
+    margin: 0;
+    padding: 0;
+    background: var(--beige-premium);
+    color: var(--negro-suave);
+    font-family: var(--font-body);
 }
 
-a { text-decoration: none; color: inherit; }
-img { max-width: 100%; display: block; }
-ul { list-style: none; }
-
-/* ── BANNER SUPERIOR ────────────────────────────────────────── */
-.banner {
-    background: var(--oscuro);
-    color: var(--dorado);
-    text-align: center;
-    padding: 9px 1rem;
-    font-family: 'Montserrat', sans-serif;
-    font-size: 0.62rem;
-    font-weight: 500;
-    letter-spacing: 0.22em;
+a {
+    text-decoration: none;
+    color: inherit;
 }
 
-/* ── NAVEGACIÓN ─────────────────────────────────────────────── */
-.nav-main {
-    display: grid;
-    grid-template-columns: 1fr auto 1fr;
-    align-items: center;
-    padding: 1.1rem 3.5rem;
-    border-bottom: 1px solid var(--borde);
-    background: var(--crema);
-    position: sticky;
-    top: 0;
-    z-index: 200;
-}
-
-.nav-left {
-    display: flex;
-    align-items: center;
-    gap: 2.5rem;
-}
-
-.nav-right {
-    display: flex;
-    align-items: center;
-    gap: 2rem;
-    justify-content: flex-end;
-}
-
-.nav-left a,
-.nav-right a {
-    font-family: 'Montserrat', sans-serif;
-    font-size: 0.62rem;
-    font-weight: 500;
-    letter-spacing: 0.18em;
-    color: var(--texto);
-    transition: color 0.25s;
-}
-
-.nav-left a:hover,
-.nav-right a:hover {
-    color: var(--dorado);
-}
-
-.logo {
-    font-family: 'Playfair Display', serif;
-    font-size: 1.55rem;
-    font-weight: 400;
-    color: var(--texto);
-    text-align: center;
-    white-space: nowrap;
-    letter-spacing: 0.02em;
-}
-
-.logo .amp {
-    font-style: italic;
-    color: var(--dorado);
-    margin: 0 0.1em;
-}
-
-/* ── HERO (split layout) ────────────────────────────────────── */
-.hero {
-    display: grid;
-    grid-template-columns: 55% 45%;
-    min-height: 88vh;
-    overflow: hidden;
-}
-
-.hero-image {
-    position: relative;
-    overflow: hidden;
-}
-
-.hero-image img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: center;
+img {
     display: block;
-    transition: transform 8s ease;
+    max-width: 100%;
 }
 
-.hero-image:hover img {
-    transform: scale(1.03);
+/* ============================================================
+   HEADER PREMIUM
+============================================================ */
+
+.header-premium {
+    background: var(--verde-oscuro);
+    text-align: center;
+    padding-bottom: 1.5rem;
 }
 
-.hero-content {
+.banner-envio {
+    background: var(--dorado);
+    color: var(--verde-oscuro);
+    padding: 0.5rem;
+    font-size: 0.9rem;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+}
+
+.logo-premium {
+    font-family: var(--font-display), serif;
+    font-size: 3rem;
+    color: var(--dorado);
+    margin: 1.2rem 0 0.5rem;
+}
+
+.nav-premium {
     display: flex;
-    flex-direction: column;
     justify-content: center;
-    padding: 4rem 5rem 4rem 4.5rem;
-    background: var(--crema);
+    gap: 2.5rem;
+    margin-top: 0.5rem;
 }
 
-.hero-label {
-    font-family: 'Montserrat', sans-serif;
-    font-size: 0.6rem;
-    letter-spacing: 0.25em;
+.nav-premium a {
+    color: var(--blanco-puro);
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    transition: color var(--transition);
+}
+
+.nav-premium a:hover,
+.nav-premium a.active {
     color: var(--dorado);
-    margin-bottom: 1.8rem;
 }
 
-.hero-title {
-    font-family: 'Playfair Display', serif;
-    font-size: clamp(2.8rem, 4vw, 4.2rem);
-    line-height: 1.08;
-    font-weight: 400;
-    margin-bottom: 1.8rem;
-    color: var(--texto);
+/* ============================================================
+   BOTONES
+============================================================ */
+
+/* Base compartida */
+.btn-gold,
+.btn-outline,
+.btn-detalle,
+.btn-volver,
+.btn-coleccion {
+    display: inline-block;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    transition: background var(--transition), color var(--transition);
+    cursor: pointer;
 }
 
-.hero-title em {
-    font-style: italic;
+.btn-gold {
+    background: var(--dorado);
+    color: var(--verde-oscuro);
+    padding: 0.9rem 1.8rem;
+}
+.btn-gold:hover { background: var(--dorado-hover); }
+
+.btn-outline {
+    border: 2px solid var(--dorado);
     color: var(--dorado);
-    display: block;
+    padding: 0.7rem 1.4rem;
+}
+.btn-outline:hover {
+    background: var(--dorado);
+    color: var(--verde-oscuro);
+}
+
+.btn-coleccion {
+    padding: 0.8rem 1.6rem;
+    background: var(--dorado);
+    border: none;
+    color: var(--verde-oscuro);
+}
+.btn-coleccion:hover { background: var(--dorado-hover); }
+
+.btn-detalle,
+.btn-volver {
+    padding: 0.7rem 1.2rem;
+    background: var(--dorado-alt);
+    color: var(--verde-pagina);
+    font-size: 0.95rem;
+}
+.btn-detalle:hover,
+.btn-volver:hover { background: var(--dorado-alt-hover); }
+
+.btn-detalle { margin-top: 1rem; }
+.btn-volver  { padding: 0.8rem 1.4rem; }
+
+/* ============================================================
+   TÍTULOS GENERALES
+============================================================ */
+
+.section-title {
+    font-family: var(--font-display);
+    font-size: 2.6rem;
+    text-align: center;
+    color: var(--verde-oscuro);
+    margin-bottom: 3rem;
+}
+
+/* ============================================================
+   HERO ARISTOCRÁTICO (INDEX)
+============================================================ */
+
+.hero-aristocratico {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 4rem;
+    padding: var(--section-padding);
+    background: var(--blanco-puro);
+    align-items: center;
+}
+
+.hero-aristocratico .hero-imagen img {
+    width: 100%;
+    height: 700px;
+    object-fit: cover;
+    object-position: center top;
+    box-shadow: var(--shadow-hero);
+}
+
+.hero-texto {
+    padding-right: 2rem;
+}
+
+.hero-edicion {
+    color: var(--dorado);
+    font-size: 0.9rem;
+    letter-spacing: 0.15em;
+    margin-bottom: 1rem;
+}
+
+.hero-titulo {
+    font-family: var(--font-display);
+    font-size: 3.4rem;
+    line-height: 1.2;
+    color: var(--verde-oscuro);
+    margin-bottom: 1.2rem;
 }
 
 .hero-desc {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 1.05rem;
-    font-weight: 300;
-    color: var(--texto-suave);
-    max-width: 360px;
-    margin-bottom: 2.8rem;
-    line-height: 1.9;
+    font-size: 1.15rem;
+    color: #333;
+    line-height: 1.7;
+    margin-bottom: 2.2rem;
 }
 
-/* ── BOTÓN GOLD ─────────────────────────────────────────────── */
-.btn-gold {
-    display: inline-block;
-    background: var(--oscuro);
-    color: var(--dorado);
-    padding: 1.05rem 2.8rem;
-    font-family: 'Montserrat', sans-serif;
-    font-size: 0.62rem;
-    font-weight: 600;
-    letter-spacing: 0.22em;
-    border: none;
-    cursor: pointer;
-    transition: background 0.3s, color 0.3s, letter-spacing 0.3s;
-    text-align: center;
-    text-transform: uppercase;
+/* ============================================================
+   DOMINIOS PALACIEGOS (INDEX)
+============================================================ */
+
+.dominios-section {
+    padding: var(--section-padding);
 }
 
-.btn-gold::after {
-    content: " →";
-}
-
-.btn-gold:hover {
-    background: var(--dorado);
-    color: var(--oscuro);
-    letter-spacing: 0.28em;
-}
-
-/* ── DUAL CARDS (Perros / Gatos) ────────────────────────────── */
-.dual-section {
+.dominios-grid-palaciego {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    height: 72vh;
+    gap: 3rem;
 }
 
-.dual-card {
+.dominio-palaciego {
     position: relative;
     overflow: hidden;
-    cursor: pointer;
+    box-shadow: var(--shadow-hero);
 }
 
-.dual-card img {
+.dominio-palaciego img {
     width: 100%;
-    height: 100%;
+    height: 500px;
     object-fit: cover;
-    transition: transform 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-    display: block;
 }
 
-.dual-card:hover img {
-    transform: scale(1.05);
-}
-
-.dual-card-overlay {
+.dominio-info {
     position: absolute;
-    inset: 0;
-    background: linear-gradient(to top, rgba(0,0,0,0.65) 0%, rgba(0,0,0,0.1) 50%, transparent 100%);
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    padding: 2.5rem 3rem;
-    transition: background 0.4s;
-}
-
-.dual-card:hover .dual-card-overlay {
-    background: linear-gradient(to top, rgba(0,0,0,0.75) 0%, rgba(0,0,0,0.15) 60%, transparent 100%);
-}
-
-.dual-card-label {
-    font-family: 'Montserrat', sans-serif;
-    font-size: 0.58rem;
-    letter-spacing: 0.22em;
-    color: var(--dorado);
-    margin-bottom: 0.5rem;
-    text-transform: uppercase;
-}
-
-.dual-card h3 {
-    font-family: 'Playfair Display', serif;
-    font-size: 2rem;
-    font-weight: 400;
-    color: var(--blanco);
-    margin-bottom: 1.2rem;
-    text-shadow: 0 2px 12px rgba(0,0,0,0.3);
-}
-
-.dual-card-link {
-    font-family: 'Montserrat', sans-serif;
-    font-size: 0.6rem;
-    letter-spacing: 0.18em;
-    color: var(--dorado);
-    text-transform: uppercase;
-    transition: letter-spacing 0.3s;
-}
-
-.dual-card-link::after {
-    content: " →";
-}
-
-.dual-card:hover .dual-card-link {
-    letter-spacing: 0.24em;
-}
-
-/* ── FINCAS / DOMINIOS ──────────────────────────────────────── */
-.fincas-section {
-    padding: 6rem 3rem;
-    background: var(--crema);
-    text-align: center;
-}
-
-.section-label {
-    font-family: 'Montserrat', sans-serif;
-    font-size: 0.6rem;
-    letter-spacing: 0.25em;
-    color: var(--dorado);
-    margin-bottom: 0.8rem;
-    text-transform: uppercase;
-}
-
-.section-title {
-    font-family: 'Playfair Display', serif;
-    font-size: 2.8rem;
-    font-weight: 400;
-    color: var(--texto);
-    margin-bottom: 3.5rem;
-    line-height: 1.15;
-}
-
-.fincas-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 1.5rem;
-    max-width: 1050px;
-    margin: 0 auto;
-}
-
-.fincas-grid img {
+    bottom: 0;
     width: 100%;
-    height: 400px;
-    object-fit: cover;
-    transition: transform 0.5s ease;
+    padding: 2.5rem;
+    background: linear-gradient(to top, rgba(0,0,0,0.7), transparent);
+    color: var(--blanco-puro);
 }
 
-.fincas-grid img:hover {
-    transform: scale(1.02);
+.dominio-info h3 {
+    font-family: var(--font-display);
+    font-size: 2rem;
+    margin-bottom: 1rem;
 }
 
-/* ── RECOMENDACIONES ────────────────────────────────────────── */
+/* ============================================================
+   RECOMENDACIONES GOURMET (INDEX)
+============================================================ */
+
 .recomendaciones-section {
-    padding: 6rem 3rem;
-    background: var(--crema);
-    text-align: center;
+    padding: var(--section-padding);
 }
 
 .recomendaciones-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 2.5rem;
+}
+
+.reco-card img {
+    width: 100%;
+    height: 260px;
+    object-fit: cover;
+    box-shadow: var(--shadow-card);
+}
+
+.reco-card h4 {
+    margin-top: 1rem;
+    font-size: 1.2rem;
+    color: var(--verde-oscuro);
+}
+
+.reco-card p {
+    color: var(--dorado);
+    font-weight: 600;
+    margin-top: 0.3rem;
+}
+
+/* ============================================================
+   COMPROMISO INQUEBRANTABLE (INDEX)
+============================================================ */
+
+.compromiso-section {
+    background: var(--verde-oscuro);
+    color: var(--blanco-puro);
+    padding: var(--section-padding);
+    text-align: center;
+}
+
+.compromiso-section h2 {
+    font-family: var(--font-display);
+    font-size: 2.6rem;
+    margin-bottom: 3rem;
+}
+
+.compromiso-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 3rem;
     max-width: 1200px;
-    margin: 0 auto;
-    margin-top: 3.5rem;
+    margin: auto;
 }
 
-.card {
-    text-align: left;
+.compromiso-card h3 {
+    color: var(--dorado);
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
 }
 
-.card-image-wrap {
-    position: relative;
+.compromiso-card p {
+    opacity: 0.85;
+    line-height: 1.7;
+}
+
+/* ============================================================
+   SOBRE NOSOTROS — HISTORIA
+============================================================ */
+
+.sobre-nosotros-page {
+    padding: var(--section-padding);
+    color: var(--verde-oscuro);
+}
+
+.historia-section {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    align-items: center;
+}
+
+.historia-texto h2.titulo-editorial {
+    font-family: var(--font-display);
+    font-size: 3rem;
+    margin-bottom: 0.5rem;
+}
+
+.subtitulo-editorial {
+    font-size: 1.3rem;
+    opacity: 0.75;
+    margin-bottom: 2.5rem;
+}
+
+.bloque-titulo {
+    font-size: 1.4rem;
+    font-weight: 600;
+    margin: 1.5rem 0 1rem;
+}
+
+.historia-texto p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    margin-bottom: 1.2rem;
+    opacity: 0.9;
+}
+
+.historia-imagen {
+    width: 100%;
+    max-width: 420px;
+    max-height: 560px;
     overflow: hidden;
-    aspect-ratio: 1;
-    margin-bottom: 1.1rem;
-    background: var(--crema-oscura);
+    margin-left: auto;
 }
 
-.card-image-wrap img {
+.historia-imagen img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    transition: transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
     display: block;
 }
 
-.card:hover .card-image-wrap img {
-    transform: scale(1.06);
-}
+/* ============================================================
+   CITA EDITORIAL
+============================================================ */
 
-.card-badge {
-    position: absolute;
-    top: 0.9rem;
-    left: 0.9rem;
-    background: var(--dorado);
-    color: var(--oscuro);
-    font-family: 'Montserrat', sans-serif;
-    font-size: 0.52rem;
-    font-weight: 700;
-    letter-spacing: 0.12em;
-    padding: 0.28rem 0.65rem;
-    text-transform: uppercase;
-    z-index: 1;
-}
-
-.card-label {
-    font-family: 'Montserrat', sans-serif;
-    font-size: 0.55rem;
-    letter-spacing: 0.18em;
-    color: var(--texto-suave);
-    margin-bottom: 0.35rem;
-    text-transform: uppercase;
-}
-
-.card h4 {
-    font-family: 'Playfair Display', serif;
-    font-size: 1.15rem;
-    font-weight: 400;
-    color: var(--texto);
-}
-
-/* ── LA PROMESA ─────────────────────────────────────────────── */
-.promesa {
-    background: var(--oscuro);
-    color: var(--blanco);
-    padding: 7rem 3rem;
+.cita-editorial {
+    font-family: var(--font-display);
+    font-size: 1.8rem;
     text-align: center;
+    max-width: 900px;
+    margin: 4rem auto;
+    color: var(--verde-oscuro);
+    line-height: 1.5;
 }
 
-.promesa .section-label {
-    color: var(--dorado);
-}
-
-.promesa .section-title {
-    color: var(--blanco);
-    font-size: 2.6rem;
-}
-
-.promesa-divider {
-    width: 55px;
-    height: 1px;
-    background: var(--dorado);
-    margin: 2rem auto;
+.cita-editorial span {
+    display: block;
+    margin-top: 1.2rem;
+    font-size: 1rem;
     opacity: 0.7;
 }
 
-.promesa-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 4rem;
-    max-width: 950px;
-    margin: 4rem auto 0;
+/* ============================================================
+   PRINCIPIOS (SOBRE NOSOTROS)
+============================================================ */
+
+.principios-section {
+    margin-top: 5rem;
 }
 
-.promesa-item {
+.principios-sub {
     text-align: center;
+    opacity: 0.7;
+    margin-bottom: 3rem;
+}
+
+.principios-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 3rem;
+}
+
+.principio-card {
+    background: var(--blanco-puro);
+    padding: 2.5rem;
+    box-shadow: var(--shadow-card);
+}
+
+.principio-card h3 {
+    font-family: var(--font-display);
+    font-size: 1.6rem;
+    margin-bottom: 1rem;
+}
+
+.principio-card p {
+    font-size: 1.05rem;
+    line-height: 1.7;
+    opacity: 0.85;
+}
+
+/* ============================================================
+   COLECCIONES — SELECTOR (LISTA.HTML)
+============================================================ */
+
+.colecciones-selector {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin: 4rem 0 2rem;
+}
+
+/* ============================================================
+   HERO COLECCIÓN (LISTA.HTML)
+============================================================ */
+
+.hero-coleccion {
+    padding: 0 8%;
+    margin-bottom: 3rem;
+}
+
+.hero-coleccion img {
+    width: 100%;
+    height: 420px;
+    object-fit: cover;
+    box-shadow: var(--shadow-hero);
+    margin-bottom: 1.5rem;
+}
+
+.hero-coleccion h2 {
+    font-family: var(--font-display);
+    font-size: 2.6rem;
+    color: var(--verde-oscuro);
+}
+
+.hero-coleccion h3 {
+    font-size: 1.4rem;
+    color: var(--dorado);
+    margin-top: 0.5rem;
+}
+
+.hero-coleccion p {
+    margin-top: 1rem;
+    font-size: 1.1rem;
+    opacity: 0.85;
+    max-width: 700px;
+}
+
+/* ============================================================
+   PRODUCTOS GRID (LISTA.HTML)
+============================================================ */
+
+.productos-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2.5rem;
+    padding: 2rem 8%;
+}
+
+.producto-card {
+    background: var(--blanco-puro);
+    padding-bottom: 1.5rem;
+    box-shadow: var(--shadow-card);
+    transition: transform var(--transition);
+}
+
+.producto-card:hover {
+    transform: translateY(-5px);
+}
+
+.producto-card img {
+    width: 100%;
+    height: 260px;
+    object-fit: cover;
+}
+
+.producto-card h4 {
+    margin-top: 1rem;
+    font-size: 1.2rem;
+    color: var(--verde-oscuro);
     padding: 0 1rem;
 }
 
-.promesa-icon {
-    width: 42px;
-    height: 42px;
-    margin: 0 auto 1.3rem;
-    opacity: 0.8;
+.producto-card .categoria {
+    color: var(--dorado);
+    font-weight: 600;
+    margin-top: 0.3rem;
+    padding: 0 1rem;
 }
 
-.promesa-icon svg {
+.producto-card .precio {
+    margin-top: 0.3rem;
+    font-weight: 600;
+    padding: 0 1rem;
+}
+
+/* ============================================================
+   PÁGINAS CON FONDO OSCURO (CONDICIONES, DETALLE)
+============================================================ */
+
+.fondo-oscuro {
+    background-color: var(--verde-pagina);
+    color: var(--texto-oscuro);
+    font-family: var(--font-body);
+}
+
+/* HERO CONDICIONES */
+.hero-condiciones {
+    padding: 6rem 2rem 4rem;
+    text-align: center;
+    background: var(--blanco-puro);
+}
+
+.hero-condiciones-texto {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.hero-sub {
+    font-size: 1.2rem;
+    color: #cfcbb9;
+    line-height: 1.6;
+}
+
+/* CONTENIDO CONDICIONES */
+.contenedor-condiciones {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 3rem 2rem 6rem;
+}
+
+.bloque-condicion {
+    margin-bottom: 3rem;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.bloque-condicion h3,
+.detalle-info h3 {
+    font-family: var(--font-display);
+    font-size: 1.8rem;
+    color: #f5f3eb;
+    margin-bottom: 1rem;
+}
+
+.bloque-condicion p,
+.detalle-info p {
+    font-size: 1.05rem;
+    line-height: 1.7;
+    color: var(--texto-oscuro-sub);
+}
+
+.detalle-info p {
+    margin-bottom: 2rem;
+}
+
+/* HERO DETALLE */
+.hero-detalle {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding: 5rem 3rem;
+    gap: 3rem;
+    align-items: center;
+    background: var(--beige-premium);
+}
+
+.hero-detalle-imagen img {
     width: 100%;
-    height: 100%;
-    stroke: var(--dorado);
-    fill: none;
-    stroke-width: 1.2;
+    object-fit: cover;
+    box-shadow: var(--shadow-deep);
 }
 
-.promesa-item h4 {
-    font-family: 'Playfair Display', serif;
+.hero-detalle-texto .hero-titulo {
+    font-family: var(--font-display);
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.hero-detalle-texto .hero-desc {
     font-size: 1.1rem;
-    font-weight: 400;
-    color: var(--blanco);
-    margin-bottom: 0.8rem;
-    line-height: 1.3;
+    line-height: 1.7;
+    color: var(--texto-oscuro-sub);
+    margin-bottom: 2rem;
 }
 
-.promesa-item p {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 0.95rem;
-    color: rgba(255, 255, 255, 0.55);
-    line-height: 1.8;
-    font-weight: 300;
+.detalle-info {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 4rem 2rem 6rem;
 }
 
-/* ── FOOTER ─────────────────────────────────────────────────── */
+/* ============================================================
+   FOOTER
+============================================================ */
+
 footer {
     background: var(--verde-medio);
-    color: rgba(255, 255, 255, 0.65);
+    color: var(--texto-oscuro-muted);
     padding: 5rem 3.5rem 2.5rem;
 }
 
@@ -481,7 +659,7 @@ footer {
 }
 
 footer h4 {
-    font-family: 'Playfair Display', serif;
+    font-family: var(--font-display);
     font-size: 1rem;
     font-weight: 400;
     color: var(--blanco);
@@ -493,19 +671,15 @@ footer a {
     display: block;
     margin-bottom: 0.55rem;
     color: rgba(255, 255, 255, 0.5);
-    font-family: 'Montserrat', sans-serif;
     font-size: 0.65rem;
     letter-spacing: 0.08em;
     transition: color 0.25s;
     text-transform: uppercase;
 }
 
-footer a:hover {
-    color: var(--dorado);
-}
+footer a:hover { color: var(--dorado); }
 
 footer p {
-    font-family: 'Montserrat', sans-serif;
     font-size: 0.72rem;
     line-height: 1.9;
     color: rgba(255, 255, 255, 0.45);
@@ -517,7 +691,6 @@ footer input[type="email"] {
     background: rgba(255, 255, 255, 0.07);
     border: 1px solid rgba(255, 255, 255, 0.18);
     color: var(--blanco);
-    font-family: 'Montserrat', sans-serif;
     font-size: 0.68rem;
     margin-top: 0.7rem;
     outline: none;
@@ -525,13 +698,8 @@ footer input[type="email"] {
     letter-spacing: 0.06em;
 }
 
-footer input[type="email"]:focus {
-    border-color: var(--dorado);
-}
-
-footer input[type="email"]::placeholder {
-    color: rgba(255, 255, 255, 0.3);
-}
+footer input[type="email"]:focus    { border-color: var(--dorado); }
+footer input[type="email"]::placeholder { color: rgba(255, 255, 255, 0.3); }
 
 .footer-copy {
     max-width: 1200px;
@@ -539,359 +707,23 @@ footer input[type="email"]::placeholder {
     padding-top: 2.5rem;
     border-top: 1px solid rgba(255, 255, 255, 0.08);
     text-align: center;
-    font-family: 'Montserrat', sans-serif;
     font-size: 0.6rem;
     letter-spacing: 0.2em;
     color: rgba(255, 255, 255, 0.3);
     text-transform: uppercase;
 }
 
-/* ── HEADER LEGACY (para páginas sin nav-main) ─────────────── */
-header > div:first-child {
-    background: var(--oscuro);
-    color: var(--dorado);
-    text-align: center;
-    padding: 9px 1rem;
-    font-family: 'Montserrat', sans-serif;
-    font-size: 0.62rem;
-    font-weight: 500;
-    letter-spacing: 0.22em;
-}
+/* ============================================================
+   RESPONSIVE
+============================================================ */
 
-header nav {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 3rem;
-    padding: 1.1rem 3.5rem;
-    border-bottom: 1px solid var(--borde);
-    background: var(--crema);
-    font-family: 'Montserrat', sans-serif;
-    font-size: 0.62rem;
-    font-weight: 500;
-    letter-spacing: 0.18em;
-    text-transform: uppercase;
-}
+@media (max-width: 900px) {
+    .hero-detalle {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
 
-header nav a {
-    color: var(--texto);
-    transition: color 0.25s;
+    .hero-detalle-texto {
+        padding-top: 2rem;
+    }
 }
-
-header nav a:hover {
-    color: var(--dorado);
-}
-
-header h1 {
-    font-family: 'Playfair Display', serif;
-    font-size: 1.55rem;
-    font-weight: 400;
-    color: var(--texto);
-    text-align: center;
-    padding: 0.8rem 1rem;
-    border-bottom: 1px solid var(--borde);
-    background: var(--crema);
-    letter-spacing: 0.03em;
-}
-
-/* ── CATEGORÍAS – LISTA ─────────────────────────────────────── */
-.categorias-hero {
-    background: var(--oscuro);
-    color: var(--blanco);
-    padding: 5rem 3rem;
-    text-align: center;
-}
-
-.categorias-hero p.section-label {
-    color: var(--dorado);
-}
-
-.categorias-hero h2 {
-    font-family: 'Playfair Display', serif;
-    font-size: 3rem;
-    font-weight: 400;
-    color: var(--blanco);
-    margin-top: 0.5rem;
-}
-
-.categorias-hero p:not(.section-label) {
-    color: rgba(255,255,255,0.55);
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 1.1rem;
-    font-weight: 300;
-    margin-top: 1rem;
-}
-
-.categorias-lista {
-    max-width: 1100px;
-    margin: 0 auto;
-    padding: 4rem 3rem;
-}
-
-.categoria-item {
-    display: grid;
-    grid-template-columns: 280px 1fr;
-    gap: 4rem;
-    align-items: center;
-    padding: 3.5rem 0;
-    border-bottom: 1px solid var(--borde);
-    transition: opacity 0.3s;
-}
-
-.categoria-item:last-child {
-    border-bottom: none;
-}
-
-.categoria-item:hover {
-    opacity: 0.88;
-}
-
-.categoria-item-image {
-    overflow: hidden;
-}
-
-.categoria-item-image img {
-    width: 280px;
-    height: 200px;
-    object-fit: cover;
-    transition: transform 0.5s ease;
-    display: block;
-}
-
-.categoria-item:hover .categoria-item-image img {
-    transform: scale(1.04);
-}
-
-.categoria-info .section-label {
-    margin-bottom: 0.6rem;
-}
-
-.categoria-info h3 {
-    font-family: 'Playfair Display', serif;
-    font-size: 2rem;
-    font-weight: 400;
-    margin-bottom: 0.8rem;
-    line-height: 1.15;
-}
-
-.categoria-info p {
-    color: var(--texto-suave);
-    font-size: 1rem;
-    margin-bottom: 1.8rem;
-    font-weight: 300;
-    max-width: 480px;
-}
-
-/* ── CATEGORÍA – DETALLE ────────────────────────────────────── */
-.detalle-container {
-    max-width: 1100px;
-    margin: 0 auto;
-    padding: 5rem 3rem;
-}
-
-.detalle-grid {
-    display: grid;
-    grid-template-columns: 360px 1fr;
-    gap: 5rem;
-    align-items: flex-start;
-}
-
-.detalle-image {
-    overflow: hidden;
-}
-
-.detalle-image img {
-    width: 360px;
-    height: 300px;
-    object-fit: cover;
-    display: block;
-}
-
-.detalle-info .section-label {
-    margin-bottom: 0.8rem;
-}
-
-.detalle-info h2 {
-    font-family: 'Playfair Display', serif;
-    font-size: 2.8rem;
-    font-weight: 400;
-    margin-bottom: 1.2rem;
-    line-height: 1.1;
-}
-
-.detalle-info p {
-    color: var(--texto-suave);
-    font-size: 1.05rem;
-    font-weight: 300;
-    margin-bottom: 1.2rem;
-    line-height: 1.9;
-}
-
-.detalle-divider {
-    width: 40px;
-    height: 2px;
-    background: var(--dorado);
-    margin: 2rem 0;
-}
-
-/* ── CARRITO / SELECCIÓN ────────────────────────────────────── */
-.carrito-hero {
-    background: var(--oscuro);
-    color: var(--blanco);
-    padding: 3.5rem 3rem;
-    text-align: center;
-}
-
-.carrito-hero h2 {
-    font-family: 'Playfair Display', serif;
-    font-size: 2.2rem;
-    font-weight: 400;
-    color: var(--blanco);
-}
-
-.carrito-container {
-    max-width: 1100px;
-    margin: 0 auto;
-    padding: 4rem 3rem;
-    display: grid;
-    grid-template-columns: 1fr 340px;
-    gap: 4rem;
-    align-items: flex-start;
-}
-
-.carrito-item {
-    display: grid;
-    grid-template-columns: 1fr auto;
-    align-items: center;
-    padding: 1.5rem 0;
-    border-bottom: 1px solid var(--borde);
-    gap: 1rem;
-}
-
-.carrito-item:first-child {
-    border-top: 1px solid var(--borde);
-}
-
-.carrito-item-nombre {
-    font-family: 'Playfair Display', serif;
-    font-size: 1.1rem;
-    font-weight: 400;
-    margin-bottom: 0.2rem;
-}
-
-.carrito-item-cat {
-    font-family: 'Montserrat', sans-serif;
-    font-size: 0.58rem;
-    letter-spacing: 0.15em;
-    color: var(--dorado);
-    text-transform: uppercase;
-}
-
-.carrito-item-precio {
-    font-family: 'Playfair Display', serif;
-    font-size: 1.2rem;
-    color: var(--texto);
-    font-weight: 400;
-    white-space: nowrap;
-}
-
-.carrito-subtotal {
-    display: flex;
-    justify-content: space-between;
-    padding: 2rem 0 0.5rem;
-    font-family: 'Playfair Display', serif;
-    font-size: 1.3rem;
-    font-weight: 400;
-}
-
-.carrito-envio {
-    font-family: 'Montserrat', sans-serif;
-    font-size: 0.62rem;
-    letter-spacing: 0.1em;
-    color: var(--texto-suave);
-    margin-top: 0.3rem;
-}
-
-.carrito-sidebar {
-    background: var(--crema-oscura);
-    padding: 2.5rem;
-    border: 1px solid var(--borde);
-}
-
-.carrito-sidebar h3 {
-    font-family: 'Playfair Display', serif;
-    font-size: 1.4rem;
-    font-weight: 400;
-    margin-bottom: 0.8rem;
-}
-
-.carrito-sidebar p {
-    font-size: 0.95rem;
-    color: var(--texto-suave);
-    font-weight: 300;
-    margin-bottom: 1.5rem;
-}
-
-.carrito-sidebar-section {
-    margin-top: 1.8rem;
-    padding-top: 1.8rem;
-    border-top: 1px solid var(--borde);
-}
-
-.carrito-sidebar-section h4 {
-    font-family: 'Montserrat', sans-serif;
-    font-size: 0.6rem;
-    letter-spacing: 0.18em;
-    color: var(--dorado);
-    text-transform: uppercase;
-    margin-bottom: 0.7rem;
-}
-
-/* ── CONDICIONES ────────────────────────────────────────────── */
-.condiciones-hero {
-    background: var(--oscuro);
-    color: var(--blanco);
-    padding: 4rem 3rem;
-    text-align: center;
-}
-
-.condiciones-hero h2 {
-    font-family: 'Playfair Display', serif;
-    font-size: 2.5rem;
-    font-weight: 400;
-    color: var(--blanco);
-}
-
-.condiciones-body {
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 5rem 3rem;
-}
-
-.condiciones-body h3 {
-    font-family: 'Playfair Display', serif;
-    font-size: 1.5rem;
-    font-weight: 400;
-    margin: 2.5rem 0 0.8rem;
-    color: var(--texto);
-}
-
-.condiciones-body p {
-    color: var(--texto-suave);
-    font-size: 1rem;
-    font-weight: 300;
-    line-height: 2;
-    margin-bottom: 1rem;
-}
-
-/* ── CONTAINER GENÉRICO ─────────────────────────────────────── */
-.container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 3rem;
-}
-
-/* ── UTILIDADES ─────────────────────────────────────────────── */
-.text-dorado { color: var(--dorado); }
-.mt-1 { margin-top: 1rem; }
-.mb-2 { margin-bottom: 2rem; }
