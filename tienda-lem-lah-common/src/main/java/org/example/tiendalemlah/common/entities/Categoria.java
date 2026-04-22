@@ -5,6 +5,9 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.util.HashSet;
+import java.util.Set;
+
 @Entity
 @Table(name = "categorias")
 @Data
@@ -27,4 +30,8 @@ public class Categoria {
 
     @Column(length=50)
     private String tipo;
+
+    @ManyToMany(mappedBy="categorias")
+    private Set<Producto> productos = new HashSet<>();
+
 }

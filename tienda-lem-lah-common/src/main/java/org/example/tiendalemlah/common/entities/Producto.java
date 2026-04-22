@@ -6,6 +6,9 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.AllArgsConstructor;
 
+import java.util.HashSet;
+import java.util.Set;
+
 @Entity
 @Table(name="productos")
 @Data
@@ -32,4 +35,17 @@ public class Producto {
 
     @Column(nullable=false)
     private Integer descuento;
+
+    @ManyToOne(optional=false)
+    @JoinColumn(name="marca_id")
+    private Marca marca;
+
+    @ManyToMany
+    @JoinTable(
+            name="producto_categoria",
+            joinColumns=@JoinColumn(name="producto_id"),
+            inverseJoinColumns=@JoinColumn(name="categoria_id")
+    )
+    private Set<Categoria> categorias = new HashSet<>();
+
 }

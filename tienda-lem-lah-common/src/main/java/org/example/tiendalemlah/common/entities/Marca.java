@@ -5,6 +5,9 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.AllArgsConstructor;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @Entity
 @Table(name = "marcas")
 @Data
@@ -24,4 +27,8 @@ public class Marca {
 
     @Column(length = 500)
     private String imagen;
+
+    @OneToMany(mappedBy="marca")
+    private List<Producto> productos = new ArrayList<>();
+
 }
