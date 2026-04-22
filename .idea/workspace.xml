@@ -4,13 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="db32a8df-270e-447d-a191-71dadb85c78a" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/tienda-lem-lah-common/src/main/java/org/example/tiendalemlah/common/entities/Marca.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tienda-lem-lah-common/src/main/java/org/example/tiendalemlah/common/repositories/MarcaRepositorio.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tienda-lem-lah-common/src/main/java/org/example/tiendalemlah/common/services/MarcaServicio.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tienda-lem-lah-common/src/main/java/org/example/tiendalemlah/common/services/MarcaServicioImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="db32a8df-270e-447d-a191-71dadb85c78a" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -19,6 +13,7 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="Interface" />
         <option value="Class" />
       </list>
     </option>
