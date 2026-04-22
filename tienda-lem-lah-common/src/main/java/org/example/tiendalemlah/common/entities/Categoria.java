@@ -1,62 +1,30 @@
 package org.example.tiendalemlah.common.entities;
 
+import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
+@Entity
+@Table(name = "categorias")
 @Data
+@NoArgsConstructor
+@AllArgsConstructor
 public class Categoria {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
+    @Column(nullable=false, length=100, unique=true)
     private String nombre;
+
+    @Column(length=2000)
     private String descripcion;
+
+    @Column(length=500)
     private String imagen;
-    private String tipo; // "perros" o "gatos"
-    public Categoria() {}
 
-    public Categoria(Long id, String nombre, String descripcion, String imagen, String tipo) {
-        this.id = id;
-        this.nombre = nombre;
-        this.descripcion = descripcion;
-        this.imagen = imagen;
-        this.tipo = tipo;
-    }
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public String getNombre() {
-        return nombre;
-    }
-
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
-    }
-
-    public String getDescripcion() {
-        return descripcion;
-    }
-
-    public void setDescripcion(String descripcion) {
-        this.descripcion = descripcion;
-    }
-
-    public String getImagen() {
-        return imagen;
-    }
-
-    public void setImagen(String imagen) {
-        this.imagen = imagen;
-    }
-
-    public String getTipo() {
-        return tipo;
-    }
-
-    public void setTipo(String tipo) {
-        this.tipo = tipo;
-    }
+    @Column(length=50)
+    private String tipo;
 }
