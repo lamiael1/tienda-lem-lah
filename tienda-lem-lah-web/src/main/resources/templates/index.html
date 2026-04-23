@@ -2,37 +2,17 @@
 <html lang="es" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Crown & Collar · Inicio</title>
+    <title>Crown &amp; Collar · Inicio</title>
     <link rel="stylesheet" th:href="@{/css/style.css}">
 </head>
-
 <body>
 
-<!-- ======================================
-     HEADER
-====================================== -->
-<header class="header-premium">
-    <div class="banner-envio">ENVÍO EXPRESS DE CORTESÍA EN PEDIDOS SUPERIORES A 120€</div>
+<div th:replace="~{fragments/navbar :: header(paginaActiva='inicio')}"></div>
 
-    <h1 class="logo-premium">Crown & Collar</h1>
-
-    <nav class="nav-premium">
-        <a th:href="@{/}" class="active">Inicio</a>
-        <a th:href="@{/categorias}">Colecciones</a>
-        <a href="/sobre-nosotros.html">Sobre Nosotros</a>
-        <a th:href="@{/condiciones}">Condiciones</a>
-    </nav>
-</header>
-
-
-<!-- ======================================
-     HERO ARISTOCRÁTICO
-====================================== -->
 <section class="hero-aristocratico">
     <div class="hero-imagen">
-        <img src="/imagenes/categorias/index-fondo.jpg" alt="Crown & Collar Hero">
+        <img src="/imagenes/categorias/index-fondo.jpg" alt="Crown &amp; Collar Hero">
     </div>
-
     <div class="hero-texto">
         <h4 class="hero-edicion">EDICIÓN LIMITADA — PRIMAVERA 2026</h4>
         <h2 class="hero-titulo">Nutrición Real para su Compañero Noble</h2>
@@ -44,128 +24,73 @@
     </div>
 </section>
 
-
 <main>
-
-    <!-- ======================================
-         NUESTROS DOMINIOS (PALACIEGO)
-    ====================================== -->
     <section class="dominios-section">
         <h2 class="section-title">Nuestros Dominios</h2>
-
         <div class="dominios-grid-palaciego">
-
             <div class="dominio-palaciego">
                 <img src="/imagenes/categorias/perro.jpg" alt="El Patrimonio Canino">
                 <div class="dominio-info">
                     <h3>El Patrimonio Canino</h3>
-                    <a th:href="@{/categorias}" class="btn-outline">Ver colección</a>
+                    <a th:href="@{/categorias(tipo='perros')}" class="btn-outline">Ver colección</a>
                 </div>
             </div>
-
             <div class="dominio-palaciego">
                 <img src="/imagenes/categorias/gato.jpg" alt="La Herencia Felina">
                 <div class="dominio-info">
                     <h3>La Herencia Felina</h3>
-                    <a th:href="@{/categorias}" class="btn-outline">Ver colección</a>
+                    <a th:href="@{/categorias(tipo='gatos')}" class="btn-outline">Ver colección</a>
                 </div>
             </div>
-
         </div>
     </section>
 
-
-    <!-- ======================================
-         RECOMENDACIONES GOURMET
-    ====================================== -->
     <section class="recomendaciones-section">
         <h2 class="section-title">Nuestras Recomendaciones</h2>
-
         <div class="recomendaciones-grid">
-
             <div class="reco-card">
-                <img src="/imagenes/categorias/venisonTruffle.jpg" alt="Venison & Truffle">
-                <h4>Venison & Truffle</h4>
-                <p>25.00€</p>
+                <img src="/imagenes/categorias/venisonTruffle.jpg" alt="Venison &amp; Truffle">
+                <h4>Venison &amp; Truffle</h4>
+                <p>29.99€</p>
             </div>
-
             <div class="reco-card">
-                <img src="/imagenes/categorias/SalmonCaviar.jpg" alt="Salmon & Caviar">
-                <h4>Salmon & Caviar</h4>
-                <p>25.00€</p>
+                <img src="/imagenes/categorias/SalmonCaviar.jpg" alt="Salmon &amp; Caviar">
+                <h4>Salmon &amp; Caviar</h4>
+                <p>27.50€</p>
             </div>
-
             <div class="reco-card">
                 <img src="/imagenes/categorias/Organic.jpg" alt="Organic Chicken">
                 <h4>Organic Chicken</h4>
-                <p>25.00€</p>
+                <p>24.99€</p>
             </div>
-
             <div class="reco-card">
                 <img src="/imagenes/categorias/GorumetFeast.jpg" alt="Gourmet Feast">
                 <h4>Gourmet Feast</h4>
-                <p>25.00€</p>
+                <p>26.99€</p>
             </div>
-
         </div>
     </section>
 
-
-    <!-- ======================================
-         COMPROMISO INQUEBRANTABLE
-    ====================================== -->
     <section class="compromiso-section">
         <h2>Nuestro Compromiso Inquebrantable</h2>
-
         <div class="compromiso-grid">
-
             <div class="compromiso-card">
                 <h3>Ingredientes de Grado Humano</h3>
                 <p>Cada ingrediente ha sido cuidadosamente seleccionado para ofrecer calidad superior.</p>
             </div>
-
             <div class="compromiso-card">
                 <h3>Logística Eficiente y Gratuita</h3>
                 <p>Realizamos envíos rápidos, garantizando que los productos lleguen en excelente estado.</p>
             </div>
-
             <div class="compromiso-card">
                 <h3>Garantía de Satisfacción Real</h3>
                 <p>Si no estás satisfecho, te ofrecemos la devolución íntegra de tu inversión.</p>
             </div>
-
         </div>
     </section>
-
 </main>
 
-<footer>
-    <div class="footer-grid">
-        <div>
-            <h4>Crown & Collar</h4>
-            <p>Nutrición artesanal de lujo para los compañeros más distinguidos.</p>
-        </div>
-        <div>
-            <h4>La Casa</h4>
-            <a href="#">Nuestra Historia</a>
-            <a href="#">Sostenibilidad</a>
-            <a href="#">Prensa</a>
-            <a href="#">Carreras</a>
-        </div>
-        <div>
-            <h4>Asistencia</h4>
-            <a href="#">Contacto</a>
-            <a href="#">Envíos y Devoluciones</a>
-            <a href="#">Preguntas Frecuentes</a>
-            <a href="#">Guía de Tallas</a>
-        </div>
-        <div>
-            <h4>La Gaceta Real</h4>
-            <p>Subscríbase para recibir novedades exclusivas.</p>
-            <input type="email" placeholder="su@email.com">
-        </div>
-    </div>
-    <p style="margin-top:2rem; text-align:center;">© 2026 CROWN & COLLAR. TODOS LOS DERECHOS RESERVADOS.</p>
-</footer>
+<div th:replace="~{fragments/footer :: footer}"></div>
+
 </body>
 </html>

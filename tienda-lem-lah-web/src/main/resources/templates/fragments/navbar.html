@@ -1,6 +1,26 @@
-<nav th:fragment="navbar">
-    <a th:href="@{/}">Inicio</a>
-    <a th:href="@{/categorias}">Categorías</a>
-    <a th:href="@{/productos}">Productos</a>
-    <a th:href="@{/admin}">Administración</a>
-</nav>
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<body>
+
+<!--
+  Fragmento: header completo (banner + logo + nav)
+  Parámetro: paginaActiva — string con la página activa ('inicio','categorias','nosotros','condiciones')
+  Uso: th:replace="~{fragments/navbar :: header(paginaActiva='inicio')}"
+-->
+<header th:fragment="header(paginaActiva)" class="header-premium">
+    <div class="banner-envio">ENVÍO EXPRESS DE CORTESÍA EN PEDIDOS SUPERIORES A 120€</div>
+    <h1 class="logo-premium">Crown &amp; Collar</h1>
+    <nav class="nav-premium">
+        <a th:href="@{/}"
+           th:classappend="${paginaActiva == 'inicio'} ? ' active' : ''">Inicio</a>
+        <a th:href="@{/categorias}"
+           th:classappend="${paginaActiva == 'categorias'} ? ' active' : ''">Colecciones</a>
+        <a href="/sobre-nosotros.html"
+           th:classappend="${paginaActiva == 'nosotros'} ? ' active' : ''">Sobre Nosotros</a>
+        <a th:href="@{/condiciones}"
+           th:classappend="${paginaActiva == 'condiciones'} ? ' active' : ''">Condiciones</a>
+    </nav>
+</header>
+
+</body>
+</html>

@@ -1,5 +1,6 @@
 package org.example.tiendalemlah.web.controllers.admin;
 
+import org.example.tiendalemlah.common.entities.Categoria;
 import org.example.tiendalemlah.common.entities.Producto;
 import org.example.tiendalemlah.common.services.CategoriaServicio;
 import org.example.tiendalemlah.common.services.MarcaServicio;
@@ -7,6 +8,10 @@ import org.example.tiendalemlah.common.services.ProductoServicio;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
 
 @Controller
 @RequestMapping("/admin/productos")
@@ -17,21 +22,25 @@ public class AdminProductoControlador {
     private final CategoriaServicio categoriaServicio;
 
     public AdminProductoControlador(ProductoServicio productoServicio,
-                                   MarcaServicio marcaServicio,
-                                   CategoriaServicio categoriaServicio) {
+                                    MarcaServicio marcaServicio,
+                                    CategoriaServicio categoriaServicio) {
         this.productoServicio = productoServicio;
         this.marcaServicio = marcaServicio;
         this.categoriaServicio = categoriaServicio;
     }
 
-    // LISTADO
+    // Redirige /admin/productos/ (con barra) a /admin/productos
+    @GetMapping("/")
+    public String listarSlash() {
+        return "redirect:/admin/productos";
+    }
+
     @GetMapping
     public String listar(Model model) {
         model.addAttribute("productos", productoServicio.findAll());
-        return "admin/productos/lista";
+        return "admin/productos/lista"; // ✅ corregido (antes devolvía "lista")
     }
 
-    // FORMULARIO CREAR
     @GetMapping("/new")
     public String crearForm(Model model) {
         model.addAttribute("producto", new Producto());
@@ -40,14 +49,28 @@ public class AdminProductoControlador {
         return "admin/productos/crear";
     }
 
-    // GUARDAR NUEVO
+    /**
+     * Guardado de nuevo producto.
+     * La marca y categorías se reciben por ID separado para evitar problemas de binding JPA.
+     */
     @PostMapping
-    public String guardar(@ModelAttribute Producto producto) {
+    public String guardar(@ModelAttribute Producto producto,
+                          @RequestParam Long marcaId,
+                          @RequestParam(required = false) List<Long> categoriaIds) {
+
+        producto.setMarca(marcaServicio.findById(marcaId).orElseThrow());
+
+        Set<Categoria> cats = new HashSet<>();
+        if (categoriaIds != null) {
+            categoriaIds.forEach(cid ->
+                    categoriaServicio.findById(cid).ifPresent(cats::add));
+        }
+        producto.setCategorias(cats);
+
         productoServicio.save(producto);
         return "redirect:/admin/productos";
     }
 
-    // FORMULARIO EDITAR
     @GetMapping("/{id}/edit")
     public String editarForm(@PathVariable Long id, Model model) {
         model.addAttribute("producto", productoServicio.findById(id).orElse(null));
@@ -56,22 +79,32 @@ public class AdminProductoControlador {
         return "admin/productos/editar";
     }
 
-    // ACTUALIZAR
     @PostMapping("/{id}/edit")
-    public String actualizar(@PathVariable Long id, @ModelAttribute Producto producto) {
+    public String actualizar(@PathVariable Long id,
+                             @ModelAttribute Producto producto,
+                             @RequestParam Long marcaId,
+                             @RequestParam(required = false) List<Long> categoriaIds) {
+
         producto.setId(id);
+        producto.setMarca(marcaServicio.findById(marcaId).orElseThrow());
+
+        Set<Categoria> cats = new HashSet<>();
+        if (categoriaIds != null) {
+            categoriaIds.forEach(cid ->
+                    categoriaServicio.findById(cid).ifPresent(cats::add));
+        }
+        producto.setCategorias(cats);
+
         productoServicio.save(producto);
         return "redirect:/admin/productos";
     }
 
-    // FORMULARIO ELIMINAR
     @GetMapping("/{id}/delete")
     public String eliminarForm(@PathVariable Long id, Model model) {
         model.addAttribute("producto", productoServicio.findById(id).orElse(null));
         return "admin/productos/eliminar";
     }
 
-    // ELIMINAR
     @PostMapping("/{id}/delete")
     public String eliminar(@PathVariable Long id) {
         productoServicio.deleteById(id);

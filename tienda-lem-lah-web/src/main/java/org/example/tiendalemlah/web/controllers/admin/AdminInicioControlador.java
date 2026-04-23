@@ -10,7 +10,12 @@ public class AdminInicioControlador {
 
     @GetMapping
     public String adminHome() {
-        // Página principal del área de administración
         return "admin/index";
+    }
+
+    // Redirige /admin/ (con barra) a /admin (sin barra)
+    @GetMapping("/")
+    public String adminHomeSlash() {
+        return "redirect:/admin";
     }
 }

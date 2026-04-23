@@ -16,6 +16,12 @@ public class AdminCategoriaControlador {
         this.servicio = servicio;
     }
 
+    // Redirige /admin/categorias/ (con barra) a /admin/categorias
+    @GetMapping("/")
+    public String listarSlash() {
+        return "redirect:/admin/categorias";
+    }
+
     @GetMapping
     public String listar(Model model) {
         model.addAttribute("categorias", servicio.findAll());

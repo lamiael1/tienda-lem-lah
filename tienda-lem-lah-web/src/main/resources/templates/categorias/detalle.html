@@ -2,105 +2,82 @@
 <html lang="es" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title th:text="${categoria.nombre} + ' · Crown & Collar'">Detalle · Crown & Collar</title>
+    <title th:text="${categoria.nombre} + ' · Crown &amp; Collar'">Detalle</title>
     <link rel="stylesheet" th:href="@{/css/style.css}">
 </head>
-
 <body class="fondo-oscuro">
 
-<header class="header-premium">
-    <div class="banner-envio">ENVÍO EXPRESS DE CORTESÍA EN PEDIDOS SUPERIORES A 120€</div>
+<div th:replace="~{fragments/navbar :: header(paginaActiva='categorias')}"></div>
 
-    <h1 class="logo-premium">Crown & Collar</h1>
-
-    <nav class="nav-premium">
-        <a th:href="@{/}">Inicio</a>
-        <a th:href="@{/categorias}">Colecciones</a>
-        <a href="/sobre-nosotros.html">Sobre Nosotros</a>
-        <a th:href="@{/condiciones}">Condiciones</a>
-    </nav>
-</header>
-
-<!-- HERO DETALLE -->
 <section class="hero-detalle">
     <div class="hero-detalle-imagen">
         <img th:src="@{'/imagenes/categorias/' + ${categoria.imagen}}"
              th:alt="${categoria.nombre}">
     </div>
-
     <div class="hero-detalle-texto">
-        <p class="hero-edicion" th:text="${categoria.tipo == 'perros'} ? 'COLECCIÓN CANINA' : 'COLECCIÓN FELINA'"></p>
-
+        <p class="hero-edicion"
+           th:text="${categoria.tipo == 'perros'} ? 'COLECCIÓN CANINA' : 'COLECCIÓN FELINA'"></p>
         <h2 class="hero-titulo" th:text="${categoria.nombre}"></h2>
-
         <p class="hero-desc" th:text="${categoria.descripcion}"></p>
-
-        <a th:href="@{/categorias(tipo=${categoria.tipo})}" class="btn-volver">
-            ← Volver a Colecciones
-        </a>
+        <a th:href="@{/categorias(tipo=${categoria.tipo})}" class="btn-volver">← Volver a Colecciones</a>
     </div>
-    <div class="hero-detalle-imagen">
-        <img th:src="@{'/imagenes/productos/' + ${producto.imagen}}" alt="">
-    </div>
-    <div class="hero-detalle-texto">
-        <h2 th:text="${producto.nombre}"></h2>
-        <p th:text="'EAN: ' + ${producto.codigoEan}"></p>
-        <p th:text="${producto.descripcion}"></p>
-        <p th:text="'Marca: ' + ${producto.marca.nombre}"></p>
-    </div>
-
 </section>
 
-<!-- BLOQUE PREMIUM DE INFORMACIÓN -->
+<!-- PRODUCTOS DE ESTA CATEGORÍA con lógica 0 / 1 / varios -->
 <section class="detalle-info">
-    <h3>Sobre esta creación</h3>
-    <p>
-        En Crown & Collar seleccionamos únicamente ingredientes de grado humano, tratados con precisión
-        culinaria y un enfoque aristocrático hacia la nutrición animal.
-        Cada receta es elaborada con respeto por la tradición y un compromiso absoluto con la excelencia.
+    <h3>Productos en esta colección</h3>
+
+    <!-- Sin productos -->
+    <p th:if="${#sets.isEmpty(categoria.productos)}">
+        No hay productos disponibles en esta colección por el momento.
     </p>
 
-    <h3>Ingredientes Destacados</h3>
-    <p>
-        Esta colección incluye ingredientes nobles como proteínas magras, caldos reducidos, aceites naturales
-        y extractos gourmet que elevan la experiencia gastronómica de su compañero.
-    </p>
-
-    <h3>Recomendación de la Casa</h3>
-    <p>
-        Ideal para hogares que buscan un equilibrio entre nutrición avanzada y un ritual culinario elegante.
-        Perfecto para animales con paladar exigente y familias que valoran la excelencia.
-    </p>
-</section>
-
-<footer>
-    <div class="footer-grid">
-        <div>
-            <h4>Crown & Collar</h4>
-            <p>Nutrición artesanal de lujo para los compañeros más distinguidos.</p>
-        </div>
-        <div>
-            <h4>La Casa</h4>
-            <a href="#">Nuestra Historia</a>
-            <a href="#">Sostenibilidad</a>
-            <a href="#">Prensa</a>
-            <a href="#">Carreras</a>
-        </div>
-        <div>
-            <h4>Asistencia</h4>
-            <a href="#">Contacto</a>
-            <a href="#">Envíos y Devoluciones</a>
-            <a href="#">Preguntas Frecuentes</a>
-            <a href="#">Guía de Tallas</a>
-        </div>
-        <div>
-            <h4>La Gaceta Real</h4>
-            <p>Subscríbase para recibir novedades exclusivas.</p>
-            <input type="email" placeholder="su@email.com">
+    <!-- Un solo producto -->
+    <div th:if="${#sets.size(categoria.productos) == 1}">
+        <div th:each="p : ${categoria.productos}" class="producto-card">
+            <img th:src="${p.imagen != null ? '/imagenes/productos/' + p.imagen : '/imagenes/no-disponible.jpg'}"
+                 th:alt="'Imagen de ' + ${p.nombre}">
+            <h4>
+                <a th:href="@{/productos/{id}/{slug}(id=${p.id}, slug=${#strings.replace(#strings.toLowerCase(p.nombre),' ','-')})}"
+                   th:text="${p.nombre}"></a>
+            </h4>
+            <!-- Marca como enlace -->
+            <p>
+                <a th:href="@{/marcas/{id}(id=${p.marca.id})}" th:text="${p.marca.nombre}"></a>
+            </p>
+            <!-- Precio con o sin descuento -->
+            <p th:if="${p.descuento == 0}" th:text="${p.precio} + '€'"></p>
+            <div th:if="${p.descuento > 0}">
+                <span class="badge-descuento" th:text="'-' + ${p.descuento} + '%'"></span>
+                <span class="precio-actual" th:text="${#numbers.formatDecimal(p.precio * (1 - p.descuento / 100.0), 1, 2)} + '€'"></span>
+                <span class="precio-original tachado" th:text="${p.precio} + '€'"></span>
+            </div>
         </div>
     </div>
-    <p style="margin-top:2rem; text-align:center;">© 2026 CROWN & COLLAR. TODOS LOS DERECHOS RESERVADOS.</p>
-</footer>
+
+    <!-- Varios productos -->
+    <div th:if="${#sets.size(categoria.productos) > 1}" class="productos-grid">
+        <div th:each="p : ${categoria.productos}" class="producto-card">
+            <img th:src="${p.imagen != null ? '/imagenes/productos/' + p.imagen : '/imagenes/no-disponible.jpg'}"
+                 th:alt="'Imagen de ' + ${p.nombre}">
+            <h4>
+                <a th:href="@{/productos/{id}/{slug}(id=${p.id}, slug=${#strings.replace(#strings.toLowerCase(p.nombre),' ','-')})}"
+                   th:text="${p.nombre}"></a>
+            </h4>
+            <p>
+                <a th:href="@{/marcas/{id}(id=${p.marca.id})}" th:text="${p.marca.nombre}"></a>
+            </p>
+            <p th:if="${p.descuento == 0}" th:text="${p.precio} + '€'"></p>
+            <div th:if="${p.descuento > 0}">
+                <span class="badge-descuento" th:text="'-' + ${p.descuento} + '%'"></span>
+                <span class="precio-actual" th:text="${#numbers.formatDecimal(p.precio * (1 - p.descuento / 100.0), 1, 2)} + '€'"></span>
+                <span class="precio-original tachado" th:text="${p.precio} + '€'"></span>
+            </div>
+        </div>
+    </div>
+</section>
+
+<div th:replace="~{fragments/footer :: footer}"></div>
 
 </body>
 </html>

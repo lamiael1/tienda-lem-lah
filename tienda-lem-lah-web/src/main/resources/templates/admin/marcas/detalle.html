@@ -2,22 +2,36 @@
 <html lang="es" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Productos · Crown &amp; Collar</title>
+    <title th:text="${marca.nombre} + ' · Crown &amp; Collar'">Marca</title>
     <link rel="stylesheet" th:href="@{/css/style.css}">
 </head>
-<body>
+<body class="fondo-oscuro">
 
-<div th:replace="~{fragments/navbar :: header(paginaActiva='productos')}"></div>
+<div th:replace="~{fragments/navbar :: header(paginaActiva='')}"></div>
 
-<main class="productos-grid" style="padding: 2rem;">
-    <div th:each="p : ${productos}" class="producto-card" style="position:relative;">
+<section class="hero-detalle">
+    <div class="hero-detalle-imagen" th:if="${marca.imagen != null}">
+        <img th:src="@{'/imagenes/marcas/' + ${marca.imagen}}" th:alt="${marca.nombre}">
+    </div>
+    <div class="hero-detalle-texto">
+        <h2 class="hero-titulo" th:text="${marca.nombre}"></h2>
+        <p class="hero-desc" th:text="${marca.descripcion}"></p>
+        <a th:href="@{/productos}" class="btn-volver">← Volver a Productos</a>
+    </div>
+</section>
 
-        <!-- Badge de descuento -->
+<section class="productos-grid" style="padding: 2rem;">
+    <h3 style="width:100%; text-align:center;">Productos de esta marca</h3>
+
+    <p th:if="${productosOrdenados.isEmpty()}" style="width:100%; text-align:center;">
+        Esta marca no tiene productos disponibles actualmente.
+    </p>
+
+    <div th:each="p : ${productosOrdenados}" class="producto-card" style="position:relative;">
         <span th:if="${p.descuento > 0}"
               class="badge-descuento"
               th:text="'-' + ${p.descuento} + '%'"></span>
 
-        <!-- Imagen -->
         <img th:if="${p.imagen != null}"
              th:src="@{'/imagenes/productos/' + ${p.imagen}}"
              th:alt="'Imagen de ' + ${p.nombre}">
@@ -25,33 +39,20 @@
              src="/imagenes/no-disponible.jpg"
              alt="">
 
-        <!-- Nombre como enlace al detalle -->
         <h4>
             <a th:href="@{/productos/{id}/{slug}(id=${p.id},
                 slug=${#strings.replace(#strings.toLowerCase(p.nombre),' ','-')})}"
                th:text="${p.nombre}"></a>
         </h4>
 
-        <!-- Marca como enlace -->
-        <p th:if="${p.marca != null}">
-            <a th:href="@{/marcas/{id}(id=${p.marca.id})}"
-               th:text="${p.marca.nombre}"
-               class="categoria"></a>
-        </p>
-
-        <!-- Precio con o sin descuento -->
         <p th:if="${p.descuento == 0}" class="precio" th:text="${p.precio} + '€'"></p>
         <div th:if="${p.descuento > 0}">
             <span class="precio-actual"
                   th:text="${#numbers.formatDecimal(p.precio * (1 - p.descuento / 100.0), 1, 2)} + '€'"></span>
             <span class="precio-original tachado" th:text="${p.precio} + '€'"></span>
         </div>
-
-        <!-- Primeros 200 caracteres de la descripción -->
-        <p th:text="${#strings.abbreviate(p.descripcion, 200)}" class="descripcion-corta"></p>
-
     </div>
-</main>
+</section>
 
 <div th:replace="~{fragments/footer :: footer}"></div>
 

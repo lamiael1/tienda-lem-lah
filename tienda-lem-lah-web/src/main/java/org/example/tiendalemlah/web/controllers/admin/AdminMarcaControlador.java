@@ -16,15 +16,21 @@ public class AdminMarcaControlador {
         this.marcaServicio = marcaServicio;
     }
 
+    // Redirige /admin/marcas/ (con barra) a /admin/marcas
+    @GetMapping("/")
+    public String listarSlash() {
+        return "redirect:/admin/marcas";
+    }
+
     @GetMapping
     public String listar(Model model) {
         model.addAttribute("marcas", marcaServicio.findAll());
-        return "admin/marcas/lista";
+        return "admin/marcas/lista"; // ✅ corregido (antes devolvía "lista")
     }
 
     @GetMapping("/new")
     public String crearForm(Model model) {
-        model.addAttribute("marca", new Marca());   // 👈 IMPORTANTE: "marca"
+        model.addAttribute("marca", new Marca());
         return "admin/marcas/crear";
     }
 
@@ -36,7 +42,7 @@ public class AdminMarcaControlador {
 
     @GetMapping("/{id}/edit")
     public String editarForm(@PathVariable Long id, Model model) {
-        model.addAttribute("marca", marcaServicio.findById(id).orElse(null)); // 👈 "marca"
+        model.addAttribute("marca", marcaServicio.findById(id).orElse(null));
         return "admin/marcas/editar";
     }
 

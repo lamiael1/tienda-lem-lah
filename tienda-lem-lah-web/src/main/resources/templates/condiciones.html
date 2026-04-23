@@ -2,134 +2,56 @@
 <html lang="es" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Condiciones de Uso · Crown & Collar</title>
+    <title>Condiciones de Uso · Crown &amp; Collar</title>
     <link rel="stylesheet" th:href="@{/css/style.css}">
 </head>
-
 <body class="fondo-oscuro">
 
-<header class="header-premium">
-    <div class="banner-envio">ENVÍO EXPRESS DE CORTESÍA EN PEDIDOS SUPERIORES A 120€</div>
+<div th:replace="~{fragments/navbar :: header(paginaActiva='condiciones')}"></div>
 
-    <h1 class="logo-premium">Crown & Collar</h1>
-
-    <nav class="nav-premium">
-        <a th:href="@{/}">Inicio</a>
-        <a th:href="@{/categorias}">Colecciones</a>
-        <a href="/sobre-nosotros.html">Sobre Nosotros</a>
-        <a th:href="@{/condiciones}" class="active">Condiciones</a>
-    </nav>
-</header>
-
-<!-- HERO EDITORIAL -->
 <section class="hero-condiciones">
     <div class="hero-condiciones-texto">
         <h2 class="hero-titulo">Condiciones de Uso y Contratación</h2>
-        <p class="hero-desc">
-            Le rogamos que lea atentamente las presentes condiciones antes de utilizar este sitio web o realizar un pedido.
-        </p>
+        <p class="hero-desc">Le rogamos que lea atentamente las presentes condiciones antes de utilizar este sitio web o realizar un pedido.</p>
     </div>
 </section>
 
-<!-- CONTENIDO PRINCIPAL -->
 <main class="contenedor-condiciones">
-
     <section class="bloque-condicion">
         <h3>01 · Identificación del Titular</h3>
-        <p>
-            Crown & Collar S.L., inscrita en el Registro Mercantil de Madrid, CIF B-88543214,
-            con domicilio en Calle Serrano 240, 28016 Madrid, España.
-            Contacto: info@crownandcollar.com · +34 910 123 456
-        </p>
+        <p>Crown &amp; Collar S.L., inscrita en el Registro Mercantil de Madrid, CIF B-88543214, con domicilio en Calle Serrano 240, 28016 Madrid, España. Contacto: info@crownandcollar.com · +34 910 123 456</p>
     </section>
-
     <section class="bloque-condicion">
         <h3>02 · Objeto y Ámbito de Aplicación</h3>
-        <p>
-            Las presentes Condiciones regulan el acceso y uso del sitio web, así como la contratación de productos
-            y servicios ofrecidos por Crown & Collar.
-        </p>
+        <p>Las presentes Condiciones regulan el acceso y uso del sitio web, así como la contratación de productos y servicios ofrecidos por Crown &amp; Collar.</p>
     </section>
-
     <section class="bloque-condicion">
         <h3>03 · Proceso de Compra</h3>
-        <p>
-            1. Selección de productos y adición al carrito.<br>
-            2. Confirmación del pedido y formalización del contrato.<br>
-            3. Envío de correo electrónico con los detalles del pedido.
-        </p>
+        <p>1. Selección de productos y adición al carrito.<br>2. Confirmación del pedido y formalización del contrato.<br>3. Envío de correo electrónico con los detalles del pedido.</p>
     </section>
-
     <section class="bloque-condicion">
         <h3>04 · Precios, Impuestos y Envíos</h3>
-        <p>
-            Todos los precios incluyen impuestos. Los gastos de envío se calculan según destino y peso.
-            Métodos de pago: tarjeta, PayPal o transferencia bancaria.
-        </p>
+        <p>Todos los precios incluyen impuestos. Los gastos de envío se calculan según destino y peso. Métodos de pago: tarjeta, PayPal o transferencia bancaria.</p>
     </section>
-
     <section class="bloque-condicion">
         <h3>05 · Derecho de Desistimiento</h3>
-        <p>
-            El cliente dispone de 14 días naturales para desistir de la compra sin necesidad de justificación.
-            Los productos deben devolverse en perfecto estado y en su embalaje original.
-        </p>
+        <p>El cliente dispone de 14 días naturales para desistir de la compra sin necesidad de justificación. Los productos deben devolverse en perfecto estado y en su embalaje original.</p>
     </section>
-
     <section class="bloque-condicion">
         <h3>06 · Garantía de Satisfacción</h3>
-        <p>
-            Crown & Collar garantiza la calidad de todos sus productos. En caso de defecto, el cliente podrá solicitar
-            sustitución o reembolso.
-        </p>
+        <p>Crown &amp; Collar garantiza la calidad de todos sus productos. En caso de defecto, el cliente podrá solicitar sustitución o reembolso.</p>
     </section>
-
     <section class="bloque-condicion">
         <h3>07 · Protección de Datos</h3>
-        <p>
-            Cumplimos con el RGPD y la Ley Orgánica 3/2018. Los datos serán tratados con confidencialidad y utilizados
-            únicamente para la gestión de pedidos.
-        </p>
+        <p>Cumplimos con el RGPD y la Ley Orgánica 3/2018. Los datos serán tratados con confidencialidad y utilizados únicamente para la gestión de pedidos.</p>
     </section>
-
     <section class="bloque-condicion">
         <h3>08 · Ley Aplicable</h3>
-        <p>
-            Las presentes Condiciones se rigen por la legislación española. Para cualquier conflicto, las partes se
-            someten a los Juzgados y Tribunales de Madrid.
-        </p>
+        <p>Las presentes Condiciones se rigen por la legislación española. Para cualquier conflicto, las partes se someten a los Juzgados y Tribunales de Madrid.</p>
     </section>
-
 </main>
 
-<footer>
-    <div class="footer-grid">
-        <div>
-            <h4>Crown & Collar</h4>
-            <p>Nutrición artesanal de lujo para los compañeros más distinguidos.</p>
-        </div>
-        <div>
-            <h4>La Casa</h4>
-            <a href="#">Nuestra Historia</a>
-            <a href="#">Sostenibilidad</a>
-            <a href="#">Prensa</a>
-            <a href="#">Carreras</a>
-        </div>
-        <div>
-            <h4>Asistencia</h4>
-            <a href="#">Contacto</a>
-            <a href="#">Envíos y Devoluciones</a>
-            <a href="#">Preguntas Frecuentes</a>
-            <a href="#">Guía de Tallas</a>
-        </div>
-        <div>
-            <h4>La Gaceta Real</h4>
-            <p>Subscríbase para recibir novedades exclusivas.</p>
-            <input type="email" placeholder="su@email.com">
-        </div>
-    </div>
-    <p style="margin-top:2rem; text-align:center;">© 2026 CROWN & COLLAR. TODOS LOS DERECHOS RESERVADOS.</p>
-</footer>
+<div th:replace="~{fragments/footer :: footer}"></div>
 
 </body>
 </html>
