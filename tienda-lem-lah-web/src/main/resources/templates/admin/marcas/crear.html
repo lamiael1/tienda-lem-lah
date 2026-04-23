@@ -1,0 +1,15 @@
+<h2>Nueva Marca</h2>
+
+<form th:action="@{/admin/marcas}" method="post" th:object="${marca}">
+    <label for="nombre">Nombre:</label>
+    <input id="nombre" type="text" th:field="*{nombre}" required>
+
+    <label for="descripcion">Descripción:</label>
+    <textarea id="descripcion" th:field="*{descripcion}"></textarea>
+
+    <label for="imagen">Imagen:</label>
+    <input id="imagen" type="text" th:field="*{imagen}">
+
+    <button type="submit" class="btn btn-primary">Guardar</button>
+    <a th:href="@{/admin/marcas}" class="btn btn-secondary">Cancelar</a>
+</form>

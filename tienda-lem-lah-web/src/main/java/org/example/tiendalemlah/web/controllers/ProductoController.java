@@ -16,6 +16,7 @@ public class ProductoController {
     @GetMapping
     public String listar(Model model){
         model.addAttribute("productos", servicio.findAll());
+
         return "productos/lista";
     }
     @GetMapping("/{id}/{slug}")

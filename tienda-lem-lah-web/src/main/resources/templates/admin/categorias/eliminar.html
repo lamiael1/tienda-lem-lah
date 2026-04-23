@@ -1,0 +1,8 @@
+<h2>Eliminar Categoría</h2>
+
+<p th:text="'¿Seguro que desea borrar la categoría ' + ${categoria.nombre} + '?'"></p>
+
+<form th:action="@{'/admin/categorias/' + ${categoria.id} + '/delete'}" method="post">
+    <button type="submit" class="btn btn-danger">Eliminar</button>
+    <a th:href="@{/admin/categorias}" class="btn btn-secondary">Cancelar</a>
+</form>

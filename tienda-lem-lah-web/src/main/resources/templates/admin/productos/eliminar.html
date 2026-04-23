@@ -1,0 +1,8 @@
+<h2>Eliminar Producto</h2>
+
+<p th:text="'¿Seguro que desea borrar el producto ' + ${producto.nombre} + '?'"></p>
+
+<form th:action="@{'/admin/productos/' + ${producto.id} + '/delete'}" method="post">
+    <button type="submit" class="btn btn-danger">Eliminar</button>
+    <a th:href="@{/admin/productos}" class="btn btn-secondary">Cancelar</a>
+</form>

@@ -5,15 +5,22 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="db32a8df-270e-447d-a191-71dadb85c78a" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/tienda-lem-lah-web/src/main/java/org/example/tiendalemlah/web/controllers/admin/AdminCategoriaControlador.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tienda-lem-lah-web/src/main/java/org/example/tiendalemlah/web/controllers/admin/AdminInicioControlador.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tienda-lem-lah-web/src/main/java/org/example/tiendalemlah/web/controllers/admin/AdminMarcaControlador.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tienda-lem-lah-web/src/main/java/org/example/tiendalemlah/web/controllers/admin/AdminProductoControlador.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tienda-lem-lah-web/src/main/resources/templates/admin/categorias/listado.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tienda-lem-lah-web/src/main/resources/templates/admin/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tienda-lem-lah-web/src/main/resources/templates/admin/marcas/listado.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tienda-lem-lah-web/src/main/resources/templates/admin/productos/listado.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tienda-lem-lah-web/src/main/resources/templates/admin/categorias/crear.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tienda-lem-lah-web/src/main/resources/templates/admin/categorias/editar.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tienda-lem-lah-web/src/main/resources/templates/admin/categorias/eliminar.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tienda-lem-lah-web/src/main/resources/templates/admin/marcas/crear.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tienda-lem-lah-web/src/main/resources/templates/admin/marcas/editar.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tienda-lem-lah-web/src/main/resources/templates/admin/marcas/eliminar.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tienda-lem-lah-web/src/main/resources/templates/admin/productos/crear.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tienda-lem-lah-web/src/main/resources/templates/admin/productos/editar.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tienda-lem-lah-web/src/main/resources/templates/admin/productos/eliminar.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tienda-lem-lah-web/src/main/java/org/example/tiendalemlah/web/WebApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/tienda-lem-lah-web/src/main/java/org/example/tiendalemlah/WebApp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tienda-lem-lah-web/src/main/java/org/example/tiendalemlah/web/controllers/CategoriaControlador.java" beforeDir="false" afterPath="$PROJECT_DIR$/tienda-lem-lah-web/src/main/java/org/example/tiendalemlah/web/controllers/CategoriaControlador.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tienda-lem-lah-web/src/main/java/org/example/tiendalemlah/web/controllers/ProductoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/tienda-lem-lah-web/src/main/java/org/example/tiendalemlah/web/controllers/ProductoController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tienda-lem-lah-web/src/main/java/org/example/tiendalemlah/web/controllers/admin/AdminCategoriaControlador.java" beforeDir="false" afterPath="$PROJECT_DIR$/tienda-lem-lah-web/src/main/java/org/example/tiendalemlah/web/controllers/admin/AdminCategoriaControlador.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tienda-lem-lah-web/src/main/java/org/example/tiendalemlah/web/controllers/admin/AdminMarcaControlador.java" beforeDir="false" afterPath="$PROJECT_DIR$/tienda-lem-lah-web/src/main/java/org/example/tiendalemlah/web/controllers/admin/AdminMarcaControlador.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tienda-lem-lah-web/src/main/java/org/example/tiendalemlah/web/controllers/admin/AdminProductoControlador.java" beforeDir="false" afterPath="$PROJECT_DIR$/tienda-lem-lah-web/src/main/java/org/example/tiendalemlah/web/controllers/admin/AdminProductoControlador.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -55,36 +62,45 @@
   <component name="ProjectViewState">
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
-    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
-    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
-    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
-    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
-    &quot;RunOnceActivity.MCP Project settings loaded&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.typescript.service.memoryLimit.init&quot;: &quot;true&quot;,
-    &quot;Spring Boot.WebApp.executor&quot;: &quot;Run&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/Pepe/Desktop/DA2D1A/AD_DW/3/tienda-lem-lah&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RequestMappingsPanelOrder0": "0",
+    "RequestMappingsPanelOrder1": "1",
+    "RequestMappingsPanelWidth0": "75",
+    "RequestMappingsPanelWidth1": "75",
+    "RunOnceActivity.MCP Project settings loaded": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "RunOnceActivity.typescript.service.memoryLimit.init": "true",
+    "Spring Boot.WebApp.executor": "Run",
+    "git-widget-placeholder": "main",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/laura/Downloads/tienda-lem-lah/tienda-lem-lah/tienda-lem-lah-web/src/main/resources/templates/admin/marcas",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\laura\Downloads\tienda-lem-lah\tienda-lem-lah\tienda-lem-lah-web\src\main\resources\templates\admin\marcas" />
+      <recent name="C:\Users\laura\Downloads\tienda-lem-lah\tienda-lem-lah\tienda-lem-lah-web\src\main\resources\templates\admin\productos" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\laura\Downloads\tienda-lem-lah\tienda-lem-lah\tienda-lem-lah-web\src\main\resources\templates\admin\categorias" />
+    </key>
+  </component>
   <component name="RunManager">
     <configuration name="WebApp" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
       <option name="FRAME_DEACTIVATION_UPDATE_POLICY" value="UpdateClassesAndResources" />
       <module name="tienda-lem-lah-web" />
-      <option name="SPRING_BOOT_MAIN_CLASS" value="org.example.tiendalemlah.web.WebApp" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="org.example.tiendalemlah.WebApp" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>

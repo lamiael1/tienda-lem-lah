@@ -1,13 +1,9 @@
-package org.example.tiendalemlah.web;
+package org.example.tiendalemlah;
+
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
-@SpringBootApplication(
-        scanBasePackages = {
-                "org.example.tiendalemlah.web",
-                "org.example.tiendalemlah.common"
-        }
-)
+@SpringBootApplication
 public class WebApp {
     public static void main(String[] args) {
         SpringApplication.run(WebApp.class, args);

@@ -1,0 +1,20 @@
+<h2>Editar Categoría</h2>
+
+<form th:action="@{'/admin/categorias/' + ${categoria.id} + '/edit'}"
+      method="post" th:object="${categoria}">
+
+    <label for="nombre">Nombre:</label>
+    <input id="nombre" type="text" th:field="*{nombre}" required>
+
+    <label for="descripcion">Descripción:</label>
+    <textarea id="descripcion" th:field="*{descripcion}"></textarea>
+
+    <label for="tipo">Tipo:</label>
+    <select id="tipo" th:field="*{tipo}">
+        <option value="perros">Perros</option>
+        <option value="gatos">Gatos</option>
+    </select>
+
+    <button type="submit" class="btn btn-primary">Actualizar</button>
+    <a th:href="@{/admin/categorias}" class="btn btn-secondary">Cancelar</a>
+</form>
