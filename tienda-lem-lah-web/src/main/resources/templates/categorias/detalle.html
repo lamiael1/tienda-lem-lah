@@ -39,6 +39,16 @@
             ← Volver a Colecciones
         </a>
     </div>
+    <div class="hero-detalle-imagen">
+        <img th:src="@{'/imagenes/productos/' + ${producto.imagen}}" alt="">
+    </div>
+    <div class="hero-detalle-texto">
+        <h2 th:text="${producto.nombre}"></h2>
+        <p th:text="'EAN: ' + ${producto.codigoEan}"></p>
+        <p th:text="${producto.descripcion}"></p>
+        <p th:text="'Marca: ' + ${producto.marca.nombre}"></p>
+    </div>
+
 </section>
 
 <!-- BLOQUE PREMIUM DE INFORMACIÓN -->

@@ -4,6 +4,7 @@ import org.example.tiendalemlah.common.services.ProductoServicio;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
@@ -17,4 +18,12 @@ public class ProductoController {
         model.addAttribute("productos", servicio.findAll());
         return "productos/lista";
     }
+    @GetMapping("/{id}/{slug}")
+    public String detalle(@PathVariable Long id, Model model){
+        return servicio.findById(id)
+                .map(p -> { model.addAttribute("producto", p); return "productos/detalle"; })
+                .orElse("redirect:/productos");
+    }
+
+
 }
