@@ -19,7 +19,7 @@ public class AdminMarcaControlador {
     @GetMapping
     public String listar(Model model) {
         model.addAttribute("marcas", marcaServicio.findAll());
-        return "lista";
+        return "admin/marcas/lista";
     }
 
     @GetMapping("/new")

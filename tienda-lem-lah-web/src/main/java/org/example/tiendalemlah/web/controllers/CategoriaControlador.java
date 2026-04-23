@@ -2,6 +2,7 @@ package org.example.tiendalemlah.web.controllers;
 
 import org.example.tiendalemlah.common.entities.Categoria;
 import org.example.tiendalemlah.common.services.CategoriaServicio;
+import org.example.tiendalemlah.common.services.ProductoServicio;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -11,15 +12,33 @@ import org.springframework.web.bind.annotation.*;
 public class CategoriaControlador {
 
     private final CategoriaServicio servicio;
+    private final ProductoServicio productoServicio;
 
-    public CategoriaControlador(CategoriaServicio servicio) {
+    public CategoriaControlador(CategoriaServicio servicio, ProductoServicio productoServicio) {
         this.servicio = servicio;
+        this.productoServicio = productoServicio;
     }
 
+    // LISTADO filtrado por tipo (perros / gatos)
     @GetMapping
-    public String listar(Model model) {
-        model.addAttribute("categorias", servicio.findAll());
+    public String listar(@RequestParam(required = false) String tipo, Model model) {
+        if (tipo != null && !tipo.isBlank()) {
+            model.addAttribute("categorias", servicio.findByTipo(tipo));
+            model.addAttribute("productos", productoServicio.findByCategoriaTipo(tipo));
+        } else {
+            model.addAttribute("categorias", servicio.findAll());
+            model.addAttribute("productos", productoServicio.findAll());
+        }
+        model.addAttribute("tipo", tipo);
         return "categorias/lista";
+    }
+
+    // DETALLE de una categoría
+    @GetMapping("/{id}")
+    public String detalle(@PathVariable Long id, Model model) {
+        return servicio.findById(id)
+                .map(c -> { model.addAttribute("categoria", c); return "categorias/detalle"; })
+                .orElse("redirect:/categorias");
     }
 
     @GetMapping("/new")

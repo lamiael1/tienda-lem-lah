@@ -28,7 +28,7 @@ public class AdminProductoControlador {
     @GetMapping
     public String listar(Model model) {
         model.addAttribute("productos", productoServicio.findAll());
-        return "lista";
+        return "admin/productos/lista";
     }
 
     // FORMULARIO CREAR

@@ -9,4 +9,7 @@ public interface ProductoServicio {
     Optional<Producto> findById(Long id);
     Producto save(Producto producto);
     void deleteById(Long id);
+
+    // Devuelve productos cuyas categorías pertenecen al tipo indicado (perros / gatos)
+    List<Producto> findByCategoriaTipo(String tipo);
 }

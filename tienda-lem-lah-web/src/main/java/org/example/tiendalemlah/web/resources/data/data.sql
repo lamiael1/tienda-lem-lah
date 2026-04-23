@@ -16,3 +16,6 @@ INSERT INTO productos (codigo_ean, nombre, descripcion, imagen, precio, descuent
                                                                                                  ('0000000000001', 'Organic Chicken Deluxe', 'Alimento orgánico para perros', 'organicDeluxe.jpg', 24.99, 10, 1),
                                                                                                  ('0000000000002', 'Venison & Truffle Supreme', 'Receta gourmet con trufa', 'venisonSupreme.jpg', 29.99, 0, 1),
                                                                                                  ('0000000000003', 'Salmon & Caviar Elegance', 'Receta premium para gatos', 'salmonElegance.jpg', 27.50, 15, 2);
+INSERT INTO producto_categoria (producto_id, categoria_id) VALUES (1, 1);
+INSERT INTO producto_categoria (producto_id, categoria_id) VALUES (2, 2);
+INSERT INTO producto_categoria (producto_id, categoria_id) VALUES (3, 3);
