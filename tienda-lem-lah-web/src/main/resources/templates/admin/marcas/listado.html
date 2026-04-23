@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Listado de Marcas · Crown & Collar</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+
+<h2>Listado de Marcas</h2>
+
+<table class="table table-striped">
+    <thead>
+    <tr>
+        <th>ID</th>
+        <th>Nombre</th>
+        <th>Descripción</th>
+        <th>Acciones</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="m : ${marcas}">
+        <td th:text="${m.id}"></td>
+        <td th:text="${m.nombre}"></td>
+        <td th:text="${m.descripcion}"></td>
+        <td>
+            <a th:href="@{'/admin/marcas/' + ${m.id} + '/edit'}">✏️</a>
+            <a th:href="@{'/admin/marcas/' + ${m.id} + '/delete'}">🗑️</a>
+        </td>
+    </tr>
+    </tbody>
+</table>
+
+<a th:href="@{/admin/marcas/new}" class="btn btn-primary">Nueva Marca</a>
+
+</body>
+</html>

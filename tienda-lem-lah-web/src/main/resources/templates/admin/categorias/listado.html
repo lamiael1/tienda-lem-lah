@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Listado de Categorías · Crown & Collar</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+
+<h2>Listado de Categorías</h2>
+
+<table class="table table-striped">
+    <thead>
+    <tr>
+        <th>ID</th>
+        <th>Nombre</th>
+        <th>Tipo</th>
+        <th>Acciones</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="c : ${categorias}">
+        <td th:text="${c.id}"></td>
+        <td th:text="${c.nombre}"></td>
+        <td th:text="${c.tipo}"></td>
+        <td>
+            <a th:href="@{'/admin/categorias/' + ${c.id} + '/edit'}">✏️</a>
+            <a th:href="@{'/admin/categorias/' + ${c.id} + '/delete'}">🗑️</a>
+        </td>
+    </tr>
+    </tbody>
+</table>
+
+<a th:href="@{/admin/categorias/new}" class="btn btn-primary">Nueva Categoría</a>
+
+</body>
+</html>

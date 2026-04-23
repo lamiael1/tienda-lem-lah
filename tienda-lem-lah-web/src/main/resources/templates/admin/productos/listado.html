@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Listado de Productos · Crown & Collar</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+
+<h2>Listado de Productos</h2>
+
+<table class="table table-striped">
+    <thead>
+    <tr>
+        <th>ID</th>
+        <th>Nombre</th>
+        <th>Marca</th>
+        <th>Precio</th>
+        <th>Descuento</th>
+        <th>Acciones</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="p : ${productos}">
+        <td th:text="${p.id}"></td>
+        <td th:text="${p.nombre}"></td>
+        <td th:text="${p.marca.nombre}"></td>
+        <td th:text="${p.precio}"></td>
+        <td th:text="${p.descuento + '%'}"></td>
+        <td>
+            <a th:href="@{'/admin/productos/' + ${p.id} + '/edit'}">✏️</a>
+            <a th:href="@{'/admin/productos/' + ${p.id} + '/delete'}">🗑️</a>
+        </td>
+    </tr>
+    </tbody>
+</table>
+
+<a th:href="@{/admin/productos/new}" class="btn btn-primary">Nuevo Producto</a>
+
+</body>
+</html>
