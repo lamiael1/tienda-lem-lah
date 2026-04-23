@@ -77,6 +77,13 @@
         </a>
 
     </div>
+    <div th:each="p : ${productos}" class="producto-card">
+        <img th:src="${p.imagen != null ? '/imagenes/productos/' + p.imagen : '/imagenes/no-disponible.jpg'}" alt="">
+        <h4 th:text="${p.nombre}"></h4>
+        <p class="categoria" th:text="${p.marca.nombre}"></p>
+        <p class="precio" th:text="'€' + p.precio"></p>
+    </div>
+
 </section>
 
     <footer>
