@@ -4,7 +4,8 @@
 
 <!--
   Fragmento: header completo (banner + logo + nav)
-  Parámetro: paginaActiva — string con la página activa ('inicio','categorias','nosotros','condiciones')
+  Parámetro: paginaActiva — string con la página activa
+             Valores: 'inicio' | 'categorias' | 'nosotros' | 'condiciones'
   Uso: th:replace="~{fragments/navbar :: header(paginaActiva='inicio')}"
 -->
 <header th:fragment="header(paginaActiva)" class="header-premium">
@@ -15,7 +16,8 @@
            th:classappend="${paginaActiva == 'inicio'} ? ' active' : ''">Inicio</a>
         <a th:href="@{/categorias}"
            th:classappend="${paginaActiva == 'categorias'} ? ' active' : ''">Colecciones</a>
-        <a href="/sobre-nosotros.html"
+        <!-- Fix 1: enlace a /sobre-nosotros (template Thymeleaf) en vez de /sobre-nosotros.html (estático) -->
+        <a th:href="@{/sobre-nosotros}"
            th:classappend="${paginaActiva == 'nosotros'} ? ' active' : ''">Sobre Nosotros</a>
         <a th:href="@{/condiciones}"
            th:classappend="${paginaActiva == 'condiciones'} ? ' active' : ''">Condiciones</a>

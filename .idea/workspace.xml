@@ -4,23 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="db32a8df-270e-447d-a191-71dadb85c78a" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/tienda-lem-lah-web/src/main/java/org/example/tiendalemlah/web/controllers/ProductoControlador.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tienda-lem-lah-web/src/main/java/org/example/tiendalemlah/web/controllers/ProductoController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tienda-lem-lah-web/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/tienda-lem-lah-web/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tienda-lem-lah-web/src/main/resources/templates/admin/categorias/crear.html" beforeDir="false" afterPath="$PROJECT_DIR$/tienda-lem-lah-web/src/main/resources/templates/admin/categorias/crear.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tienda-lem-lah-web/src/main/resources/templates/admin/categorias/editar.html" beforeDir="false" afterPath="$PROJECT_DIR$/tienda-lem-lah-web/src/main/resources/templates/admin/categorias/editar.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tienda-lem-lah-web/src/main/resources/templates/admin/categorias/eliminar.html" beforeDir="false" afterPath="$PROJECT_DIR$/tienda-lem-lah-web/src/main/resources/templates/admin/categorias/eliminar.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tienda-lem-lah-web/src/main/resources/templates/admin/marcas/crear.html" beforeDir="false" afterPath="$PROJECT_DIR$/tienda-lem-lah-web/src/main/resources/templates/admin/marcas/crear.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tienda-lem-lah-web/src/main/resources/templates/admin/marcas/editar.html" beforeDir="false" afterPath="$PROJECT_DIR$/tienda-lem-lah-web/src/main/resources/templates/admin/marcas/editar.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tienda-lem-lah-web/src/main/resources/templates/admin/marcas/eliminar.html" beforeDir="false" afterPath="$PROJECT_DIR$/tienda-lem-lah-web/src/main/resources/templates/admin/marcas/eliminar.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tienda-lem-lah-web/src/main/resources/templates/admin/marcas/lista.html" beforeDir="false" afterPath="$PROJECT_DIR$/tienda-lem-lah-web/src/main/resources/templates/admin/marcas/lista.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tienda-lem-lah-web/src/main/resources/templates/admin/productos/crear.html" beforeDir="false" afterPath="$PROJECT_DIR$/tienda-lem-lah-web/src/main/resources/templates/admin/productos/crear.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tienda-lem-lah-web/src/main/resources/templates/admin/productos/editar.html" beforeDir="false" afterPath="$PROJECT_DIR$/tienda-lem-lah-web/src/main/resources/templates/admin/productos/editar.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tienda-lem-lah-web/src/main/resources/templates/admin/productos/eliminar.html" beforeDir="false" afterPath="$PROJECT_DIR$/tienda-lem-lah-web/src/main/resources/templates/admin/productos/eliminar.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tienda-lem-lah-web/src/main/resources/templates/admin/productos/lista.html" beforeDir="false" afterPath="$PROJECT_DIR$/tienda-lem-lah-web/src/main/resources/templates/admin/productos/lista.html" afterDir="false" />
-    </list>
+    <list default="true" id="db32a8df-270e-447d-a191-71dadb85c78a" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -43,12 +27,12 @@
     &quot;assignee&quot;: &quot;lamiael1&quot;
   }
 }</component>
-  <component name="GithubPullRequestsUISettings">{
-  &quot;selectedUrlAndAccountId&quot;: {
-    &quot;url&quot;: &quot;https://github.com/lamiael1/tienda-lem-lah.git&quot;,
-    &quot;accountId&quot;: &quot;3312b8e4-f334-42bb-a4ca-176db8ad6609&quot;
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/lamiael1/tienda-lem-lah.git",
+    "accountId": "d2ed5c18-09be-4a54-9f08-835415878b3e"
   }
-}</component>
+}]]></component>
   <component name="McpProjectServerCommands">
     <commands />
     <urls />
@@ -61,31 +45,33 @@
   <component name="ProjectViewState">
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
-    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
-    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
-    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
-    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
-    &quot;RunOnceActivity.MCP Project settings loaded&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.typescript.service.memoryLimit.init&quot;: &quot;true&quot;,
-    &quot;Spring Boot.WebApp.executor&quot;: &quot;Run&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/laura/Downloads/tienda-lem-lah/tienda-lem-lah/tienda-lem-lah-web/src/main/resources/templates/admin/marcas&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RequestMappingsPanelOrder0": "0",
+    "RequestMappingsPanelOrder1": "1",
+    "RequestMappingsPanelWidth0": "75",
+    "RequestMappingsPanelWidth1": "75",
+    "RunOnceActivity.MCP Project settings loaded": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "RunOnceActivity.typescript.service.memoryLimit.init": "true",
+    "Spring Boot.WebApp.executor": "Run",
+    "git-widget-placeholder": "main",
+    "junie.onboarding.icon.badge.shown": "true",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/laura/Downloads/tienda-lem-lah/tienda-lem-lah/tienda-lem-lah-web/src/main/resources/templates/admin/marcas",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
+    "to.speed.mode.migration.done": "true",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\laura\Downloads\tienda-lem-lah\tienda-lem-lah\tienda-lem-lah-web\src\main\resources\templates\admin\marcas" />
@@ -108,8 +94,8 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-jdk-30f59d01ecdd-2fc7cc6b9a17-intellij.indexing.shared.core-IU-253.31033.145" />
-        <option value="bundled-js-predefined-d6986cc7102b-9b0f141eb926-JavaScript-IU-253.31033.145" />
+        <option value="bundled-jdk-9823dce3aa75-bf35d07a577b-intellij.indexing.shared.core-IU-252.25557.131" />
+        <option value="bundled-js-predefined-d6986cc7102b-b598e85cdad2-JavaScript-IU-252.25557.131" />
       </set>
     </attachedChunks>
   </component>

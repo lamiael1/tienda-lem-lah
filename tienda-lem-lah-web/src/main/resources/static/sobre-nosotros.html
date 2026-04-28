@@ -2,33 +2,15 @@
 <html lang="es" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Sobre Nosotros · Crown & Collar</title>
-    <link rel="stylesheet" href="/css/style.css">
+    <title>Sobre Nosotros · Crown &amp; Collar</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
 </head>
-
 <body>
 
-<header class="header-premium">
-    <div class="banner-envio">ENVÍO EXPRESS DE CORTESÍA EN PEDIDOS SUPERIORES A 120€</div>
-
-    <h1 class="logo-premium">Crown & Collar</h1>
-
-    <nav class="nav-premium">
-        <a href="/">Inicio</a>
-        <a href="/categorias">Colecciones</a>
-        <a href="/sobre-nosotros.html" class="active">Sobre Nosotros</a>
-        <a href="/condiciones">Condiciones</a>
-    </nav>
-</header>
-
-
-
+<div th:replace="~{fragments/navbar :: header(paginaActiva='nosotros')}"></div>
 
 <main class="sobre-nosotros-page">
 
-    <!-- ===========================
-         NUESTRA HISTORIA
-    ============================ -->
     <section class="historia-section">
         <div class="historia-texto">
             <h2 class="titulo-editorial">Nuestra Historia</h2>
@@ -36,7 +18,7 @@
 
             <h3 class="bloque-titulo">La Fundación</h3>
             <p>
-                Crown & Collar nació en 2018 en las Cotswolds inglesas, fruto de la frustración de una veterinaria
+                Crown &amp; Collar nació en 2018 en las Cotswolds inglesas, fruto de la frustración de una veterinaria
                 y un chef ante la incapacidad de encontrar alimento realmente digno para sus propios animales.
             </p>
             <p>
@@ -49,36 +31,28 @@
                 por lo puro. Cada receta pasa por más de 60 controles de calidad antes de llegar a su hogar.
             </p>
         </div>
-
         <div class="historia-imagen">
-            <img src="/imagenes/categorias/gatos-herencia.png" alt="Nuestra historia Crown & Collar">
+            <img src="/imagenes/categorias/gatos-herencia.png" alt="Nuestra historia Crown &amp; Collar">
         </div>
     </section>
 
     <blockquote class="cita-editorial">
-        “La nobleza no es cuestión de raza. Es cuestión de cómo se les cría.”
+        "La nobleza no es cuestión de raza. Es cuestión de cómo se les cría."
         <span>— Eleonora Blackwood</span>
     </blockquote>
 
-
-    <!-- ===========================
-         PRINCIPIOS
-    ============================ -->
     <section class="principios-section">
         <h2 class="titulo-editorial">Nuestros Principios</h2>
         <p class="principios-sub">Los pilares de la Casa</p>
-
         <div class="principios-grid">
             <div class="principio-card">
                 <h3>Pureza de Origen</h3>
                 <p>Cada ingrediente es trazable hasta su fuente. Nada de subproductos, nada artificial.</p>
             </div>
-
             <div class="principio-card">
                 <h3>Excelencia Artesanal</h3>
                 <p>Elaboramos en lotes pequeños para garantizar una calidad que la producción masiva no puede igualar.</p>
             </div>
-
             <div class="principio-card">
                 <h3>El Bienestar ante Todo</h3>
                 <p>La ciencia nutricional más avanzada al servicio del bienestar real y duradero.</p>
@@ -87,34 +61,8 @@
     </section>
 
 </main>
-<footer>
-    <div class="footer-grid">
-        <div>
-            <h4>Crown & Collar</h4>
-            <p>Nutrición artesanal de lujo para los compañeros más distinguidos.</p>
-        </div>
-        <div>
-            <h4>La Casa</h4>
-            <a href="#">Nuestra Historia</a>
-            <a href="#">Sostenibilidad</a>
-            <a href="#">Prensa</a>
-            <a href="#">Carreras</a>
-        </div>
-        <div>
-            <h4>Asistencia</h4>
-            <a href="#">Contacto</a>
-            <a href="#">Envíos y Devoluciones</a>
-            <a href="#">Preguntas Frecuentes</a>
-            <a href="#">Guía de Tallas</a>
-        </div>
-        <div>
-            <h4>La Gaceta Real</h4>
-            <p>Subscríbase para recibir novedades exclusivas.</p>
-            <input type="email" placeholder="su@email.com">
-        </div>
-    </div>
-    <p style="margin-top:2rem; text-align:center;">© 2026 CROWN & COLLAR. TODOS LOS DERECHOS RESERVADOS.</p>
-</footer>
+
+<div th:replace="~{fragments/footer :: footer}"></div>
 
 </body>
 </html>
