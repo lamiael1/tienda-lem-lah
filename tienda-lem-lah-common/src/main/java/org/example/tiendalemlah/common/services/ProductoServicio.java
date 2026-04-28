@@ -7,9 +7,8 @@ import java.util.Optional;
 public interface ProductoServicio {
     List<Producto> findAll();
     Optional<Producto> findById(Long id);
+    Optional<Producto> findByIdWithCategorias(Long id);
     Producto save(Producto producto);
     void deleteById(Long id);
-
-    // Devuelve productos cuyas categorías pertenecen al tipo indicado (perros / gatos)
     List<Producto> findByCategoriaTipo(String tipo);
 }

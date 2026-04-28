@@ -3,6 +3,7 @@ package org.example.tiendalemlah.common.services;
 import org.example.tiendalemlah.common.entities.Producto;
 import org.example.tiendalemlah.common.repositories.ProductoRepositorio;
 import org.springframework.stereotype.Service;
+
 import java.util.List;
 import java.util.Optional;
 
@@ -26,6 +27,11 @@ public class ProductoServicioImpl implements ProductoServicio {
     }
 
     @Override
+    public Optional<Producto> findByIdWithCategorias(Long id) {
+        return repo.findByIdWithCategorias(id);
+    }
+
+    @Override
     public Producto save(Producto p) {
         return repo.save(p);
     }
@@ -35,16 +41,8 @@ public class ProductoServicioImpl implements ProductoServicio {
         repo.deleteById(id);
     }
 
-    /**
-     * Filtra los productos cuyas categorías tengan el tipo indicado.
-     * Recorre todas las categorías de cada producto y comprueba si alguna
-     * coincide con el tipo buscado (ignorando mayúsculas/minúsculas).
-     */
     @Override
     public List<Producto> findByCategoriaTipo(String tipo) {
-        return repo.findAll().stream()
-                .filter(p -> p.getCategorias().stream()
-                        .anyMatch(c -> c.getTipo().equalsIgnoreCase(tipo)))
-                .toList();
+        return repo.findByCategoriaTipoFetch(tipo);
     }
 }

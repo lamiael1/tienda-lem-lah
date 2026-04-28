@@ -5,8 +5,10 @@ import org.example.tiendalemlah.common.entities.Producto;
 import org.example.tiendalemlah.common.services.CategoriaServicio;
 import org.example.tiendalemlah.common.services.MarcaServicio;
 import org.example.tiendalemlah.common.services.ProductoServicio;
+import org.springframework.beans.propertyeditors.CustomNumberEditor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.WebDataBinder;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.HashSet;
@@ -73,29 +75,38 @@ public class AdminProductoControlador {
 
     @GetMapping("/{id}/edit")
     public String editarForm(@PathVariable Long id, Model model) {
-        model.addAttribute("producto", productoServicio.findById(id).orElse(null));
+        model.addAttribute("producto", productoServicio.findByIdWithCategorias(id).orElse(null));
         model.addAttribute("marcas", marcaServicio.findAll());
         model.addAttribute("categorias", categoriaServicio.findAll());
         return "admin/productos/editar";
     }
-
     @PostMapping("/{id}/edit")
     public String actualizar(@PathVariable Long id,
                              @ModelAttribute Producto producto,
                              @RequestParam Long marcaId,
-                             @RequestParam(required = false) List<Long> categoriaIds) {
+                             @RequestParam(required = false) List<Long> categoriaIds,
+                             Model model) {
 
-        producto.setId(id);
-        producto.setMarca(marcaServicio.findById(marcaId).orElseThrow());
+        // Carga el producto existente de la BD
+        Producto existente = productoServicio.findById(id).orElseThrow();
+
+        // Actualiza solo los campos del formulario
+        existente.setCodigoEan(producto.getCodigoEan());
+        existente.setNombre(producto.getNombre());
+        existente.setDescripcion(producto.getDescripcion());
+        existente.setImagen(producto.getImagen());
+        existente.setPrecio(producto.getPrecio());
+        existente.setDescuento(producto.getDescuento());
+        existente.setMarca(marcaServicio.findById(marcaId).orElseThrow());
 
         Set<Categoria> cats = new HashSet<>();
         if (categoriaIds != null) {
             categoriaIds.forEach(cid ->
                     categoriaServicio.findById(cid).ifPresent(cats::add));
         }
-        producto.setCategorias(cats);
+        existente.setCategorias(cats);
 
-        productoServicio.save(producto);
+        productoServicio.save(existente);
         return "redirect:/admin/productos";
     }
 
@@ -109,5 +120,9 @@ public class AdminProductoControlador {
     public String eliminar(@PathVariable Long id) {
         productoServicio.deleteById(id);
         return "redirect:/admin/productos";
+    }
+    @InitBinder
+    public void initBinder(WebDataBinder binder) {
+        binder.registerCustomEditor(Double.class, new CustomNumberEditor(Double.class, true));
     }
 }
