@@ -5,26 +5,21 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="db32a8df-270e-447d-a191-71dadb85c78a" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/tienda-lem-lah-web/src/main/java/org/example/tiendalemlah/web/controllers/MarcaControlador.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tienda-lem-lah-web/src/main/resources/templates/admin/marcas/detalle.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tienda-lem-lah-web/src/main/resources/templates/admin/productos/detalle.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tienda-lem-lah-web/src/main/java/org/example/tiendalemlah/web/controllers/ProductoControlador.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tienda-lem-lah-web/src/main/java/org/example/tiendalemlah/web/controllers/admin/AdminCategoriaControlador.java" beforeDir="false" afterPath="$PROJECT_DIR$/tienda-lem-lah-web/src/main/java/org/example/tiendalemlah/web/controllers/admin/AdminCategoriaControlador.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tienda-lem-lah-web/src/main/java/org/example/tiendalemlah/web/controllers/admin/AdminInicioControlador.java" beforeDir="false" afterPath="$PROJECT_DIR$/tienda-lem-lah-web/src/main/java/org/example/tiendalemlah/web/controllers/admin/AdminInicioControlador.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tienda-lem-lah-web/src/main/java/org/example/tiendalemlah/web/controllers/admin/AdminMarcaControlador.java" beforeDir="false" afterPath="$PROJECT_DIR$/tienda-lem-lah-web/src/main/java/org/example/tiendalemlah/web/controllers/admin/AdminMarcaControlador.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tienda-lem-lah-web/src/main/java/org/example/tiendalemlah/web/controllers/admin/AdminProductoControlador.java" beforeDir="false" afterPath="$PROJECT_DIR$/tienda-lem-lah-web/src/main/java/org/example/tiendalemlah/web/controllers/admin/AdminProductoControlador.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tienda-lem-lah-web/src/main/java/org/example/tiendalemlah/web/resources/data/data.sql" beforeDir="false" afterPath="$PROJECT_DIR$/tienda-lem-lah-web/src/main/java/org/example/tiendalemlah/web/resources/data/data.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tienda-lem-lah-web/src/main/java/org/example/tiendalemlah/web/controllers/ProductoController.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/tienda-lem-lah-web/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/tienda-lem-lah-web/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tienda-lem-lah-web/src/main/resources/templates/admin/categorias/lista.html" beforeDir="false" afterPath="$PROJECT_DIR$/tienda-lem-lah-web/src/main/resources/templates/admin/categorias/lista.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tienda-lem-lah-web/src/main/resources/templates/admin/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/tienda-lem-lah-web/src/main/resources/templates/admin/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tienda-lem-lah-web/src/main/resources/templates/admin/categorias/crear.html" beforeDir="false" afterPath="$PROJECT_DIR$/tienda-lem-lah-web/src/main/resources/templates/admin/categorias/crear.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tienda-lem-lah-web/src/main/resources/templates/admin/categorias/editar.html" beforeDir="false" afterPath="$PROJECT_DIR$/tienda-lem-lah-web/src/main/resources/templates/admin/categorias/editar.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tienda-lem-lah-web/src/main/resources/templates/admin/categorias/eliminar.html" beforeDir="false" afterPath="$PROJECT_DIR$/tienda-lem-lah-web/src/main/resources/templates/admin/categorias/eliminar.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tienda-lem-lah-web/src/main/resources/templates/admin/marcas/crear.html" beforeDir="false" afterPath="$PROJECT_DIR$/tienda-lem-lah-web/src/main/resources/templates/admin/marcas/crear.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tienda-lem-lah-web/src/main/resources/templates/admin/marcas/editar.html" beforeDir="false" afterPath="$PROJECT_DIR$/tienda-lem-lah-web/src/main/resources/templates/admin/marcas/editar.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tienda-lem-lah-web/src/main/resources/templates/admin/marcas/eliminar.html" beforeDir="false" afterPath="$PROJECT_DIR$/tienda-lem-lah-web/src/main/resources/templates/admin/marcas/eliminar.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tienda-lem-lah-web/src/main/resources/templates/admin/marcas/lista.html" beforeDir="false" afterPath="$PROJECT_DIR$/tienda-lem-lah-web/src/main/resources/templates/admin/marcas/lista.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tienda-lem-lah-web/src/main/resources/templates/admin/productos/crear.html" beforeDir="false" afterPath="$PROJECT_DIR$/tienda-lem-lah-web/src/main/resources/templates/admin/productos/crear.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tienda-lem-lah-web/src/main/resources/templates/admin/productos/editar.html" beforeDir="false" afterPath="$PROJECT_DIR$/tienda-lem-lah-web/src/main/resources/templates/admin/productos/editar.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tienda-lem-lah-web/src/main/resources/templates/admin/productos/eliminar.html" beforeDir="false" afterPath="$PROJECT_DIR$/tienda-lem-lah-web/src/main/resources/templates/admin/productos/eliminar.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tienda-lem-lah-web/src/main/resources/templates/admin/productos/lista.html" beforeDir="false" afterPath="$PROJECT_DIR$/tienda-lem-lah-web/src/main/resources/templates/admin/productos/lista.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tienda-lem-lah-web/src/main/resources/templates/categorias/detalle.html" beforeDir="false" afterPath="$PROJECT_DIR$/tienda-lem-lah-web/src/main/resources/templates/categorias/detalle.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tienda-lem-lah-web/src/main/resources/templates/categorias/lista.html" beforeDir="false" afterPath="$PROJECT_DIR$/tienda-lem-lah-web/src/main/resources/templates/categorias/lista.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tienda-lem-lah-web/src/main/resources/templates/condiciones.html" beforeDir="false" afterPath="$PROJECT_DIR$/tienda-lem-lah-web/src/main/resources/templates/condiciones.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tienda-lem-lah-web/src/main/resources/templates/fragments/admin-navbar.html" beforeDir="false" afterPath="$PROJECT_DIR$/tienda-lem-lah-web/src/main/resources/templates/fragments/admin-navbar.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tienda-lem-lah-web/src/main/resources/templates/fragments/footer.html" beforeDir="false" afterPath="$PROJECT_DIR$/tienda-lem-lah-web/src/main/resources/templates/fragments/footer.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tienda-lem-lah-web/src/main/resources/templates/fragments/navbar.html" beforeDir="false" afterPath="$PROJECT_DIR$/tienda-lem-lah-web/src/main/resources/templates/fragments/navbar.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tienda-lem-lah-web/src/main/resources/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/tienda-lem-lah-web/src/main/resources/templates/index.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -128,6 +123,7 @@
       <workItem from="1776849976153" duration="114000" />
       <workItem from="1776850349957" duration="340000" />
       <workItem from="1776856284973" duration="1261000" />
+      <workItem from="1777357845496" duration="665000" />
     </task>
     <servers />
   </component>

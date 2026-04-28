@@ -2,58 +2,71 @@
 <html lang="es" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Productos · Crown &amp; Collar</title>
-    <link rel="stylesheet" th:href="@{/css/style.css}">
+    <title>Productos · Admin</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 </head>
-<body>
+<body class="bg-light">
 
-<div th:replace="~{fragments/navbar :: header(paginaActiva='productos')}"></div>
+<div th:replace="~{fragments/admin-navbar :: admin-navbar}"></div>
 
-<main class="productos-grid" style="padding: 2rem;">
-    <div th:each="p : ${productos}" class="producto-card" style="position:relative;">
-
-        <!-- Badge de descuento -->
-        <span th:if="${p.descuento > 0}"
-              class="badge-descuento"
-              th:text="'-' + ${p.descuento} + '%'"></span>
-
-        <!-- Imagen -->
-        <img th:if="${p.imagen != null}"
-             th:src="@{'/imagenes/productos/' + ${p.imagen}}"
-             th:alt="'Imagen de ' + ${p.nombre}">
-        <img th:if="${p.imagen == null}"
-             src="/imagenes/no-disponible.jpg"
-             alt="">
-
-        <!-- Nombre como enlace al detalle -->
-        <h4>
-            <a th:href="@{/productos/{id}/{slug}(id=${p.id},
-                slug=${#strings.replace(#strings.toLowerCase(p.nombre),' ','-')})}"
-               th:text="${p.nombre}"></a>
-        </h4>
-
-        <!-- Marca como enlace -->
-        <p th:if="${p.marca != null}">
-            <a th:href="@{/marcas/{id}(id=${p.marca.id})}"
-               th:text="${p.marca.nombre}"
-               class="categoria"></a>
-        </p>
-
-        <!-- Precio con o sin descuento -->
-        <p th:if="${p.descuento == 0}" class="precio" th:text="${p.precio} + '€'"></p>
-        <div th:if="${p.descuento > 0}">
-            <span class="precio-actual"
-                  th:text="${#numbers.formatDecimal(p.precio * (1 - p.descuento / 100.0), 1, 2)} + '€'"></span>
-            <span class="precio-original tachado" th:text="${p.precio} + '€'"></span>
-        </div>
-
-        <!-- Primeros 200 caracteres de la descripción -->
-        <p th:text="${#strings.abbreviate(p.descripcion, 200)}" class="descripcion-corta"></p>
-
+<div class="container py-4">
+    <div class="d-flex justify-content-between align-items-center mb-3">
+        <h2>Listado de Productos</h2>
+        <a th:href="@{/admin/productos/new}" class="btn btn-success">
+            <i class="bi bi-plus-circle" aria-hidden="true"></i> Nuevo Producto
+        </a>
     </div>
-</main>
 
-<div th:replace="~{fragments/footer :: footer}"></div>
+    <table class="table table-striped table-bordered align-middle">
+        <thead class="table-dark">
+        <tr>
+            <th scope="col">ID</th>
+            <th scope="col">EAN</th>
+            <th scope="col">Nombre</th>
+            <th scope="col">Marca</th>
+            <th scope="col">Precio</th>
+            <th scope="col">Dto.</th>
+            <th scope="col">Acciones</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="p : ${productos}">
+            <td th:text="${p.id}"></td>
+            <td th:text="${p.codigoEan}"></td>
+            <td th:text="${p.nombre}"></td>
+            <td th:text="${p.marca != null ? p.marca.nombre : '—'}"></td>
+            <td th:text="${p.precio} + '€'"></td>
+            <td th:text="${p.descuento} + '%'"></td>
+            <td>
+                <a th:href="@{'/admin/productos/' + ${p.id} + '/edit'}"
+                   class="btn btn-sm btn-warning me-1"
+                   th:aria-label="'Editar producto ' + ${p.nombre}">
+                    <i class="bi bi-pencil-fill" aria-hidden="true"></i>
+                    <span class="visually-hidden" th:text="'Editar ' + ${p.nombre}"></span>
+                </a>
+                <a th:href="@{'/admin/productos/' + ${p.id} + '/delete'}"
+                   class="btn btn-sm btn-danger"
+                   th:aria-label="'Eliminar producto ' + ${p.nombre}">
+                    <i class="bi bi-trash-fill" aria-hidden="true"></i>
+                    <span class="visually-hidden" th:text="'Eliminar ' + ${p.nombre}"></span>
+                </a>
+            </td>
+        </tr>
+        </tbody>
+        <tfoot>
+        <tr>
+            <td colspan="7" class="text-muted small"
+                th:text="${productos.size()} + ' productos en total'"></td>
+        </tr>
+        </tfoot>
+    </table>
 
+    <a th:href="@{/admin/productos/new}" class="btn btn-success">
+        <i class="bi bi-plus-circle" aria-hidden="true"></i> Nuevo Producto
+    </a>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
