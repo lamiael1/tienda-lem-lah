@@ -9,11 +9,9 @@ public class ConfiguracionWeb implements WebMvcConfigurer {
 
     @Override
     public void addViewControllers(ViewControllerRegistry registry) {
-        // Mapeo para condiciones (ya existía)
+
         registry.addViewController("/condiciones")
                 .setViewName("condiciones");
 
-        registry.addViewController("/sobre-nosotros")
-                .setViewName("sobre-nosotros");
     }
 }
