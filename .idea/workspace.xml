@@ -6,13 +6,16 @@
   <component name="ChangeListManager">
     <list default="true" id="db32a8df-270e-447d-a191-71dadb85c78a" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tienda-lem-lah-common/src/main/java/org/example/tiendalemlah/common/repositories/ProductoRepositorio.java" beforeDir="false" afterPath="$PROJECT_DIR$/tienda-lem-lah-common/src/main/java/org/example/tiendalemlah/common/repositories/ProductoRepositorio.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tienda-lem-lah-common/src/main/java/org/example/tiendalemlah/common/services/ProductoServicio.java" beforeDir="false" afterPath="$PROJECT_DIR$/tienda-lem-lah-common/src/main/java/org/example/tiendalemlah/common/services/ProductoServicio.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tienda-lem-lah-common/src/main/java/org/example/tiendalemlah/common/services/ProductoServicioImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/tienda-lem-lah-common/src/main/java/org/example/tiendalemlah/common/services/ProductoServicioImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tienda-lem-lah-common/target/classes/org/example/tiendalemlah/common/repositories/ProductoRepositorio.class" beforeDir="false" afterPath="$PROJECT_DIR$/tienda-lem-lah-common/target/classes/org/example/tiendalemlah/common/repositories/ProductoRepositorio.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tienda-lem-lah-common/target/classes/org/example/tiendalemlah/common/services/ProductoServicio.class" beforeDir="false" afterPath="$PROJECT_DIR$/tienda-lem-lah-common/target/classes/org/example/tiendalemlah/common/services/ProductoServicio.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tienda-lem-lah-common/target/classes/org/example/tiendalemlah/common/services/ProductoServicioImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/tienda-lem-lah-common/target/classes/org/example/tiendalemlah/common/services/ProductoServicioImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tienda-lem-lah-web/src/main/java/org/example/tiendalemlah/web/controllers/admin/AdminProductoControlador.java" beforeDir="false" afterPath="$PROJECT_DIR$/tienda-lem-lah-web/src/main/java/org/example/tiendalemlah/web/controllers/admin/AdminProductoControlador.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tienda-lem-lah-common/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/tienda-lem-lah-common/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tienda-lem-lah-common/src/main/java/org/example/tiendalemlah/common/entities/Categoria.java" beforeDir="false" afterPath="$PROJECT_DIR$/tienda-lem-lah-common/src/main/java/org/example/tiendalemlah/common/entities/Categoria.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tienda-lem-lah-common/src/main/java/org/example/tiendalemlah/common/entities/Marca.java" beforeDir="false" afterPath="$PROJECT_DIR$/tienda-lem-lah-common/src/main/java/org/example/tiendalemlah/common/entities/Marca.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tienda-lem-lah-common/src/main/java/org/example/tiendalemlah/common/entities/Producto.java" beforeDir="false" afterPath="$PROJECT_DIR$/tienda-lem-lah-common/src/main/java/org/example/tiendalemlah/common/entities/Producto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tienda-lem-lah-common/target/classes/org/example/tiendalemlah/common/entities/Categoria.class" beforeDir="false" afterPath="$PROJECT_DIR$/tienda-lem-lah-common/target/classes/org/example/tiendalemlah/common/entities/Categoria.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tienda-lem-lah-common/target/classes/org/example/tiendalemlah/common/entities/Marca.class" beforeDir="false" afterPath="$PROJECT_DIR$/tienda-lem-lah-common/target/classes/org/example/tiendalemlah/common/entities/Marca.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tienda-lem-lah-common/target/classes/org/example/tiendalemlah/common/entities/Producto.class" beforeDir="false" afterPath="$PROJECT_DIR$/tienda-lem-lah-common/target/classes/org/example/tiendalemlah/common/entities/Producto.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tienda-lem-lah-web/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/tienda-lem-lah-web/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tienda-lem-lah-web/src/main/java/org/example/tiendalemlah/web/resources/data/data.sql" beforeDir="false" afterPath="$PROJECT_DIR$/tienda-lem-lah-web/src/main/resources/data/data.sql" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tienda-lem-lah-web/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/tienda-lem-lah-web/src/main/resources/application.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -37,12 +40,12 @@
     &quot;assignee&quot;: &quot;lamiael1&quot;
   }
 }</component>
-  <component name="GithubPullRequestsUISettings">{
-  &quot;selectedUrlAndAccountId&quot;: {
-    &quot;url&quot;: &quot;https://github.com/lamiael1/tienda-lem-lah.git&quot;,
-    &quot;accountId&quot;: &quot;d2ed5c18-09be-4a54-9f08-835415878b3e&quot;
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/lamiael1/tienda-lem-lah.git",
+    "accountId": "3312b8e4-f334-42bb-a4ca-176db8ad6609"
   }
-}</component>
+}]]></component>
   <component name="McpProjectServerCommands">
     <commands />
     <urls />
@@ -88,6 +91,9 @@
       <recent name="C:\Users\laura\Downloads\tienda-lem-lah\tienda-lem-lah\tienda-lem-lah-web\src\main\resources\templates\admin\productos" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Pepe\Desktop\DA2D1A\AD_DW\3\tienda-lem-lah\tienda-lem-lah-web\src\main\resources\data" />
+      <recent name="C:\Users\Pepe\Desktop\DA2D1A\AD_DW\3\tienda-lem-lah\tienda-lem-lah-web\src\main\resources" />
+      <recent name="C:\Users\Pepe\Desktop\DA2D1A\AD_DW\3\tienda-lem-lah\tienda-lem-lah-web\src\main\java\org\example\tiendalemlah\web\resources" />
       <recent name="C:\Users\laura\Downloads\tienda-lem-lah\tienda-lem-lah\tienda-lem-lah-web\src\main\resources\templates\admin\categorias" />
     </key>
   </component>
@@ -104,8 +110,8 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-jdk-9823dce3aa75-bf35d07a577b-intellij.indexing.shared.core-IU-252.25557.131" />
-        <option value="bundled-js-predefined-d6986cc7102b-b598e85cdad2-JavaScript-IU-252.25557.131" />
+        <option value="bundled-jdk-30f59d01ecdd-2fc7cc6b9a17-intellij.indexing.shared.core-IU-253.31033.145" />
+        <option value="bundled-js-predefined-d6986cc7102b-9b0f141eb926-JavaScript-IU-253.31033.145" />
       </set>
     </attachedChunks>
   </component>
@@ -120,6 +126,7 @@
       <workItem from="1776850349957" duration="340000" />
       <workItem from="1776856284973" duration="1261000" />
       <workItem from="1777357845496" duration="665000" />
+      <workItem from="1777451049613" duration="1712000" />
     </task>
     <servers />
   </component>
