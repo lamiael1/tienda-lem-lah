@@ -14,6 +14,7 @@
         <img th:if="${producto.imagen != null}"
              th:src="@{'/imagenes/productos/' + ${producto.imagen}}"
              th:alt="'Imagen de ' + ${producto.nombre}">
+
         <img th:if="${producto.imagen == null}"
              src="/imagenes/no-disponible.jpg"
              alt="">
@@ -22,17 +23,14 @@
     <div class="hero-detalle-texto">
         <h2 class="hero-titulo" th:text="${producto.nombre}"></h2>
 
-        <!-- EAN -->
         <p><strong>EAN-13:</strong> <span th:text="${producto.codigoEan}"></span></p>
 
-        <!-- Marca como enlace -->
         <p th:if="${producto.marca != null}">
             <strong>Marca:</strong>
-            <a th:href="@{/marcas/{id}(id=${producto.marca.id})}"
+            <a th:href="@{/marcas/{id}/{nombre}(id=${producto.marca.id}, nombre=${producto.marca.nombre})}"
                th:text="${producto.marca.nombre}"></a>
         </p>
 
-        <!-- Precio con o sin descuento -->
         <p th:if="${producto.descuento == 0}" class="precio" th:text="${producto.precio} + '€'"></p>
         <div th:if="${producto.descuento > 0}">
             <span class="badge-descuento" th:text="'-' + ${producto.descuento} + '%'"></span>
@@ -41,29 +39,25 @@
             <span class="precio-original tachado" th:text="${producto.precio} + '€'"></span>
         </div>
 
-        <!-- Descripción completa -->
         <p th:text="${producto.descripcion}" class="hero-desc"></p>
 
-        <!-- Categorías: 0 → nada, 1 → párrafo, varios → lista ul -->
-        <div th:if="${not #sets.isEmpty(producto.categorias)}">
+        <div th:if="${not #lists.isEmpty(producto.categorias)}">
             <strong>Colecciones:</strong>
 
-            <!-- Una sola categoría → párrafo -->
-            <p th:if="${#sets.size(producto.categorias) == 1}">
-                <span th:each="c : ${producto.categorias}">
-                    <a th:href="@{/categorias/{id}(id=${c.id})}" th:text="${c.nombre}"></a>
-                </span>
+            <p th:if="${#lists.size(producto.categorias) == 1}">
+                <a th:href="@{/categorias/{id}/{nombre}(id=${producto.categorias[0].id}, nombre=${producto.categorias[0].nombre})}"
+                   th:text="${producto.categorias[0].nombre}"></a>
             </p>
 
-            <!-- Varias categorías → lista ul -->
-            <ul th:if="${#sets.size(producto.categorias) > 1}">
+            <ul th:if="${#lists.size(producto.categorias) > 1}">
                 <li th:each="c : ${producto.categorias}">
-                    <a th:href="@{/categorias/{id}(id=${c.id})}" th:text="${c.nombre}"></a>
+                    <a th:href="@{/categorias/{id}/{nombre}(id=${c.id}, nombre=${c.nombre})}"
+                       th:text="${c.nombre}"></a>
                 </li>
             </ul>
         </div>
 
-        <a th:href="@{/productos}" class="btn-volver">← Volver al listado</a>
+        <a th:href="@{/productos}" class="btn-volver" aria-label="Volver al listado de productos">← Volver al listado</a>
     </div>
 </section>
 

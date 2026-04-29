@@ -5,22 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="db32a8df-270e-447d-a191-71dadb85c78a" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tienda-lem-lah-common/target/classes/org/example/tiendalemlah/common/entities/Categoria.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tienda-lem-lah-common/target/classes/org/example/tiendalemlah/common/entities/Marca.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tienda-lem-lah-common/target/classes/org/example/tiendalemlah/common/entities/Producto.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tienda-lem-lah-common/target/classes/org/example/tiendalemlah/common/repositories/CategoriaRepositorio.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tienda-lem-lah-common/target/classes/org/example/tiendalemlah/common/repositories/MarcaRepositorio.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tienda-lem-lah-common/target/classes/org/example/tiendalemlah/common/repositories/ProductoRepositorio.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tienda-lem-lah-common/target/classes/org/example/tiendalemlah/common/services/CategoriaServicio.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tienda-lem-lah-common/target/classes/org/example/tiendalemlah/common/services/CategoriaServicioImpl.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tienda-lem-lah-common/target/classes/org/example/tiendalemlah/common/services/MarcaServicio.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tienda-lem-lah-common/target/classes/org/example/tiendalemlah/common/services/MarcaServicioImpl.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tienda-lem-lah-common/target/classes/org/example/tiendalemlah/common/services/ProductoServicio.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tienda-lem-lah-common/target/classes/org/example/tiendalemlah/common/services/ProductoServicioImpl.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tienda-lem-lah-web/src/main/resources/data/data.sql" beforeDir="false" afterPath="$PROJECT_DIR$/tienda-lem-lah-web/src/main/resources/data/data.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tienda-lem-lah-web/src/main/resources/templates/admin/productos/detalle.html" beforeDir="false" afterPath="$PROJECT_DIR$/tienda-lem-lah-web/src/main/resources/templates/admin/productos/detalle.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -134,7 +120,7 @@
       <workItem from="1776856284973" duration="1261000" />
       <workItem from="1777357845496" duration="665000" />
       <workItem from="1777451049613" duration="2689000" />
-      <workItem from="1777459137643" duration="3015000" />
+      <workItem from="1777459137643" duration="4493000" />
     </task>
     <servers />
   </component>
