@@ -152,3 +152,31 @@ INSERT INTO producto_categoria (producto_id, categoria_id) VALUES (14, 1); -- Os
 INSERT INTO producto_categoria (producto_id, categoria_id) VALUES (16, 3); -- Caviar & Cream → Gourmet Feast
 INSERT INTO producto_categoria (producto_id, categoria_id) VALUES (17, 1); -- Lamb & Mint → Organic Chicken
 
+-- ============================================================
+-- ROLES
+-- ============================================================
+INSERT INTO roles (id, descripcion) VALUES ('USER',  'Usuario normal');
+INSERT INTO roles (id, descripcion) VALUES ('ADMIN', 'Administrador');
+
+-- ============================================================
+-- USUARIO ADMIN
+-- Hash bcrypt cost=12 de la contraseña "Password"
+-- Genera el tuyo en https://bcrypt-generator.com (Rounds: 12)
+-- ============================================================
+INSERT INTO usuarios (nombre, apellidos, email, password, fecha_registro) VALUES
+    ('Admin', 'Tienda', 'admin@tienda.com',
+     '$2a$12$DeiOeW/TOcGxuAUGePNMzOPYguTwvjVaoo3R9JB661a86sOOLTXcS',
+     CURRENT_TIMESTAMP);
+
+INSERT INTO usuario_rol (usuario_id, rol_id) VALUES (1, 'USER');
+INSERT INTO usuario_rol (usuario_id, rol_id) VALUES (1, 'ADMIN');
+
+-- ============================================================
+-- USUARIO NORMAL
+-- ============================================================
+INSERT INTO usuarios (nombre, apellidos, email, password, fecha_registro) VALUES
+    ('Usuario', 'Normal', 'user@tienda.com',
+     '$2a$12$DeiOeW/TOcGxuAUGePNMzOPYguTwvjVaoo3R9JB661a86sOOLTXcS',
+     CURRENT_TIMESTAMP);
+
+INSERT INTO usuario_rol (usuario_id, rol_id) VALUES (2, 'USER');
