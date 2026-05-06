@@ -21,7 +21,6 @@ import javax.xml.parsers.*;
 import javax.xml.transform.*;
 import javax.xml.transform.dom.DOMSource;
 import javax.xml.transform.stream.StreamResult;
-import java.io.*;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.*;
@@ -47,7 +46,6 @@ public class XmlControlador {
     public void exportar(HttpServletResponse response) throws Exception {
         List<Producto> productos = productoRepo.findAll();
 
-        // Construir documento DOM
         DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
         DocumentBuilder builder = factory.newDocumentBuilder();
         Document doc = builder.newDocument();
@@ -59,34 +57,33 @@ public class XmlControlador {
             Element prodEl = doc.createElement("producto");
             root.appendChild(prodEl);
 
-            appendElement(doc, prodEl, "id", String.valueOf(p.getId()));
-            appendElement(doc, prodEl, "codigoEan", p.getCodigoEan());
-            appendElement(doc, prodEl, "nombre", p.getNombre());
+            appendElement(doc, prodEl, "id",          String.valueOf(p.getId()));
+            appendElement(doc, prodEl, "codigoEan",   p.getCodigoEan());
+            appendElement(doc, prodEl, "nombre",      p.getNombre());
             appendElement(doc, prodEl, "descripcion", p.getDescripcion());
-            appendElement(doc, prodEl, "precio", String.valueOf(p.getPrecio()));
-            appendElement(doc, prodEl, "descuento", String.valueOf(p.getDescuento()));
-            appendElement(doc, prodEl, "stock", String.valueOf(p.getStock()));
+            appendElement(doc, prodEl, "precio",      String.valueOf(p.getPrecio()));
+            appendElement(doc, prodEl, "descuento",   String.valueOf(p.getDescuento()));
+            appendElement(doc, prodEl, "stock",       String.valueOf(p.getStock()));
 
-            // Marca
+            // Marca — id y nombre según enunciado
             if (p.getMarca() != null) {
                 Element marcaEl = doc.createElement("marca");
                 prodEl.appendChild(marcaEl);
-                appendElement(doc, marcaEl, "id", String.valueOf(p.getMarca().getId()));
+                appendElement(doc, marcaEl, "id",     String.valueOf(p.getMarca().getId()));
                 appendElement(doc, marcaEl, "nombre", p.getMarca().getNombre());
             }
 
-            // Categorías
+            // Categorías — id y nombre según enunciado
             Element catsEl = doc.createElement("categorias");
             prodEl.appendChild(catsEl);
             for (Categoria cat : p.getCategorias()) {
                 Element catEl = doc.createElement("categoria");
                 catsEl.appendChild(catEl);
-                appendElement(doc, catEl, "id", String.valueOf(cat.getId()));
+                appendElement(doc, catEl, "id",     String.valueOf(cat.getId()));
                 appendElement(doc, catEl, "nombre", cat.getNombre());
             }
         }
 
-        // Serializar y enviar
         TransformerFactory tf = TransformerFactory.newInstance();
         Transformer transformer = tf.newTransformer();
         transformer.setOutputProperty(OutputKeys.ENCODING, "UTF-8");
@@ -117,12 +114,17 @@ public class XmlControlador {
 
         List<Producto> productosAGuardar = new ArrayList<>();
 
+        // Array de un elemento para capturar excepciones desde dentro del handler
+        // (las lambdas/clases anónimas no permiten lanzar checked exceptions ni
+        // asignar variables locales externas, pero sí mutar un array)
+        RuntimeException[] errorCapturado = {null};
+
         DefaultHandler handler = new DefaultHandler() {
             private Producto productoActual;
-            private Marca marcaActual;
-            private Categoria categoriaActual;
+            private Long marcaIdActual;
+            private Long categoriaIdActual;
             private StringBuilder texto = new StringBuilder();
-            private boolean enMarca = false;
+            private boolean enMarca     = false;
             private boolean enCategoria = false;
 
             @Override
@@ -130,12 +132,12 @@ public class XmlControlador {
                                      String qName, Attributes attributes) {
                 texto.setLength(0);
                 switch (qName) {
-                    case "producto" -> {
+                    case "producto"  -> {
                         productoActual = new Producto();
                         productoActual.setCategorias(new HashSet<>());
                     }
-                    case "marca"     -> { marcaActual = new Marca(); enMarca = true; }
-                    case "categoria" -> { categoriaActual = new Categoria(); enCategoria = true; }
+                    case "marca"     -> { marcaIdActual = null;     enMarca     = true; }
+                    case "categoria" -> { categoriaIdActual = null; enCategoria = true; }
                 }
             }
 
@@ -146,29 +148,29 @@ public class XmlControlador {
 
             @Override
             public void endElement(String uri, String localName, String qName) {
+                if (errorCapturado[0] != null) return; // ya hay un error, no seguir procesando
+
                 String valor = texto.toString().trim();
+
                 if (enMarca) {
                     switch (qName) {
-                        case "id"     -> marcaActual.setId(Long.parseLong(valor));
-                        case "nombre" -> marcaActual.setNombre(valor);
-                        case "marca"  -> {
-                            // Validar que la marca existe
-                            Marca marcaBd = marcaRepo.findById(marcaActual.getId())
-                                    .orElseThrow(() -> new MarcaNoEncontradaException(marcaActual.getId()));
-                            productoActual.setMarca(marcaBd);
-                            enMarca = false;
+                        case "id"    -> marcaIdActual = Long.parseLong(valor);
+                        case "marca" -> {
+                            // Validar que existe — capturamos el error para lanzarlo fuera del SAX
+                            marcaRepo.findById(marcaIdActual).ifPresentOrElse(
+                                    m -> { productoActual.setMarca(m); enMarca = false; },
+                                    () -> errorCapturado[0] = new MarcaNoEncontradaException(marcaIdActual)
+                            );
                         }
                     }
                 } else if (enCategoria) {
                     switch (qName) {
-                        case "id"        -> categoriaActual.setId(Long.parseLong(valor));
-                        case "nombre"    -> categoriaActual.setNombre(valor);
+                        case "id"        -> categoriaIdActual = Long.parseLong(valor);
                         case "categoria" -> {
-                            // Validar que la categoría existe
-                            Categoria catBd = categoriaRepo.findById(categoriaActual.getId())
-                                    .orElseThrow(() -> new CategoriaNoEncontradaException(categoriaActual.getId()));
-                            productoActual.getCategorias().add(catBd);
-                            enCategoria = false;
+                            categoriaRepo.findById(categoriaIdActual).ifPresentOrElse(
+                                    c -> { productoActual.getCategorias().add(c); enCategoria = false; },
+                                    () -> errorCapturado[0] = new CategoriaNoEncontradaException(categoriaIdActual)
+                            );
                         }
                     }
                 } else {
@@ -187,7 +189,11 @@ public class XmlControlador {
 
         saxParser.parse(file.getInputStream(), handler);
 
-        // Guardar todos dentro de la misma transacción
+        // Lanzar aquí — fuera del SAX — para que @Transactional haga rollback de todo
+        if (errorCapturado[0] != null) {
+            throw errorCapturado[0];
+        }
+
         productoRepo.saveAll(productosAGuardar);
     }
 }

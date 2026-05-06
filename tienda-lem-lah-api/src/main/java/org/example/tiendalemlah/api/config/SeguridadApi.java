@@ -31,7 +31,7 @@ public class SeguridadApi {
                 .sessionManagement(session ->
                         session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
                 .authorizeHttpRequests(auth -> auth
-                        .requestMatchers("/api/v[0-9]+/auth/**").permitAll()
+                        .requestMatchers("/api/v*/auth/**").permitAll()
                         .requestMatchers("/h2-console/**").permitAll()
                         .anyRequest().authenticated()
                 )

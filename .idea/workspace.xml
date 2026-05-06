@@ -5,20 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="db32a8df-270e-447d-a191-71dadb85c78a" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/tienda-lem-lah-api/src/main/java/org/example/tiendalemlah/api/controller/CarritoControlador.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tienda-lem-lah-api/src/main/java/org/example/tiendalemlah/api/controller/XmlControlador.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tienda-lem-lah-api/src/main/java/org/example/tiendalemlah/api/dto/AnadirAlCarritoDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tienda-lem-lah-api/src/main/java/org/example/tiendalemlah/api/dto/CarritoDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tienda-lem-lah-api/src/main/java/org/example/tiendalemlah/api/dto/ItemCarritoDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tienda-lem-lah-api/src/main/java/org/example/tiendalemlah/api/exception/CategoriaNoEncontradaException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tienda-lem-lah-api/src/main/java/org/example/tiendalemlah/api/exception/ManejadorExcepciones.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tienda-lem-lah-api/src/main/java/org/example/tiendalemlah/api/exception/MarcaNoEncontradaException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tienda-lem-lah-api/src/main/java/org/example/tiendalemlah/api/exception/ProductoNoEnCarritoException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tienda-lem-lah-api/src/main/java/org/example/tiendalemlah/api/exception/ProductoNoEncontradoException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tienda-lem-lah-api/src/main/java/org/example/tiendalemlah/api/exception/StockInsuficienteException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tienda-lem-lah-api/src/main/java/org/example/tiendalemlah/api/exception/UnidadesInvalidasException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tienda-lem-lah-common/src/main/java/org/example/tiendalemlah/common/entities/ItemCarrito.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tienda-lem-lah-common/src/main/java/org/example/tiendalemlah/common/repositories/ItemCarritoRepositorio.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tienda-lem-lah-api/src/main/java/org/example/tiendalemlah/api/config/SeguridadApi.java" beforeDir="false" afterPath="$PROJECT_DIR$/tienda-lem-lah-api/src/main/java/org/example/tiendalemlah/api/config/SeguridadApi.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tienda-lem-lah-api/src/main/java/org/example/tiendalemlah/api/controller/XmlControlador.java" beforeDir="false" afterPath="$PROJECT_DIR$/tienda-lem-lah-api/src/main/java/org/example/tiendalemlah/api/controller/XmlControlador.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tienda-lem-lah-api/src/main/java/org/example/tiendalemlah/api/mapper/CategoriaMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/tienda-lem-lah-api/src/main/java/org/example/tiendalemlah/api/mapper/CategoriaMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tienda-lem-lah-api/src/main/resources/data/data.sql" beforeDir="false" afterPath="$PROJECT_DIR$/tienda-lem-lah-api/src/main/resources/data/data.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tienda-lem-lah-common/target/classes/org/example/tiendalemlah/common/entities/Producto.class" beforeDir="false" afterPath="$PROJECT_DIR$/tienda-lem-lah-common/target/classes/org/example/tiendalemlah/common/entities/Producto.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tienda-lem-lah-common/target/classes/org/example/tiendalemlah/common/repositories/CategoriaRepositorio.class" beforeDir="false" afterPath="$PROJECT_DIR$/tienda-lem-lah-common/target/classes/org/example/tiendalemlah/common/repositories/CategoriaRepositorio.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tienda-lem-lah-common/target/classes/org/example/tiendalemlah/common/repositories/ProductoRepositorio.class" beforeDir="false" afterPath="$PROJECT_DIR$/tienda-lem-lah-common/target/classes/org/example/tiendalemlah/common/repositories/ProductoRepositorio.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -28,8 +23,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Interface" />
         <option value="Class" />
+        <option value="Interface" />
       </list>
     </option>
   </component>
