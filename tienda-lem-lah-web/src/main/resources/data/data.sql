@@ -12,12 +12,12 @@ INSERT INTO marcas (nombre, descripcion, imagen) VALUES
 -- CATEGORÍAS (situación 6: categorías sin productos)
 -- ============================================================
 INSERT INTO categorias (nombre, descripcion, imagen, tipo) VALUES
-                                                               ('Organic Chicken',  'CANINO · ORGÁNICO',  'venisonTruffle.jpg',       'perros'),
-                                                               ('Venison & Truffle','CANINO · GOURMET',   'venisonTruffle.jpg','perros'),
-                                                               ('Gourmet Feast',    'FELINO · GOURMET',   'venisonTruffle.jpg',  'gatos'),
-                                                               ('Salmon & Caviar',  'FELINO · PREMIUM',   'venisonTruffle.jpg',  'gatos'),
-                                                               ('Raw & Natural',    'CANINO · NATURAL',   'venisonTruffle.jpg',    'perros'),
-                                                               ('Kitten Premium',   'FELINO · JUNIOR',    'venisonTruffle.jpg', 'gatos');
+                                                               ('Organic Chicken',   'CANINO ORGÁNICO',  'Organic.jpg',        'perros'),
+                                                               ('Venison & Truffle', 'CANINO GOURMET',   'venisonTruffle.jpg', 'perros'),
+                                                               ('Gourmet Feast',     'FELINO GOURMET',   'GorumetFeast.jpg',   'gatos'),
+                                                               ('Salmon & Caviar',   'FELINO PREMIUM',   'SalmonCaviar.jpg',   'gatos'),
+                                                               ('Raw & Natural',     'CANINO NATURAL',    'Organic.jpg',                 'perros'),
+                                                               ('Kitten Premium',    'FELINO JUNIOR',     'GorumetFeast.jpg',                 'gatos');
 -- categorías 5 (Raw & Natural) y 6 (Kitten Premium) no tendrán productos → SITUACIÓN 6
 
 -- ============================================================
