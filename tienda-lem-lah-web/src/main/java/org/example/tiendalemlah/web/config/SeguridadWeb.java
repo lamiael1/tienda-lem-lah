@@ -1,6 +1,5 @@
 package org.example.tiendalemlah.web.config;
 
-import org.example.tiendalemlah.web.config.ManejadorLogout;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.method.configuration.EnableMethodSecurity;
@@ -29,11 +28,17 @@ public class SeguridadWeb {
                         .anyRequest().permitAll()
                 )
                 .formLogin(form -> form
+                        // GET /login → muestra nuestro template login.html
+                        .loginPage("/login")
+                        // Spring Security sigue procesando el POST a /login internamente
                         .defaultSuccessUrl("/", true)
+                        // Si falla el login redirige a /login?error
+                        .failureUrl("/login?error")
+                        .permitAll()
                 )
                 .logout(logout -> logout
-                        // Nuestro manejador registra el LOGOUT y redirige a /
                         .logoutSuccessHandler(manejadorLogout)
+                        .permitAll()
                 )
                 .httpBasic(basic -> basic.disable())
                 .csrf(csrf -> csrf

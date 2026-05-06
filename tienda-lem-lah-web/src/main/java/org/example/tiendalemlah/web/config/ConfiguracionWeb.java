@@ -9,9 +9,8 @@ public class ConfiguracionWeb implements WebMvcConfigurer {
 
     @Override
     public void addViewControllers(ViewControllerRegistry registry) {
-
-        registry.addViewController("/condiciones")
-                .setViewName("condiciones");
-
+        registry.addViewController("/condiciones").setViewName("condiciones");
+        // /login sirve el template personalizado; Spring Security sigue procesando el POST
+        registry.addViewController("/login").setViewName("login");
     }
 }
