@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
 <body>
 
 <header th:fragment="header(paginaActiva)" class="header-premium">
@@ -21,7 +22,44 @@
         <a th:href="@{/condiciones}"
            th:classappend="${paginaActiva == 'condiciones'} ? ' active' : ''">Condiciones</a>
 
+        <!-- Enlace a perfil: solo si está autenticado -->
+        <a th:href="@{/users/profile}"
+           sec:authorize="isAuthenticated()">Mi perfil</a>
+
     </nav>
+
+    <!-- ===== ÁREA DE USUARIO ===== -->
+
+    <!-- Usuario autenticado: muestra nombre + botón logout -->
+    <div sec:authorize="isAuthenticated()"
+         style="text-align:center; padding: 0.4rem 0 0.6rem;">
+        <span style="color: var(--dorado); font-size: 0.85rem; letter-spacing: 0.05em;">
+            Bienvenido, <strong sec:authentication="name"></strong>
+        </span>
+        &nbsp;·&nbsp;
+        <form th:action="@{/logout}" method="post"
+              style="display:inline; margin:0;">
+            <button type="submit"
+                    style="background:none; border:1px solid var(--dorado);
+                           color:var(--dorado); padding:0.2rem 0.7rem;
+                           cursor:pointer; font-size:0.8rem; letter-spacing:0.05em;">
+                Cerrar sesión
+            </button>
+        </form>
+    </div>
+
+    <!-- Usuario NO autenticado: muestra enlaces login y registro -->
+    <div sec:authorize="!isAuthenticated()"
+         style="text-align:center; padding: 0.4rem 0 0.6rem;">
+        <a th:href="@{/login}"
+           style="color: var(--blanco-puro); font-size:0.85rem; margin-right:1rem;">
+            Iniciar sesión
+        </a>
+        <a th:href="@{/register}"
+           style="color: var(--dorado); font-size:0.85rem; font-weight:600;">
+            Registrarse
+        </a>
+    </div>
 
 </header>
 
