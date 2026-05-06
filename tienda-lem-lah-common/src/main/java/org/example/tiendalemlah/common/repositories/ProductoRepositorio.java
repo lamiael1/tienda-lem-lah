@@ -1,6 +1,7 @@
 package org.example.tiendalemlah.common.repositories;
 
 import org.example.tiendalemlah.common.entities.Producto;
+import org.springframework.data.domain.Sort;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
@@ -15,4 +16,7 @@ public interface ProductoRepositorio extends JpaRepository<Producto, Long> {
 
     @Query("SELECT DISTINCT p FROM Producto p JOIN FETCH p.categorias c JOIN FETCH p.marca WHERE c.tipo = :tipo")
     List<Producto> findByCategoriaTipoFetch(@Param("tipo") String tipo);
+
+    @Query("SELECT DISTINCT p FROM Producto p JOIN FETCH p.marca JOIN FETCH p.categorias cat WHERE cat.id = :categoriaId")
+    List<Producto> findByCategoriaId(@Param("categoriaId") Long categoriaId, Sort sort);
 }

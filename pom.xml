@@ -15,6 +15,7 @@
         <module>tienda-lem-lah-common</module>
         <module>tienda-lem-lah-web</module>
         <module>tienda-lem-lah-security</module>
+        <module>tienda-lem-lah-api</module>
     </modules>
 
     <groupId>org.example.tiendalemlah</groupId>

@@ -5,10 +5,26 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="db32a8df-270e-447d-a191-71dadb85c78a" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/tienda-lem-lah-web/src/main/resources/templates/login.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sqldialects.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tienda-lem-lah-api/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tienda-lem-lah-api/src/main/java/org/example/tiendalemlah/ApiApp.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tienda-lem-lah-api/src/main/java/org/example/tiendalemlah/api/config/SeguridadApiMinima.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tienda-lem-lah-api/src/main/java/org/example/tiendalemlah/api/controller/CategoriaApiControlador.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tienda-lem-lah-api/src/main/java/org/example/tiendalemlah/api/controller/ProductoApiControlador.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tienda-lem-lah-api/src/main/java/org/example/tiendalemlah/api/dto/CategoriaDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tienda-lem-lah-api/src/main/java/org/example/tiendalemlah/api/dto/MarcaDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tienda-lem-lah-api/src/main/java/org/example/tiendalemlah/api/dto/ProductoDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tienda-lem-lah-api/src/main/java/org/example/tiendalemlah/api/mapper/CategoriaMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tienda-lem-lah-api/src/main/java/org/example/tiendalemlah/api/mapper/ProductoMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tienda-lem-lah-api/src/main/resources/application.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tienda-lem-lah-api/src/main/resources/data/data.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tienda-lem-lah-web/src/main/java/org/example/tiendalemlah/web/config/ConfiguracionWeb.java" beforeDir="false" afterPath="$PROJECT_DIR$/tienda-lem-lah-web/src/main/java/org/example/tiendalemlah/web/config/ConfiguracionWeb.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tienda-lem-lah-web/src/main/java/org/example/tiendalemlah/web/config/SeguridadWeb.java" beforeDir="false" afterPath="$PROJECT_DIR$/tienda-lem-lah-web/src/main/java/org/example/tiendalemlah/web/config/SeguridadWeb.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tienda-lem-lah-common/src/main/java/org/example/tiendalemlah/common/repositories/CategoriaRepositorio.java" beforeDir="false" afterPath="$PROJECT_DIR$/tienda-lem-lah-common/src/main/java/org/example/tiendalemlah/common/repositories/CategoriaRepositorio.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tienda-lem-lah-common/src/main/java/org/example/tiendalemlah/common/repositories/ProductoRepositorio.java" beforeDir="false" afterPath="$PROJECT_DIR$/tienda-lem-lah-common/src/main/java/org/example/tiendalemlah/common/repositories/ProductoRepositorio.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -63,17 +79,18 @@
     "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
     "RunOnceActivity.git.unshallow": "true",
     "RunOnceActivity.typescript.service.memoryLimit.init": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "Spring Boot.WebApp.executor": "Run",
     "git-widget-placeholder": "main",
     "junie.onboarding.icon.badge.shown": "true",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/laura/Downloads/tienda-lem-lah/tienda-lem-lah/tienda-lem-lah-web/src/main/resources/templates/admin/marcas",
+    "last_opened_file_path": "C:/Users/laura/Downloads/tienda-lem-lah/tienda-lem-lah/tienda-lem-lah-api/src/main/resources/data",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Project",
+    "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2",
     "settings.editor.selected.configurable": "preferences.pluginManager",
@@ -83,6 +100,7 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\laura\Downloads\tienda-lem-lah\tienda-lem-lah\tienda-lem-lah-api\src\main\resources\data" />
       <recent name="C:\Users\laura\Downloads\tienda-lem-lah\tienda-lem-lah\tienda-lem-lah-web\src\main\resources\templates\admin\marcas" />
       <recent name="C:\Users\laura\Downloads\tienda-lem-lah\tienda-lem-lah\tienda-lem-lah-web\src\main\resources\templates\admin\productos" />
     </key>
