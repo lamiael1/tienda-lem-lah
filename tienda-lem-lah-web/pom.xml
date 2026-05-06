@@ -59,7 +59,18 @@
             <scope>runtime</scope>
             <optional>true</optional>
         </dependency>
+        <!-- Módulo security -->
+        <dependency>
+            <groupId>org.example.tiendalemlah</groupId>
+            <artifactId>tienda-lem-lah-security</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
 
+        <!-- Thymeleaf + Spring Security (para sec:authorize en templates) -->
+        <dependency>
+            <groupId>org.thymeleaf.extras</groupId>
+            <artifactId>thymeleaf-extras-springsecurity6</artifactId>
+        </dependency>
         <!-- Lombok -->
         <dependency>
             <groupId>org.projectlombok</groupId>
